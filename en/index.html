@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Max · 个人作品集</title>
-<meta name="description" content="Max 的个人作品集：诗云、Quiet、雅思口语教练、老鹰抓小鸡、AI 自动化等，大部分能点开试。">
+<title>Max · Portfolio</title>
+<meta name="description" content="Max's portfolio: Poetry Cloud, Quiet, an IELTS speaking coach, two chicken games, AI automations — most of them open right in the browser.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' shape-rendering='crispEdges'%3E%3Crect x='1' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='9' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='3' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='7' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='5' y='5' width='2' height='2' fill='%23bf5430'/%3E%3C/svg%3E">
 <style>
   :root{
     --bg:#f7f4ec; --ink:#26231c; --muted:#6e6859; --line:#d9d2bf; --hair:#e6e0cf;
     --card:#fffdf6; --acc:#bf5430; --gold:#e9b34a;
-    --serif:"Songti SC","STSong","Noto Serif SC",Georgia,"Times New Roman",serif;
+    --serif:Georgia,"Songti SC","STSong","Noto Serif SC","Times New Roman",serif;
     --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
-    --mono:"SF Mono",ui-monospace,Menlo,Consolas,"PingFang SC",monospace;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -37,7 +37,7 @@
     border-bottom:1.5px solid var(--ink);margin:10px 10px 0;display:flex;align-items:stretch;justify-content:space-between}
   .top .cell{padding:16px 22px;display:flex;align-items:baseline;gap:12px}
   .top .brand{font-family:var(--serif);font-weight:700;font-size:24px;letter-spacing:.01em;white-space:nowrap}
-  .top .brand small{font-family:var(--sans);font-weight:500;font-size:13px;color:var(--muted);letter-spacing:.2em}
+  .top .brand small{font-family:var(--sans);font-weight:500;font-size:12px;color:var(--muted);letter-spacing:.24em}
   .top .en{border-left:1.5px solid var(--ink);display:flex;align-items:center}
   .top .en a{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
   .top .en a:hover{color:var(--ink)}
@@ -48,7 +48,6 @@
   .wrap{max-width:1020px;margin:0 auto;padding:0 28px}
   @media(max-width:760px){.wrap{padding:0 16px}}
 
-  /* slim interactive band */
   #waves{display:block;width:100%;height:88px;border-bottom:1.5px solid var(--ink);background:var(--card)}
 
   /* works */
@@ -106,7 +105,6 @@
   .arow h3 .en{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.14em}
   .arow p{font-size:14.5px;color:var(--muted);margin:5px 0 0;max-width:48em}
 
-  /* reveal */
   .reveal{opacity:0;transform:translateY(26px)}
   .in-view{opacity:1;transform:none;transition:opacity .75s ease,transform .75s cubic-bezier(.22,.61,.36,1)}
 
@@ -114,7 +112,6 @@
   footer a{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.1em}
   footer a:hover{color:var(--ink)}
 
-  /* runners */
   .runner{position:fixed;bottom:14px;left:-80px;width:44px;height:44px;z-index:950;pointer-events:none}
   .runner svg{width:100%;height:100%}
   .run-anim{animation:dash 5.2s linear forwards}
@@ -145,8 +142,8 @@
 <div id="frame" aria-hidden="true"></div>
 
 <header class="top">
-  <div class="cell"><span class="brand">Max <small>个人作品集</small></span></div>
-  <div class="cell en"><a href="/en/" hreflang="en">EN ↗</a></div>
+  <div class="cell"><span class="brand">Max <small>PORTFOLIO</small></span></div>
+  <div class="cell en"><a href="/" hreflang="zh-CN">中文 ↗</a></div>
 </header>
 
 <div class="shell">
@@ -155,19 +152,19 @@
 
 <main class="wrap works">
 
-  <!-- 1 诗云 -->
+  <!-- 1 Poetry Cloud -->
   <div class="work reveal">
     <div class="txt">
-      <h2><span class="pic" data-icon="cloud"></span>诗云</h2>
-      <div class="en">Poetry Cloud</div>
-      <p>来自刘慈欣的同名小说，自己很喜欢，就把它做了出来：所有可能的五言绝句摊进一片星空，一共 10⁷⁰ 首；《静夜思》这样人类真正写过的诗就藏在里面，飞近了会亮起金光。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener">打开飞一圈 <span class="ar">↗</span></a>
+      <h2><span class="pic" data-icon="cloud"></span>Poetry Cloud</h2>
+      <div class="en">诗云 · after Liu Cixin</div>
+      <p>Named after a Liu Cixin short story I love, so I built it: every possible five-character Chinese quatrain laid out as a galaxy — 10⁷⁰ of them. The poems humans actually wrote are hidden somewhere inside, and glow gold when you fly close.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener">Fly around <span class="ar">↗</span></a>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/poetry-cloud</span><span class="live">LIVE</span></div>
         <div class="screen" data-live="https://maxi-max-dev.github.io/poetry-cloud/">
-          <img src="assets/p-poetry.jpg" alt="诗云：星空中的五言绝句" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener" aria-label="打开诗云"></a>
+          <img src="../assets/p-poetry.jpg" alt="Poetry Cloud: quatrains as a starfield" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener" aria-label="Open Poetry Cloud"></a>
         </div>
       </div>
     </div>
@@ -178,70 +175,70 @@
     <div class="txt">
       <h2><span class="pic" data-icon="book"></span>Quiet</h2>
       <div class="en">UQ Study-Space Finder</div>
-      <p>在昆士兰大学读书时总找不到安静的自习位，就做了个工具回答一件事：现在哪个图书馆人少。接了 9 个图书馆的占用数据，原型版。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/max-huang/quiet/" target="_blank" rel="noopener">打开看看 <span class="ar">↗</span></a>
+      <p>I could never find a quiet study spot at the University of Queensland, so I built a tool that answers one question: which library is empty right now. Occupancy data from 9 UQ libraries. Prototype.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/max-huang/quiet/" target="_blank" rel="noopener">Open it <span class="ar">↗</span></a>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/max-huang/quiet</span><span class="live">LIVE</span></div>
         <div class="screen" data-live="https://maxi-max-dev.github.io/max-huang/quiet/">
-          <img src="assets/p-quiet.jpg" alt="Quiet：图书馆占用一览" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/max-huang/quiet/" target="_blank" rel="noopener" aria-label="打开 Quiet"></a>
+          <img src="../assets/p-quiet.jpg" alt="Quiet: library occupancy at a glance" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/max-huang/quiet/" target="_blank" rel="noopener" aria-label="Open Quiet"></a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 3 雅思 -->
+  <!-- 3 IELTS -->
   <div class="work reveal">
     <div class="txt">
-      <h2><span class="pic" data-icon="mic"></span>雅思口语教练</h2>
-      <div class="en">IELTS Speaking Coach</div>
-      <p>备考口语没人陪练，就自己做了个 AI 考官：选 Part 1/2/3 出题，录一段英语回答，逐句反馈、估分，再示范一遍更好的说法。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener">练一句 <span class="ar">↗</span></a>
+      <h2><span class="pic" data-icon="mic"></span>IELTS Speaking Coach</h2>
+      <div class="en">AI Examiner</div>
+      <p>I had no one to practice speaking with, so I built an AI examiner: pick Part 1/2/3, record an answer, and get sentence-by-sentence feedback, a band estimate, and a better way to say it.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener">Try a question <span class="ar">↗</span></a>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/ielts-speaking-coach</span><span class="live">LIVE</span></div>
         <div class="screen" data-live="https://maxi-max-dev.github.io/ielts-speaking-coach/" data-scroll="560">
-          <img src="assets/p-ielts.jpg" alt="雅思口语教练：出题与录音作答" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener" aria-label="打开雅思口语教练"></a>
+          <img src="../assets/p-ielts.jpg" alt="IELTS coach: question and recording panel" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener" aria-label="Open IELTS Speaking Coach"></a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 4 Unity 老鹰抓小鸡 -->
+  <!-- 4 Unity -->
   <div class="work rev reveal">
     <div class="txt">
-      <h2><span class="pic" data-icon="eagle"></span>老鹰抓小鸡 · Unity 版</h2>
-      <div class="en">Chicken Chain · Unity WebGL</div>
-      <p>小时候玩的老鹰抓小鸡，长大想再玩发现找不到代餐，就自己试着做了一个。Unity 写的，专门调手感：扑击、护娃、链条物理，老鹰母鸡小鸡三个角色都能选。键盘操作，建议电脑打开。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener">玩一把 <span class="ar">↗</span></a>
-      <div class="chicks" id="chicks1" title="？"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
+      <h2><span class="pic" data-icon="eagle"></span>Chicken Chain · Unity</h2>
+      <div class="en">老鹰抓小鸡 · Unity WebGL</div>
+      <p>Eagle-catches-chicks is a playground game from my childhood. I wanted to play it again, couldn't find anything like it, so I tried making one. Built in Unity, tuned for game feel: pouncing, guarding, chain physics — all three roles playable. Keyboard controls, best on desktop.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener">Play it <span class="ar">↗</span></a>
+      <div class="chicks" id="chicks1" title="?"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/chicken-chain</span><span class="live">LIVE</span></div>
         <div class="screen" data-live="https://maxi-max-dev.github.io/chicken-chain/" data-scroll="120">
-          <img src="assets/p-unity.jpg" alt="老鹰抓小鸡 Unity 版：选择角色" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener" aria-label="打开 Unity 版老鹰抓小鸡"></a>
+          <img src="../assets/p-unity.jpg" alt="Chicken Chain Unity: character select" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener" aria-label="Open Chicken Chain Unity"></a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 5 方块版 -->
+  <!-- 5 Voxel -->
   <div class="work reveal">
     <div class="txt">
-      <h2><span class="pic" data-icon="chick"></span>老鹰抓小鸡 · 方块版</h2>
-      <div class="en">Voxel Chicken</div>
-      <p>同一个游戏的网页版，方块画风，手机也能玩：你当母鸡，护着身后一串小鸡，老鹰会盯着队尾偷袭。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener">玩一把 <span class="ar">↗</span></a>
-      <div class="chicks" id="chicks2" title="？"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
+      <h2><span class="pic" data-icon="chick"></span>Voxel Chicken</h2>
+      <div class="en">老鹰抓小鸡 · Web Version</div>
+      <p>The web version of the same game, voxel style, works on phones too: you're the hen, shielding a chain of chicks behind you while the eagle hunts the tail.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener">Play it <span class="ar">↗</span></a>
+      <div class="chicks" id="chicks2" title="?"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/voxel-chicken</span><span class="live">LIVE</span></div>
         <div class="screen" data-live="https://maxi-max-dev.github.io/voxel-chicken/">
-          <img src="assets/p-voxel.jpg" alt="方块版老鹰抓小鸡：游戏画面" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener" aria-label="打开方块版老鹰抓小鸡"></a>
+          <img src="../assets/p-voxel.jpg" alt="Voxel Chicken: gameplay" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener" aria-label="Open Voxel Chicken"></a>
         </div>
       </div>
     </div>
@@ -252,28 +249,28 @@
     <div class="txt">
       <h2><span class="pic" data-icon="station"></span>Max Station</h2>
       <div class="en">Personal Workbench</div>
-      <p>自己每天在用的工作台：看板、日历、笔记、番茄钟放在同一页，顺手藏了几个小游戏。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener">打开看看 <span class="ar">↗</span></a>
+      <p>The workbench I actually use every day: kanban, calendar, notes and a pomodoro timer on one page, with a few mini games tucked in.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener">Open it <span class="ar">↗</span></a>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/max-station</span><span class="live">LIVE</span></div>
         <div class="screen" data-live="https://maxi-max-dev.github.io/max-station/">
-          <img src="assets/p-station.jpg" alt="Max Station 工作台总览" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener" aria-label="打开 Max Station"></a>
+          <img src="../assets/p-station.jpg" alt="Max Station workbench overview" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener" aria-label="Open Max Station"></a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 7 小红书调研 -->
+  <!-- 7 XHS -->
   <div class="work reveal">
     <div class="txt">
-      <h2><span class="pic" data-icon="lens"></span>小红书调研</h2>
-      <div class="en">XHS Research Skill</div>
-      <p>做调研要翻几十条小红书笔记，太费时间，就让 AI 自己干：给一个主题，它自动在手机端打开小红书搜索、一条条读笔记，最后汇总成一篇调研报告。快档 5 到 10 分钟，深档 15 到 30 分钟。图为它在真机上跑的样子。</p>
+      <h2><span class="pic" data-icon="lens"></span>XHS Research</h2>
+      <div class="en">Xiaohongshu Research Skill</div>
+      <p>Product research meant reading dozens of Xiaohongshu posts, so I let AI do it: give it a topic and it opens the app on a phone, searches, reads posts one by one, and writes up a research report. Fast mode 5–10 minutes, deep mode 15–30. Shown: a real run on a phone.</p>
     </div>
     <div class="vis phonewrap">
-      <div class="phone"><img src="assets/p-xhs.jpg" alt="小红书调研：手机上自动搜索中" loading="lazy"></div>
+      <div class="phone"><img src="../assets/p-xhs.jpg" alt="XHS Research running on a phone" loading="lazy"></div>
     </div>
   </div>
 
@@ -282,35 +279,35 @@
     <div class="txt">
       <h2><span class="pic" data-icon="coral"></span>ReefQuest</h2>
       <div class="en">UQ HackAIthon 2026</div>
-      <p>来自昆士兰大学一场 48 小时 AI 黑客松，我们队的方案：宝可梦式的海洋保护 app。潜水员拍到鱼群、珊瑚就顺手上传攒积分，AI 识别鱼种、评估珊瑚状态，再用潜水电脑的深度和 GPS 记录验证溯源，数据汇总给海洋保护组织。图为当时做的原型。</p>
+      <p>From a 48-hour AI hackathon at the University of Queensland — our team's concept: a Pokémon-style ocean conservation app. Divers upload photos of fish and coral for points, AI identifies species and assesses coral health, and dive-computer depth and GPS logs verify the data before it goes to conservation groups. Shown: the prototype we made.</p>
     </div>
     <div class="vis phonewrap">
-      <div class="phone"><img src="assets/p-reef.jpg" alt="ReefQuest 原型：海洋地图与积分" loading="lazy"></div>
+      <div class="phone"><img src="../assets/p-reef.jpg" alt="ReefQuest prototype: ocean map and points" loading="lazy"></div>
     </div>
   </div>
 
-  <!-- 一直在跑的 -->
-  <p class="alsointro reveal">↓ 下面这些没有界面，是一直在自动跑的</p>
+  <!-- always running -->
+  <p class="alsointro reveal">↓ These have no UI — they just run, every day</p>
   <div class="also reveal">
     <div class="arow">
       <span class="pic" data-icon="lobster"></span>
       <span>
-        <h3>多 Agent 系统 <span class="en">OPENCLAW</span></h3>
-        <p>5 个 agent 各管一摊：求职、内容、财经、健康、运维，加上十来个定时任务，从早晨的市场预测到周末的反思报告，结果推到手机上。基于开源项目 OpenClaw 搭的。</p>
+        <h3>Multi-Agent System <span class="en">OPENCLAW</span></h3>
+        <p>Five agents, each owning one area — job search, content research, finance, health, ops — plus a dozen scheduled jobs, from morning market forecasts to weekend reviews, pushed to my phone. Built on the open-source OpenClaw runtime.</p>
       </span>
     </div>
     <div class="arow">
-      <span class="pic"><img src="assets/mirofish.png" alt="MiroFish"></span>
+      <span class="pic"><img src="../assets/mirofish.png" alt="MiroFish"></span>
       <span>
-        <h3>每日预测 <span class="en">MIROFISH</span></h3>
-        <p>给开源预测引擎 MiroFish 接了条每天自动跑的管线：凌晨把当天新闻跑成趋势预测，早上自动发出来，再用记分板回头对答案。</p>
+        <h3>Daily Forecast <span class="en">MIROFISH</span></h3>
+        <p>A daily pipeline around the open-source MiroFish engine: overnight it turns the day's news into a structured forecast, posts it in the morning, and a scoreboard checks it against what actually happened.</p>
       </span>
     </div>
     <div class="arow">
       <span class="pic" data-icon="chart"></span>
       <span>
-        <h3>市场分析 <span class="en">DIGITAL ORACLE</span></h3>
-        <p>跟着 B 站 Komako 的开源思路，看市场价格反推趋势：每天自动跑换汇分析，也让一个 agent 在 ASX 模拟炒股比赛里自动看盘下单（模拟盘，战绩中游）。</p>
+        <h3>Market Analysis <span class="en">DIGITAL ORACLE</span></h3>
+        <p>Following Komako's open-sourced approach — read market prices, not headlines. A daily FX analysis runs automatically, and an agent trades the ASX Sharemarket Game on its own (simulated money, mid-table results).</p>
       </span>
     </div>
   </div>
@@ -318,7 +315,7 @@
 </main>
 
 <footer>
-  <a href="/en/" hreflang="en">ENGLISH VERSION ↗</a>
+  <a href="/" hreflang="zh-CN">中文版 ↗</a>
 </footer>
 
 </div><!-- /shell -->
