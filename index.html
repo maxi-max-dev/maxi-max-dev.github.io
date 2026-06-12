@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Max · 个人作品集</title>
+<meta name="description" content="Max 的个人作品集：网页作品、AI 自动化、黑客松、游戏。简历写不下的都在这，大部分能点开试。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' shape-rendering='crispEdges'%3E%3Crect x='4' y='1' width='2' height='2' fill='%23d04a3a'/%3E%3Crect x='3' y='3' width='5' height='4' fill='%238a6a4a'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%23e9b34a'/%3E%3Crect x='6' y='4' width='1' height='1' fill='%232b2722'/%3E%3Crect x='4' y='7' width='3' height='2' fill='%238a6a4a'/%3E%3Crect x='4' y='9' width='1' height='2' fill='%23e9b34a'/%3E%3Crect x='6' y='9' width='1' height='2' fill='%23e9b34a'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#f7f4ec; --ink:#26231c; --muted:#6e6859; --line:#d9d2bf; --hair:#e6e0cf;
+    --card:#fffdf6; --acc:#bf5430; --gold:#e9b34a;
+    --serif:"Songti SC","STSong","Noto Serif SC",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,"PingFang SC",monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:var(--acc);text-decoration:none}
+  ::selection{background:var(--gold);color:var(--ink)}
+
+  /* ---------- preloader ---------- */
+  #loader{position:fixed;inset:0;background:var(--bg);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:transform .7s cubic-bezier(.77,0,.18,1)}
+  #loader.up{transform:translateY(-100%)}
+  #loader .lhen{width:52px;height:52px;animation:peck .5s steps(2) infinite}
+  @keyframes peck{0%,100%{transform:translateY(0)}50%{transform:translateY(4px) rotate(4deg)}}
+  #loader .pct{font-family:var(--mono);font-size:13px;letter-spacing:.18em;color:var(--muted)}
+  #loader .bar{width:180px;height:2px;background:var(--hair);overflow:hidden}
+  #loader .bar i{display:block;height:100%;width:0;background:var(--ink);transition:width .12s linear}
+
+  /* ---------- page frame ---------- */
+  #frame{position:fixed;inset:10px;border:1.5px solid var(--ink);pointer-events:none;z-index:900}
+  @media(max-width:760px){#frame{inset:6px}}
+
+  /* ---------- top bar ---------- */
+  header.top{position:sticky;top:0;z-index:500;background:rgba(247,244,236,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1.5px solid var(--ink);margin:10px 10px 0;display:grid;grid-template-columns:auto 1fr auto;align-items:stretch}
+  .top .cell{padding:14px 20px;display:flex;align-items:center;gap:10px}
+  .top .cell + .cell{border-left:1.5px solid var(--ink)}
+  .top .brand{font-family:var(--serif);font-weight:700;font-size:18px;letter-spacing:.02em;white-space:nowrap}
+  .top .brand small{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--muted);margin-left:8px;letter-spacing:.12em}
+  .top nav{display:flex;gap:2px;justify-content:flex-end;width:100%;flex-wrap:wrap}
+  .top nav a{color:var(--ink);font-size:13px;padding:5px 12px;border-radius:980px;transition:background .2s,color .2s;white-space:nowrap}
+  .top nav a:hover{background:var(--ink);color:var(--bg);text-decoration:none}
+  .top .en a{font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .top .en a:hover{color:var(--ink)}
+  @media(max-width:760px){
+    header.top{margin:6px 6px 0;grid-template-columns:1fr auto}
+    .top .cell:nth-child(2){display:none}
+  }
+
+  .shell{padding:0 10px}
+  @media(max-width:760px){.shell{padding:0 6px}}
+  .wrap{max-width:920px;margin:0 auto;padding:0 26px}
+
+  /* ---------- hero ---------- */
+  .hero{text-align:center;padding:11vh 0 0;position:relative}
+  .hero .pname{position:relative;display:inline-block}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(58px,10vw,116px);line-height:1.05;margin:0;letter-spacing:-0.01em}
+  .hero h1 .ch{display:inline-block;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+  .hero h1 .ch:hover{transform:translateY(-8px) rotate(-3deg)}
+  .hero .role{font-family:var(--mono);font-size:12.5px;letter-spacing:.34em;color:var(--muted);margin-top:14px;text-transform:uppercase}
+  .hero .role b{color:var(--acc);font-weight:600}
+  .hero .sub{font-size:clamp(15.5px,1.9vw,18px);color:var(--muted);margin:22px auto 0;max-width:30em}
+  #hen{position:absolute;width:42px;height:42px;right:-50px;bottom:8px;cursor:pointer;animation:idle 1.7s steps(2) infinite}
+  @keyframes idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  #hen svg{width:100%;height:100%}
+  @media(max-width:760px){#hen{right:-44px;width:34px;height:34px}}
+
+  /* hero wave canvas */
+  #waves{display:block;width:100%;height:150px;margin-top:6vh;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);background:var(--card)}
+
+  /* ticker */
+  .ticker{overflow:hidden;border-bottom:1.5px solid var(--ink);background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.22em;white-space:nowrap;user-select:none}
+  .ticker .in{display:inline-block;padding:9px 0;animation:tick 26s linear infinite}
+  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- sections ---------- */
+  section{position:relative;padding:0 0 26px}
+  .ribbon{display:flex;justify-content:center;margin:74px 0 8px}
+  .ribbon span{background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:11.5px;letter-spacing:.3em;padding:6px 18px 6px 22px;text-transform:uppercase}
+  .shead{text-align:center;margin-bottom:34px}
+  .shead h2{font-family:var(--serif);font-size:clamp(30px,4.6vw,46px);font-weight:700;margin:0;letter-spacing:.02em}
+  .shead p{font-size:14.5px;color:var(--muted);margin:10px 0 0}
+  .ghost{position:absolute;top:46px;left:50%;transform:translateX(-50%);font-family:var(--serif);font-weight:700;
+    font-size:clamp(90px,16vw,170px);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(38,35,28,.06);
+    letter-spacing:.03em;user-select:none;pointer-events:none;white-space:nowrap;z-index:0}
+
+  /* items */
+  .list{position:relative;z-index:1;border:1.5px solid var(--ink);background:var(--card)}
+  .item{display:grid;grid-template-columns:74px 1fr;gap:20px;align-items:start;padding:26px 26px;position:relative;transition:background .25s;color:inherit}
+  .item + .item{border-top:1px solid var(--line)}
+  .item:hover{background:#fbf7ea;text-decoration:none}
+  .item:hover .icon{transform:scale(1.14) rotate(-4deg)}
+  .icon{width:56px;height:56px;margin-top:3px;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+  .icon svg,.icon img{width:100%;height:100%;image-rendering:pixelated}
+  .item h3{font-size:18.5px;font-weight:600;margin:0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .item h3 .en{font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--muted);letter-spacing:.12em}
+  .item p{font-size:15px;color:var(--muted);margin:6px 0 0;max-width:46em}
+  .item .open{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13.5px;font-weight:600;color:var(--ink);
+    border:1.5px solid var(--ink);border-radius:980px;padding:6px 16px;transition:background .2s,color .2s}
+  .item .open .ar{transition:transform .25s}
+  .item:hover .open{background:var(--ink);color:var(--bg)}
+  .item:hover .open .ar{transform:translate(2px,-2px)}
+  a.item{display:grid}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px)}
+  .in-view{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
+
+  footer{margin-top:90px;border-top:1.5px solid var(--ink);padding:36px 0 46px;text-align:center;font-size:13px;color:var(--muted)}
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--ink)}
+  #foothen{display:inline-block;width:24px;height:24px;vertical-align:-6px;margin-left:10px;cursor:pointer}
+
+  /* runners */
+  .runner{position:fixed;bottom:14px;left:-80px;width:44px;height:44px;z-index:950;pointer-events:none}
+  .runner svg{width:100%;height:100%}
+  .run-anim{animation:dash 5.2s linear forwards}
+  @keyframes dash{from{left:-80px}to{left:calc(100vw + 80px)}}
+  .hop{animation:dash 5.2s linear forwards,hopping .32s steps(2) infinite}
+  @keyframes hopping{0%,100%{bottom:14px}50%{bottom:24px}}
+
+  @media(max-width:760px){
+    .hero{padding:9vh 0 0}
+    #waves{height:110px;margin-top:5vh}
+    .item{grid-template-columns:52px 1fr;gap:15px;padding:22px 16px}
+    .icon{width:44px;height:44px}
+    .ribbon{margin-top:56px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    #loader{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div id="loader" aria-hidden="true">
+  <div class="lhen" id="lhen"></div>
+  <div class="bar"><i id="lbar"></i></div>
+  <div class="pct" id="lpct">0%</div>
+</div>
+
+<div id="frame" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="cell brand">Max<small>个人作品集</small></div>
+  <div class="cell"><nav>
+    <a href="#web">网页作品</a><a href="#agent">AI 自动化</a><a href="#hack">黑客松</a><a href="#play">游戏</a>
+  </nav></div>
+  <div class="cell en"><a href="/max-huang/" hreflang="en">EN ↗</a></div>
+</header>
+
+<div class="shell">
+
+<header class="hero">
+  <div class="wrap">
+    <div class="pname">
+      <h1 id="maxname">Max</h1>
+      <span id="hen" role="button" aria-label="小彩蛋" title="？"></span>
+    </div>
+    <div class="role">PORTFOLIO · <b>2026</b></div>
+    <p class="sub">简历写不下的，都放在这。<br>大部分能点开试一试。</p>
+  </div>
+  <canvas id="waves" aria-hidden="true"></canvas>
+  <div class="ticker" aria-hidden="true"><span class="in" id="tick"></span></div>
+</header>
+
+<main>
+
+  <!-- 网页作品 -->
+  <section id="web">
+    <div class="ghost">WEB</div>
+    <div class="ribbon reveal"><span>01 · WEB</span></div>
+    <div class="shead reveal">
+      <h2>网页作品</h2>
+      <p>单文件网页，点开就能用。</p>
+    </div>
+    <div class="wrap">
+      <div class="list reveal">
+        <a class="item" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener">
+          <span class="icon" data-icon="cloud"></span>
+          <span>
+            <h3>诗云 <span class="en">POETRY CLOUD</span></h3>
+            <p>名字来自刘慈欣的短篇《诗云》，很喜欢那篇小说。把古诗词做成一张张卡片，翻着背、随手测，比抱着书背好玩一点。</p>
+            <span class="open">打开 <span class="ar">↗</span></span>
+          </span>
+        </a>
+        <a class="item" href="https://maxi-max-dev.github.io/max-huang/quiet/" target="_blank" rel="noopener">
+          <span class="icon" data-icon="book"></span>
+          <span>
+            <h3>Quiet</h3>
+            <p>查昆士兰大学哪个图书馆现在人少、哪层安静。接了 9 个图书馆的占用数据，原型版。</p>
+            <span class="open">打开 <span class="ar">↗</span></span>
+          </span>
+        </a>
+        <a class="item" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener">
+          <span class="icon" data-icon="station"></span>
+          <span>
+            <h3>Max Station</h3>
+            <p>把看板、日历、笔记、番茄钟放进同一页的工作台，里面还藏了几个小游戏。</p>
+            <span class="open">打开 <span class="ar">↗</span></span>
+          </span>
+        </a>
+        <a class="item" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener">
+          <span class="icon" data-icon="mic"></span>
+          <span>
+            <h3>雅思口语教练</h3>
+            <p>录一段英语口语回答，AI 逐句给反馈、估分，再改写成更好的说法。</p>
+            <span class="open">打开 <span class="ar">↗</span></span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI 自动化 -->
+  <section id="agent">
+    <div class="ghost">AGENT</div>
+    <div class="ribbon reveal"><span>02 · AGENT</span></div>
+    <div class="shead reveal">
+      <h2>AI 自动化</h2>
+      <p>几套每天自动在跑的 agent 工作流，结果推到手机上。</p>
+    </div>
+    <div class="wrap">
+      <div class="list reveal">
+        <div class="item">
+          <span class="icon" data-icon="lobster"></span>
+          <span>
+            <h3>多 Agent 系统 <span class="en">OPENCLAW</span></h3>
+            <p>5 个 agent 各管一摊：求职、内容、财经、健康、运维，加上十来个定时任务，从早晨的市场预测到周末的反思报告。基于开源项目 OpenClaw 搭的。</p>
+          </span>
+        </div>
+        <div class="item">
+          <span class="icon" data-icon="lens"></span>
+          <span>
+            <h3>小红书调研</h3>
+            <p>给一个主题，自动打开手机端的小红书 app 搜索、一条条读笔记，最后汇总成一篇调研报告。快档 5 到 10 分钟，深档 15 到 30 分钟。</p>
+          </span>
+        </div>
+        <div class="item">
+          <span class="icon"><img src="assets/mirofish.png" alt="MiroFish"></span>
+          <span>
+            <h3>每日预测 <span class="en">MIROFISH</span></h3>
+            <p>开源预测引擎 MiroFish，我给它接了条管线：每天凌晨把当天新闻自动跑成趋势预测，早上发出来，再用记分板回头对答案。</p>
+          </span>
+        </div>
+        <div class="item">
+          <span class="icon" data-icon="chart"></span>
+          <span>
+            <h3>市场分析 <span class="en">DIGITAL ORACLE</span></h3>
+            <p>跟着 B 站 Komako 的开源思路：少看新闻头条，看市场价格反推趋势。每天自动跑换汇分析，也让一个 agent 在 ASX 模拟炒股比赛里自动看盘下单（模拟盘，战绩中游）。</p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 黑客松 -->
+  <section id="hack">
+    <div class="ghost">HACK</div>
+    <div class="ribbon reveal"><span>03 · HACKATHON</span></div>
+    <div class="shead reveal">
+      <h2>一场黑客松</h2>
+      <p>昆士兰大学 HackAIthon 2026，48 小时团队方案。</p>
+    </div>
+    <div class="wrap">
+      <div class="list reveal">
+        <a class="item" href="https://g.co/gemini/share/4efa9b1bd2b1" target="_blank" rel="noopener">
+          <span class="icon" data-icon="coral"></span>
+          <span>
+            <h3>ReefQuest</h3>
+            <p>宝可梦式的海洋保护 app：潜水员下水拍到鱼群、珊瑚就顺手上传，AI 帮着识别鱼种、评估珊瑚状态，攒积分；再用潜水电脑的深度和 GPS 记录做验证，数据不容易造假，汇总给海洋保护组织。</p>
+            <span class="open">看原型 <span class="ar">↗</span></span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 游戏 -->
+  <section id="play">
+    <div class="ghost">PLAY</div>
+    <div class="ribbon reveal"><span>04 · PLAY</span></div>
+    <div class="shead reveal">
+      <h2>游戏</h2>
+      <p>同一个童年游戏，做了两版。</p>
+    </div>
+    <div class="wrap">
+      <div class="list reveal">
+        <a class="item" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener">
+          <span class="icon" data-icon="chick"></span>
+          <span>
+            <h3>老鹰抓小鸡 · 方块版</h3>
+            <p>3D 方块画风：你当母鸡，护着一串小鸡躲老鹰的爪子。手机电脑都能玩。</p>
+            <span class="open">玩一把 <span class="ar">↗</span></span>
+          </span>
+        </a>
+        <a class="item" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener">
+          <span class="icon" data-icon="eagle"></span>
+          <span>
+            <h3>老鹰抓小鸡 · Unity 版</h3>
+            <p>用 Unity 重做的一版，专门调手感：扑击、护娃、链条物理。老鹰、母鸡、小鸡三个角色都能选。键盘操作，建议电脑打开。</p>
+            <span class="open">玩一把 <span class="ar">↗</span></span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/max-huang/" hreflang="en">English version ↗</a><span id="foothen" title="？"></span>
+  </div>
+</footer>
+
+</div><!-- /shell -->
+
+<script>
+/* ---------- pixel icons ---------- */
+var PAL={k:'#2b2722',w:'#f6f1e6',r:'#bf5430',x:'#d04a3a',y:'#e9b34a',g:'#6a9a58',b:'#4a7fb5',l:'#a8cae6',p:'#e08a7a',d:'#8a6a4a',m:'#a39a89',c:'#efe6d2'};
+var ICONS={
+cloud:['............','...llll.....','..llllll....','.bllllllb...','bllbblllll..','blllllllll..','.bbllllbb...','............','........xx..','........xx..','............'],
+book:['............','.kkkkk.kkkkk','kccccckccccc','kcbbbckcbbcc','kccccckccccc','kcbbcckcbbbc','kccccckccccc','.kkkkkkkkkk.','............'],
+station:['kkkkkkkkkkkk','kcccccccccck','kcrrcyycbbck','kcrrcyycbbck','kccccyycccck','kkkkkkkkkkkk','.....kk.....','...kkkkkk...','............'],
+lobster:['.xx......xx.','xxxx....xxxx','xx.xx..xx.xx','.....xx.....','..x.xxxx.x..','..xxxkkxxx..','...xxxxxx...','..x.xxxx.x..','...xxxxxx...','..x..xx..x..','....x..x....'],
+lens:['...kkkk.....','..k....k....','.k..ll..k...','.k.llll.k...','.k.llll.k...','..k....k....','...kkkk.x...','.......xx...','........xx..','.........x..'],
+chart:['..........g.','....x...g.g.','..g.x.g.g.x.','..g.x.g.x.x.','..g.g.x.x...','..g.g.x.....','..g.g.......','kkkkkkkkkkkk'],
+coral:['..p...p..p..','..p.p.p..p..','.pp.p.pp.p..','..ppp..ppp..','...pp..pp...','....pppp....','.....pp.....','yyyyyyyyyyyy'],
+chick:['............','...yyyy.....','..yyyyyy....','..ykyyyyr...','..yyyyyyr...','..yyyyyy....','...yyyy.....','...r..r.....','............'],
+eagle:['.d........d.','.dd......dd.','.ddd....ddd.','..dddddddd..','..dddkkddd..','...dddddd...','....dddd....','.....dd.....','....y..y....'],
+mic:['....kkk.....','...kcccx....','...kcccx....','...kcccx....','..k.....x...','...kkkxx....','.....k......','...kkkkk....'],
+hen:['...xx.......','..dddd......','.yddkd......','..dddd......','..ddddddd...','..ddwwddddd.','...dwwdddd..','....ddddd...','....y..y....','...yy..yy...']
+};
+function pxsvg(name){
+  var map=ICONS[name]; if(!map) return '';
+  var rows=map.length, cols=0, s='';
+  map.forEach(function(r){ if(r.length>cols) cols=r.length; });
+  map.forEach(function(row,y){
+    for(var x=0;x<row.length;x++){
+      var ch=row[x];
+      if(ch!=='.'&&PAL[ch]) s+='<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="'+PAL[ch]+'"/>';
+    }
+  });
+  return '<svg viewBox="0 0 '+cols+' '+rows+'" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-hidden="true">'+s+'</svg>';
+}
+document.querySelectorAll('[data-icon]').forEach(function(el){ el.innerHTML=pxsvg(el.getAttribute('data-icon')); });
+document.getElementById('hen').innerHTML=pxsvg('hen');
+document.getElementById('foothen').innerHTML=pxsvg('hen');
+document.getElementById('lhen').innerHTML=pxsvg('hen');
+
+/* ---------- preloader ---------- */
+(function(){
+  var L=document.getElementById('loader');
+  if(!L||getComputedStyle(L).display==='none') return;
+  var pct=document.getElementById('lpct'), bar=document.getElementById('lbar');
+  var fast=sessionStorage.getItem('seen')==='1';
+  var t=0, dur=fast?350:1050, start=null;
+  function step(ts){
+    if(!start) start=ts;
+    var p=Math.min(1,(ts-start)/dur);
+    var v=Math.round(p*100);
+    pct.textContent=v+'%'; bar.style.width=v+'%';
+    if(p<1){ requestAnimationFrame(step); }
+    else{ sessionStorage.setItem('seen','1'); setTimeout(function(){ L.classList.add('up'); setTimeout(function(){ L.remove(); },800); },120); }
+  }
+  requestAnimationFrame(step);
+})();
+
+/* ---------- hero letters ---------- */
+(function(){
+  var h=document.getElementById('maxname');
+  var txt=h.textContent, out='';
+  for(var i=0;i<txt.length;i++) out+='<span class="ch">'+txt[i]+'</span>';
+  h.innerHTML=out;
+})();
+
+/* ---------- ticker ---------- */
+(function(){
+  var names=['诗云','QUIET','MAX STATION','雅思口语教练','OPENCLAW','小红书调研','MIROFISH','DIGITAL ORACLE','REEFQUEST','老鹰抓小鸡'];
+  var s=''; names.forEach(function(n){ s+=n+'&nbsp;&nbsp;✦&nbsp;&nbsp;'; });
+  document.getElementById('tick').innerHTML=s+s;
+})();
+
+/* ---------- wave canvas (cursor-reactive) ---------- */
+(function(){
+  var cv=document.getElementById('waves'),ctx=cv.getContext('2d');
+  var W,H,mx=-9999,my=0,t=0;
+  function size(){ W=cv.clientWidth; H=cv.clientHeight; cv.width=W*devicePixelRatio; cv.height=H*devicePixelRatio; ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0); }
+  size(); addEventListener('resize',size);
+  cv.addEventListener('mousemove',function(e){ var r=cv.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top; });
+  cv.addEventListener('mouseleave',function(){ mx=-9999; });
+  var reduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function draw(){
+    t+=.012;
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle='rgba(38,35,28,.55)'; ctx.lineWidth=1;
+    var gap=9;
+    for(var x=gap/2;x<W;x+=gap){
+      ctx.beginPath();
+      for(var y=0;y<=H;y+=6){
+        var dx=Math.sin(y*.045+t+x*.012)*2.2;
+        var d=Math.hypot(x-mx,y-my);
+        if(d<120) dx+=(120-d)*.16*Math.sin((x-mx)*.05+t*3);
+        (y===0)?ctx.moveTo(x+dx,y):ctx.lineTo(x+dx,y);
+      }
+      ctx.stroke();
+    }
+    if(!reduced) requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ---------- easter egg ---------- */
+function chickenRun(){
+  if(document.querySelector('.runner')) return;
+  var crew=[{n:'eagle',d:0},{n:'hen',d:.55},{n:'chick',d:.85},{n:'chick',d:1.05},{n:'chick',d:1.25}];
+  crew.forEach(function(c){
+    var el=document.createElement('div');
+    el.className='runner '+(c.n==='eagle'?'run-anim':'hop');
+    el.style.animationDelay=c.d+'s'+(c.n==='eagle'?'':',0s');
+    el.innerHTML=pxsvg(c.n);
+    if(c.n!=='eagle') el.firstChild.style.transform='scaleX(-1)';
+    document.body.appendChild(el);
+    setTimeout(function(){ el.remove(); },7000+c.d*1000);
+  });
+}
+document.getElementById('hen').addEventListener('click',chickenRun);
+document.getElementById('foothen').addEventListener('click',chickenRun);
+
+/* ---------- scroll reveal ---------- */
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+<script data-goatcounter="https://maxdev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
