@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Max · 个人作品集</title>
-<meta name="description" content="Max 的个人作品集：诗云、Quiet、雅思口语教练、老鹰抓小鸡、AI 自动化等，大部分能点开试。">
+<meta name="description" content="Max 的个人作品集：你的音乐博物馆、诗云、Quiet、雅思口语教练、老鹰抓小鸡、AI 自动化等，大部分能点开试。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' shape-rendering='crispEdges'%3E%3Crect x='1' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='9' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='3' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='7' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='5' y='5' width='2' height='2' fill='%23bf5430'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -154,6 +154,24 @@
 <canvas id="waves" aria-hidden="true"></canvas>
 
 <main class="wrap works">
+
+  <!-- 0 音乐博物馆 -->
+  <div class="work rev reveal">
+    <div class="txt">
+      <h2><span class="pic" data-icon="muse"></span>你的音乐博物馆</h2>
+      <div class="en">Museum of You</div>
+      <p>听歌是最高频的情感行为，但「我的音乐」永远只是一份冷列表。就做了这个：AI 读你这一年听过的歌、判出你的口味，自动布展成一座能第一人称走进去的 3D 私人博物馆——最爱的那首成了聚光下的镇馆之宝，每件展品配一句解说，换份歌单整座馆就换一种气质，6 种风格随你而变。为腾讯音乐的一场 AI 黑客松做的，建议电脑打开。</p>
+      <a class="open" href="https://maxi-max-dev.github.io/walk-into-your-music/" target="_blank" rel="noopener">走进去 <span class="ar">↗</span></a>
+    </div>
+    <div class="vis">
+      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/walk-into-your-music</span><span class="live">LIVE</span></div>
+        <div class="screen" data-live="https://maxi-max-dev.github.io/walk-into-your-music/">
+          <img src="assets/p-museum.jpg" alt="你的音乐博物馆：聚光下的镇馆之宝" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/walk-into-your-music/" target="_blank" rel="noopener" aria-label="打开你的音乐博物馆"></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- 1 诗云 -->
   <div class="work reveal">
@@ -337,7 +355,8 @@ coral:['..p...p..p..','..p.p.p..p..','.pp.p.pp.p..','..ppp..ppp..','...pp..pp...
 chick:['............','...yyyy.....','..yyyyyy....','..ykyyyyr...','..yyyyyyr...','..yyyyyy....','...yyyy.....','...r..r.....','............'],
 eagle:['.d........d.','.dd......dd.','.ddd....ddd.','..dddddddd..','..dddkkddd..','...dddddd...','....dddd....','.....dd.....','....y..y....'],
 mic:['....kkk.....','...kcccx....','...kcccx....','...kcccx....','..k.....x...','...kkkxx....','.....k......','...kkkkk....'],
-hen:['...xx.......','..dddd......','.yddkd......','..dddd......','..ddddddd...','..ddwwddddd.','...dwwdddd..','....ddddd...','....y..y....','...yy..yy...']
+hen:['...xx.......','..dddd......','.yddkd......','..dddd......','..ddddddd...','..ddwwddddd.','...dwwdddd..','....ddddd...','....y..y....','...yy..yy...'],
+muse:['.....r.....','....rrr....','...rrrrr...','..rrrrrrr..','.kkkkkkkkk.','.k.k.k.k.k.','.k.k.k.k.k.','.k.k.k.k.k.','kkkkkkkkkkk']
 };
 function pxsvg(name){
   var map=ICONS[name]; if(!map) return '';
