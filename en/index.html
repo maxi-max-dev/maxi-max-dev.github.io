@@ -105,6 +105,27 @@
   .arow h3 .en{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.14em}
   .arow p{font-size:14.5px;color:var(--muted);margin:5px 0 0;max-width:48em}
 
+  /* grid tier */
+  .gridintro{font-size:13.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.14em;margin:62px 0 0;text-align:center}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+  .gcard{display:flex;flex-direction:column;color:var(--ink);border:1.5px solid var(--ink);border-radius:12px;overflow:hidden;background:var(--card);box-shadow:5px 5px 0 rgba(38,35,28,.1);transition:transform .3s ease,box-shadow .3s ease}
+  .gcard:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 rgba(38,35,28,.14);text-decoration:none}
+  .gthumb{aspect-ratio:1280/780;overflow:hidden;border-bottom:1.5px solid var(--ink);background:var(--bg)}
+  .gthumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  .gthumb.port{display:flex;align-items:center;justify-content:center}
+  .gthumb.port img{width:auto;max-width:100%;height:100%;object-fit:contain}
+  .gbody{padding:15px 17px 18px;display:flex;flex-direction:column;flex:1}
+  .gbody h3{font-family:var(--serif);font-size:18px;font-weight:700;margin:0;display:flex;align-items:center;gap:9px;letter-spacing:.01em}
+  .gbody h3 .pic{width:24px;height:24px;flex:0 0 24px}
+  .gbody h3 .pic svg{width:100%;height:100%}
+  .gbody .en{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.18em;margin-top:6px;text-transform:uppercase}
+  .gbody p{font-size:13.5px;color:var(--muted);margin:9px 0 0;line-height:1.6}
+  .gbody .go{display:inline-flex;align-items:center;gap:5px;margin-top:auto;padding-top:13px;font-size:12.5px;font-weight:600;color:var(--ink)}
+  .gbody .go .ar{transition:transform .25s}
+  .gcard:hover .go .ar{transform:translate(2px,-2px)}
+  @media(max-width:860px){.grid{grid-template-columns:1fr 1fr;gap:16px}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+
   .reveal{opacity:0;transform:translateY(26px)}
   .in-view{opacity:1;transform:none;transition:opacity .75s ease,transform .75s cubic-bezier(.22,.61,.36,1)}
 
@@ -206,192 +227,118 @@
     </div>
   </div>
 
-  <!-- 3 IELTS -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="mic"></span>IELTS Speaking Coach</h2>
-      <div class="en">AI Examiner</div>
-      <p>I had no one to practice speaking with, so I built an AI examiner: pick Part 1/2/3, record an answer, and get sentence-by-sentence feedback, a band estimate, and a better way to say it.</p>
-      <a class="open" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener">Try a question <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/ielts-speaking-coach</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/ielts-speaking-coach/" data-scroll="560">
-          <img src="../assets/p-ielts.jpg" alt="IELTS coach: question and recording panel" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener" aria-label="Open IELTS Speaking Coach"></a>
-        </div>
+  <!-- grid cards -->
+  <p class="gridintro reveal">↓ A few more — most open right in the browser</p>
+  <div class="grid">
+
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-unity.jpg" alt="Chicken Chain Unity: character select" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="eagle"></span>Chicken Chain · Unity</h3>
+        <div class="en">老鹰抓小鸡</div>
+        <p>The eagle-and-chicks game from my childhood, rebuilt in Unity — tuned for pounce and chain-physics feel. Keyboard.</p>
+        <span class="go">Play it <span class="ar">↗</span></span>
+      </div>
+    </a>
+
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-station.jpg" alt="Max Station workbench overview" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="station"></span>Max Station</h3>
+        <div class="en">个人工作台</div>
+        <p>The workbench I use every day: kanban, calendar, notes and a pomodoro on one page, with a few mini games.</p>
+        <span class="go">Open it <span class="ar">↗</span></span>
+      </div>
+    </a>
+
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-ielts.jpg" alt="IELTS coach: question and recording panel" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="mic"></span>IELTS Speaking Coach</h3>
+        <div class="en">雅思口语教练</div>
+        <p>No one to practice with, so I built an AI examiner: prompt, record, sentence-by-sentence feedback, a band estimate.</p>
+        <span class="go">Try one <span class="ar">↗</span></span>
+      </div>
+    </a>
+
+    <div class="gcard reveal">
+      <div class="gthumb port"><img src="../assets/p-reef.jpg" alt="ReefQuest prototype: ocean map and points" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="coral"></span>ReefQuest</h3>
+        <div class="en">UQ HackAIthon 2026</div>
+        <p>UQ 48-hour AI hackathon: a Pokémon-style ocean-conservation app — divers upload photos for points, AI verifies. Prototype.</p>
       </div>
     </div>
-  </div>
 
-  <!-- 4 Unity -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="eagle"></span>Chicken Chain · Unity</h2>
-      <div class="en">老鹰抓小鸡 · Unity WebGL</div>
-      <p>Eagle-catches-chicks is a playground game from my childhood. I wanted to play it again, couldn't find anything like it, so I tried making one. Built in Unity, tuned for game feel: pouncing, guarding, chain physics — all three roles playable. Keyboard controls, best on desktop.</p>
-      <a class="open" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener">Play it <span class="ar">↗</span></a>
-      <div class="chicks" id="chicks1" title="?"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/chicken-chain</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/chicken-chain/" data-scroll="120">
-          <img src="../assets/p-unity.jpg" alt="Chicken Chain Unity: character select" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener" aria-label="Open Chicken Chain Unity"></a>
-        </div>
+    <div class="gcard reveal">
+      <div class="gthumb port"><img src="../assets/p-xhs.jpg" alt="XHS Research running on a phone" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="lens"></span>XHS Research</h3>
+        <div class="en">小红书调研</div>
+        <p>AI reads dozens of Xiaohongshu posts on a phone by itself, one by one, and writes up a research report.</p>
       </div>
     </div>
-  </div>
 
-  <!-- 5 Voxel -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="chick"></span>Voxel Chicken</h2>
-      <div class="en">老鹰抓小鸡 · Web Version</div>
-      <p>The web version of the same game, voxel style, works on phones too: you're the hen, shielding a chain of chicks behind you while the eagle hunts the tail.</p>
-      <a class="open" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener">Play it <span class="ar">↗</span></a>
-      <div class="chicks" id="chicks2" title="?"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/voxel-chicken</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/voxel-chicken/">
-          <img src="../assets/p-voxel.jpg" alt="Voxel Chicken: gameplay" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener" aria-label="Open Voxel Chicken"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/projects/interface-archaeology/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-interface.jpg" alt="Interface Archaeology: a multi-hall museum of HCI history" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="muse"></span>Interface Archaeology</h3>
+        <div class="en">界面考古馆</div>
+        <p>A museum you walk through, from the command line to the coming era of the "invisible interface."</p>
+        <span class="go">Walk in <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- 6 Max Station -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="station"></span>Max Station</h2>
-      <div class="en">Personal Workbench</div>
-      <p>The workbench I actually use every day: kanban, calendar, notes and a pomodoro timer on one page, with a few mini games tucked in.</p>
-      <a class="open" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener">Open it <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/max-station</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/max-station/">
-          <img src="../assets/p-station.jpg" alt="Max Station workbench overview" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener" aria-label="Open Max Station"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/projects/newsroom-2027/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-newsroom.jpg" alt="Newsroom 2027: a real-time media-company simulator" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="mic"></span>Newsroom 2027</h3>
+        <div class="en">2027 新闻编辑室</div>
+        <p>A real-time media-company simulator: dial the AI-to-human reporter ratio and watch the newsroom run.</p>
+        <span class="go">Run it <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- 7 XHS -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="lens"></span>XHS Research</h2>
-      <div class="en">Xiaohongshu Research Skill</div>
-      <p>Product research meant reading dozens of Xiaohongshu posts, so I let AI do it: give it a topic and it opens the app on a phone, searches, reads posts one by one, and writes up a research report. Fast mode 5–10 minutes, deep mode 15–30. Shown: a real run on a phone.</p>
-    </div>
-    <div class="vis phonewrap">
-      <div class="phone"><img src="../assets/p-xhs.jpg" alt="XHS Research running on a phone" loading="lazy"></div>
-    </div>
-  </div>
-
-  <!-- 8 ReefQuest -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="coral"></span>ReefQuest</h2>
-      <div class="en">UQ HackAIthon 2026</div>
-      <p>From a 48-hour AI hackathon at the University of Queensland — our team's concept: a Pokémon-style ocean conservation app. Divers upload photos of fish and coral for points, AI identifies species and assesses coral health, and dive-computer depth and GPS logs verify the data before it goes to conservation groups. Shown: the prototype we made.</p>
-    </div>
-    <div class="vis phonewrap">
-      <div class="phone"><img src="../assets/p-reef.jpg" alt="ReefQuest prototype: ocean map and points" loading="lazy"></div>
-    </div>
-  </div>
-
-  <!-- T1 Decision Ledger -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="ledger"></span>Decision Ledger</h2>
-      <div class="en">决策回溯仪</div>
-      <p>Log the big, agonized-over decisions of your life one by one — what you were thinking at the time, how it actually turned out, how much you regret it. Enough of them and you can look back and see what kind of decision-maker you really are. Fully offline; the data lives only in your own browser.</p>
-      <a class="open" href="https://maxi-max-dev.github.io/studio/projects/decision-ledger/" target="_blank" rel="noopener">Log one <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/studio/projects/decision-ledger</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/studio/projects/decision-ledger/">
-          <img src="../assets/p-decision.jpg" alt="Decision Ledger: a timeline of life decisions" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/studio/projects/decision-ledger/" target="_blank" rel="noopener" aria-label="Open Decision Ledger"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/projects/decision-ledger/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-decision.jpg" alt="Decision Ledger: a timeline of life decisions" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="ledger"></span>Decision Ledger</h3>
+        <div class="en">决策回溯仪</div>
+        <p>Log the big decisions you agonized over, then look back at what kind of decision-maker you are. Offline.</p>
+        <span class="go">Log one <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- T2 Compound Life -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="compound"></span>Compound Life</h2>
-      <div class="en">万象复利</div>
-      <p>Five compound-interest curves running on one timeline — wealth, skills, health, network, projects — and they feed each other: skills raise your earning rate, health holds up your project output. Nudge a few sliders and see roughly what you look like thirty years out.</p>
-      <a class="open" href="https://maxi-max-dev.github.io/studio/projects/compound-life/" target="_blank" rel="noopener">Nudge it <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/studio/projects/compound-life</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/studio/projects/compound-life/">
-          <img src="../assets/p-compound.jpg" alt="Compound Life: five life compound curves" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/studio/projects/compound-life/" target="_blank" rel="noopener" aria-label="Open Compound Life"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/projects/compound-life/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-compound.jpg" alt="Compound Life: five life compound curves" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="compound"></span>Compound Life</h3>
+        <div class="en">万象复利</div>
+        <p>Five compound curves on one timeline — wealth, skills, health, network, projects — feeding each other.</p>
+        <span class="go">Nudge it <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- T3 Benner Cycle Explorer -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="cycle"></span>Benner Cycle Explorer</h2>
-      <div class="en">经济周期探索器</div>
-      <p>Kondratiev long waves, the Benner cycle, and a century of major market events stacked on one zoomable timeline — scroll to zoom, drag to pan, and read the rhythm of the big economic cycles at a glance. A small, fully offline visualization.</p>
-      <a class="open" href="https://maxi-max-dev.github.io/studio/projects/benner-cycle-explorer/" target="_blank" rel="noopener">Zoom around <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/studio/projects/benner-cycle-explorer</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/studio/projects/benner-cycle-explorer/">
-          <img src="../assets/p-cycle.jpg" alt="Benner Cycle Explorer: long waves and Benner cycle on a timeline" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/studio/projects/benner-cycle-explorer/" target="_blank" rel="noopener" aria-label="Open Benner Cycle Explorer"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/projects/benner-cycle-explorer/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-cycle.jpg" alt="Benner Cycle Explorer: long waves and Benner cycle on a timeline" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="cycle"></span>Benner Cycle Explorer</h3>
+        <div class="en">经济周期探索器</div>
+        <p>Long waves, the Benner cycle and a century of market events on one zoomable timeline.</p>
+        <span class="go">Zoom around <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- T4 Interface Archaeology -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="muse"></span>Interface Archaeology</h2>
-      <div class="en">界面考古馆</div>
-      <p>A museum you can walk through — from the command line to graphical interfaces to touch, all the way to the coming era of the "invisible interface" — watching the door between humans and machines slowly disappear. Split into several halls; step into each one.</p>
-      <a class="open" href="https://maxi-max-dev.github.io/studio/projects/interface-archaeology/" target="_blank" rel="noopener">Walk in <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/studio/projects/interface-archaeology</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/studio/projects/interface-archaeology/">
-          <img src="../assets/p-interface.jpg" alt="Interface Archaeology: a multi-hall museum of HCI history" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/studio/projects/interface-archaeology/" target="_blank" rel="noopener" aria-label="Open Interface Archaeology"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-voxel.jpg" alt="Voxel Chicken: gameplay" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="chick"></span>Voxel Chicken</h3>
+        <div class="en">老鹰抓小鸡 · 方块版</div>
+        <p>The web/voxel version of the same game, plays on phones: you're the hen guarding a chain of chicks.</p>
+        <span class="go">Play it <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- T5 Newsroom 2027 -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="mic"></span>Newsroom 2027</h2>
-      <div class="en">2027 新闻编辑室</div>
-      <p>A real-time media-company simulator: dial the ratio of AI to human reporters, set your content strategy, and watch a whole newsroom breathe — stories flow from pitch to publish, reader attention rises and falls with quality, and breaking events disrupt the rhythm. A little world that runs itself.</p>
-      <a class="open" href="https://maxi-max-dev.github.io/studio/projects/newsroom-2027/" target="_blank" rel="noopener">Start running <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/studio/projects/newsroom-2027</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/studio/projects/newsroom-2027/">
-          <img src="../assets/p-newsroom.jpg" alt="Newsroom 2027: a real-time media-company simulator" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/studio/projects/newsroom-2027/" target="_blank" rel="noopener" aria-label="Open Newsroom 2027"></a>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- always running -->

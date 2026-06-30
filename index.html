@@ -106,6 +106,27 @@
   .arow h3 .en{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.14em}
   .arow p{font-size:14.5px;color:var(--muted);margin:5px 0 0;max-width:48em}
 
+  /* grid tier */
+  .gridintro{font-size:13.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.14em;margin:62px 0 0;text-align:center}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+  .gcard{display:flex;flex-direction:column;color:var(--ink);border:1.5px solid var(--ink);border-radius:12px;overflow:hidden;background:var(--card);box-shadow:5px 5px 0 rgba(38,35,28,.1);transition:transform .3s ease,box-shadow .3s ease}
+  .gcard:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 rgba(38,35,28,.14);text-decoration:none}
+  .gthumb{aspect-ratio:1280/780;overflow:hidden;border-bottom:1.5px solid var(--ink);background:var(--bg)}
+  .gthumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  .gthumb.port{display:flex;align-items:center;justify-content:center}
+  .gthumb.port img{width:auto;max-width:100%;height:100%;object-fit:contain}
+  .gbody{padding:15px 17px 18px;display:flex;flex-direction:column;flex:1}
+  .gbody h3{font-family:var(--serif);font-size:18px;font-weight:700;margin:0;display:flex;align-items:center;gap:9px;letter-spacing:.01em}
+  .gbody h3 .pic{width:24px;height:24px;flex:0 0 24px}
+  .gbody h3 .pic svg{width:100%;height:100%}
+  .gbody .en{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.18em;margin-top:6px;text-transform:uppercase}
+  .gbody p{font-size:13.5px;color:var(--muted);margin:9px 0 0;line-height:1.6}
+  .gbody .go{display:inline-flex;align-items:center;gap:5px;margin-top:auto;padding-top:13px;font-size:12.5px;font-weight:600;color:var(--ink)}
+  .gbody .go .ar{transition:transform .25s}
+  .gcard:hover .go .ar{transform:translate(2px,-2px)}
+  @media(max-width:860px){.grid{grid-template-columns:1fr 1fr;gap:16px}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+
   /* reveal */
   .reveal{opacity:0;transform:translateY(26px)}
   .in-view{opacity:1;transform:none;transition:opacity .75s ease,transform .75s cubic-bezier(.22,.61,.36,1)}
@@ -209,192 +230,118 @@
     </div>
   </div>
 
-  <!-- 3 雅思 -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="mic"></span>雅思口语教练</h2>
-      <div class="en">IELTS Speaking Coach</div>
-      <p>备考口语没人陪练，就自己做了个 AI 考官：选 Part 1/2/3 出题，录一段英语回答，逐句反馈、估分，再示范一遍更好的说法。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener">练一句 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/ielts-speaking-coach</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/ielts-speaking-coach/" data-scroll="560">
-          <img src="assets/p-ielts.jpg" alt="雅思口语教练：出题与录音作答" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener" aria-label="打开雅思口语教练"></a>
-        </div>
+  <!-- 网格小卡 -->
+  <p class="gridintro reveal">↓ 还做了这些，大多能点开试</p>
+  <div class="grid">
+
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-unity.jpg" alt="老鹰抓小鸡 Unity 版：选择角色" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="eagle"></span>老鹰抓小鸡 · Unity</h3>
+        <div class="en">Chicken Chain · Unity</div>
+        <p>小时候的老鹰抓小鸡，用 Unity 重做了一个，专门调扑击和链条手感。键盘玩。</p>
+        <span class="go">玩一把 <span class="ar">↗</span></span>
+      </div>
+    </a>
+
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-station.jpg" alt="Max Station 工作台总览" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="station"></span>Max Station</h3>
+        <div class="en">Personal Workbench</div>
+        <p>自己每天在用的工作台：看板、日历、笔记、番茄钟一页搞定，藏了几个小游戏。</p>
+        <span class="go">打开看看 <span class="ar">↗</span></span>
+      </div>
+    </a>
+
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-ielts.jpg" alt="雅思口语教练：出题与录音作答" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="mic"></span>雅思口语教练</h3>
+        <div class="en">IELTS Speaking Coach</div>
+        <p>备考没人陪练，做了个 AI 考官：出题、录音作答、逐句反馈、估分，再示范一遍。</p>
+        <span class="go">练一句 <span class="ar">↗</span></span>
+      </div>
+    </a>
+
+    <div class="gcard reveal">
+      <div class="gthumb port"><img src="assets/p-reef.jpg" alt="ReefQuest 原型：海洋地图与积分" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="coral"></span>ReefQuest</h3>
+        <div class="en">UQ HackAIthon 2026</div>
+        <p>UQ 48 小时 AI 黑客松：宝可梦式的海洋保护 app，潜水拍鱼攒积分、AI 识别溯源。原型。</p>
       </div>
     </div>
-  </div>
 
-  <!-- 4 Unity 老鹰抓小鸡 -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="eagle"></span>老鹰抓小鸡 · Unity 版</h2>
-      <div class="en">Chicken Chain · Unity WebGL</div>
-      <p>小时候玩的老鹰抓小鸡，长大想再玩发现找不到代餐，就自己试着做了一个。Unity 写的，专门调手感：扑击、护娃、链条物理，老鹰母鸡小鸡三个角色都能选。键盘操作，建议电脑打开。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener">玩一把 <span class="ar">↗</span></a>
-      <div class="chicks" id="chicks1" title="？"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/chicken-chain</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/chicken-chain/" data-scroll="120">
-          <img src="assets/p-unity.jpg" alt="老鹰抓小鸡 Unity 版：选择角色" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener" aria-label="打开 Unity 版老鹰抓小鸡"></a>
-        </div>
+    <div class="gcard reveal">
+      <div class="gthumb port"><img src="assets/p-xhs.jpg" alt="小红书调研：手机上自动搜索中" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="lens"></span>小红书调研</h3>
+        <div class="en">XHS Research Skill</div>
+        <p>让 AI 自己在手机上翻几十条小红书笔记，一条条读，汇总成一篇调研报告。快档 5–10 分钟。</p>
       </div>
     </div>
-  </div>
 
-  <!-- 5 方块版 -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="chick"></span>老鹰抓小鸡 · 方块版</h2>
-      <div class="en">Voxel Chicken</div>
-      <p>同一个游戏的网页版，方块画风，手机也能玩：你当母鸡，护着身后一串小鸡，老鹰会盯着队尾偷袭。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener">玩一把 <span class="ar">↗</span></a>
-      <div class="chicks" id="chicks2" title="？"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/voxel-chicken</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/voxel-chicken/">
-          <img src="assets/p-voxel.jpg" alt="方块版老鹰抓小鸡：游戏画面" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener" aria-label="打开方块版老鹰抓小鸡"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/projects/interface-archaeology/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-interface.jpg" alt="界面考古馆：人机交互进化史的多展厅博物馆" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="muse"></span>界面考古馆</h3>
+        <div class="en">Interface Archaeology</div>
+        <p>一座能逛的博物馆：从命令行到正在到来的「无界面」时代，看人机那道门怎么消失的。</p>
+        <span class="go">进馆逛逛 <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- 6 Max Station -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="station"></span>Max Station</h2>
-      <div class="en">Personal Workbench</div>
-      <p>自己每天在用的工作台：看板、日历、笔记、番茄钟放在同一页，顺手藏了几个小游戏。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener">打开看看 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/max-station</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/max-station/">
-          <img src="assets/p-station.jpg" alt="Max Station 工作台总览" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener" aria-label="打开 Max Station"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/projects/newsroom-2027/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-newsroom.jpg" alt="2027 新闻编辑室：媒体公司实时模拟器" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="mic"></span>2027 新闻编辑室</h3>
+        <div class="en">Newsroom 2027</div>
+        <p>一间媒体公司的实时模拟器：调 AI 与人类记者的配比，看整间编辑室怎么运转。</p>
+        <span class="go">开始运营 <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- 7 小红书调研 -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="lens"></span>小红书调研</h2>
-      <div class="en">XHS Research Skill</div>
-      <p>做调研要翻几十条小红书笔记，太费时间，就让 AI 自己干：给一个主题，它自动在手机端打开小红书搜索、一条条读笔记，最后汇总成一篇调研报告。快档 5 到 10 分钟，深档 15 到 30 分钟。图为它在真机上跑的样子。</p>
-    </div>
-    <div class="vis phonewrap">
-      <div class="phone"><img src="assets/p-xhs.jpg" alt="小红书调研：手机上自动搜索中" loading="lazy"></div>
-    </div>
-  </div>
-
-  <!-- 8 ReefQuest -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="coral"></span>ReefQuest</h2>
-      <div class="en">UQ HackAIthon 2026</div>
-      <p>来自昆士兰大学一场 48 小时 AI 黑客松，我们队的方案：宝可梦式的海洋保护 app。潜水员拍到鱼群、珊瑚就顺手上传攒积分，AI 识别鱼种、评估珊瑚状态，再用潜水电脑的深度和 GPS 记录验证溯源，数据汇总给海洋保护组织。图为当时做的原型。</p>
-    </div>
-    <div class="vis phonewrap">
-      <div class="phone"><img src="assets/p-reef.jpg" alt="ReefQuest 原型：海洋地图与积分" loading="lazy"></div>
-    </div>
-  </div>
-
-  <!-- T1 决策回溯仪 -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="ledger"></span>决策回溯仪</h2>
-      <div class="en">Decision Ledger</div>
-      <p>把人生里那些重大的、当时纠结过的决定一条条记下来——当初怎么想的、后来结果如何、后悔几分。攒多了就能回头看：自己到底是个什么样的决策者。纯离线，数据只存在你自己的浏览器里。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/studio/projects/decision-ledger/" target="_blank" rel="noopener">记一条 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/studio/projects/decision-ledger</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/studio/projects/decision-ledger/">
-          <img src="assets/p-decision.jpg" alt="决策回溯仪：人生决策时间线" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/studio/projects/decision-ledger/" target="_blank" rel="noopener" aria-label="打开决策回溯仪"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/projects/decision-ledger/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-decision.jpg" alt="决策回溯仪：人生决策时间线" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="ledger"></span>决策回溯仪</h3>
+        <div class="en">Decision Ledger</div>
+        <p>把人生里纠结过的重大决定记下来，回头看自己是个什么样的决策者。纯离线。</p>
+        <span class="go">记一条 <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- T2 万象复利 -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="compound"></span>万象复利</h2>
-      <div class="en">Compound Life</div>
-      <p>一张时间轴上同时跑五条复利曲线：财富、技能、健康、人脉、项目，而且彼此影响——技能拉高赚钱效率、健康托着项目执行力。拨几个滑块，看看三十年后的自己大概长什么样。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/studio/projects/compound-life/" target="_blank" rel="noopener">拨一拨 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/studio/projects/compound-life</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/studio/projects/compound-life/">
-          <img src="assets/p-compound.jpg" alt="万象复利：五条人生复利曲线" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/studio/projects/compound-life/" target="_blank" rel="noopener" aria-label="打开万象复利"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/projects/compound-life/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-compound.jpg" alt="万象复利：五条人生复利曲线" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="compound"></span>万象复利</h3>
+        <div class="en">Compound Life</div>
+        <p>一条时间轴上同时跑五条复利曲线：财富、技能、健康、人脉、项目，还彼此影响。</p>
+        <span class="go">拨一拨 <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- T3 经济周期探索器 -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="cycle"></span>经济周期探索器</h2>
-      <div class="en">Benner Cycle Explorer</div>
-      <p>把康德拉季耶夫长波、本纳周期和上百年的市场大事件叠在同一条可缩放的时间轴上，滚轮缩放、拖拽平移，一眼看清经济大周期的节奏。纯离线的可视化小工具。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/studio/projects/benner-cycle-explorer/" target="_blank" rel="noopener">缩放一圈 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/studio/projects/benner-cycle-explorer</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/studio/projects/benner-cycle-explorer/">
-          <img src="assets/p-cycle.jpg" alt="经济周期探索器：长波与本纳周期叠加时间轴" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/studio/projects/benner-cycle-explorer/" target="_blank" rel="noopener" aria-label="打开经济周期探索器"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/projects/benner-cycle-explorer/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-cycle.jpg" alt="经济周期探索器：长波与本纳周期叠加时间轴" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="cycle"></span>经济周期探索器</h3>
+        <div class="en">Benner Cycle Explorer</div>
+        <p>把长波、本纳周期和上百年市场大事件叠在一条可缩放的时间轴上，一眼看清节奏。</p>
+        <span class="go">缩放一圈 <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- T4 界面考古馆 -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="muse"></span>界面考古馆</h2>
-      <div class="en">Interface Archaeology</div>
-      <p>一座能走进去逛的博物馆：从命令行、图形界面、触屏，一路走到正在到来的「无界面」时代，看人和机器之间那道门是怎么一点点消失的。分成几个展厅，挨个进去看。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/studio/projects/interface-archaeology/" target="_blank" rel="noopener">进馆逛逛 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/studio/projects/interface-archaeology</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/studio/projects/interface-archaeology/">
-          <img src="assets/p-interface.jpg" alt="界面考古馆：人机交互进化史的多展厅博物馆" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/studio/projects/interface-archaeology/" target="_blank" rel="noopener" aria-label="打开界面考古馆"></a>
-        </div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-voxel.jpg" alt="方块版老鹰抓小鸡：游戏画面" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="chick"></span>老鹰抓小鸡 · 方块版</h3>
+        <div class="en">Voxel Chicken</div>
+        <p>同一个游戏的网页方块版，手机也能玩：你当母鸡，护着身后一串小鸡。</p>
+        <span class="go">玩一把 <span class="ar">↗</span></span>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- T5 2027新闻编辑室 -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="mic"></span>2027 新闻编辑室</h2>
-      <div class="en">Newsroom 2027</div>
-      <p>一间媒体公司的实时模拟器：拨动 AI 与人类记者的比例、定下内容策略，看整间编辑室怎么「呼吸」——选题从提案流向发布，读者注意力随质量起落，偶发热点打乱节奏。一个会自己运转的小世界。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/studio/projects/newsroom-2027/" target="_blank" rel="noopener">开始运营 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/studio/projects/newsroom-2027</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/studio/projects/newsroom-2027/">
-          <img src="assets/p-newsroom.jpg" alt="2027 新闻编辑室：媒体公司实时模拟器" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/studio/projects/newsroom-2027/" target="_blank" rel="noopener" aria-label="打开2027新闻编辑室"></a>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- 一直在跑的 -->
