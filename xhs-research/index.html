@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小红书调研 · Max</title>
+<meta name="description" content="给一个主题，AI 自己在手机上翻小红书笔记，一条条读，写成一篇调研报告。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' shape-rendering='crispEdges'%3E%3Crect x='1' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='9' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='3' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='7' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='5' y='5' width='2' height='2' fill='%23bf5430'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#f7f4ec; --ink:#26231c; --muted:#6e6859; --line:#d9d2bf; --hair:#e6e0cf;
+    --card:#fffdf6; --acc:#bf5430; --gold:#e9b34a;
+    --serif:"Songti SC","STSong","Noto Serif SC",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,"PingFang SC",monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;-webkit-font-smoothing:antialiased}
+  a{color:var(--acc);text-decoration:none}
+  #frame{position:fixed;inset:10px;border:1.5px solid var(--ink);pointer-events:none;z-index:900}
+  @media(max-width:760px){#frame{inset:6px}}
+
+  header.top{position:sticky;top:0;z-index:500;background:rgba(247,244,236,.93);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1.5px solid var(--ink);margin:10px 10px 0;display:flex;align-items:stretch;justify-content:space-between}
+  .top .cell{padding:14px 22px;display:flex;align-items:center;gap:12px}
+  .top .back a{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
+  .top .back a:hover{color:var(--ink)}
+  .top .brand{font-family:var(--serif);font-weight:700;font-size:19px}
+  @media(max-width:760px){header.top{margin:6px 6px 0}.top .cell{padding:12px 14px}}
+
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px 90px}
+  @media(max-width:760px){.wrap{padding:0 16px 70px}}
+
+  h1{font-family:var(--serif);font-size:clamp(30px,5vw,42px);margin:64px 0 0;letter-spacing:.01em}
+  .en{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.22em;margin-top:10px;text-transform:uppercase}
+  .lead{font-size:17px;margin:26px 0 0;max-width:34em}
+
+  .shot{margin:44px 0 0;display:flex;justify-content:center}
+  .shot img{max-width:min(300px,80%);border:1.5px solid var(--ink);border-radius:22px;box-shadow:6px 6px 0 rgba(38,35,28,.1)}
+
+  h2{font-family:var(--serif);font-size:22px;margin:64px 0 0}
+  .steps{border:1.5px solid var(--ink);background:var(--card);margin-top:20px}
+  .step{display:grid;grid-template-columns:56px 1fr;padding:18px 20px;align-items:baseline}
+  .step + .step{border-top:1px solid var(--line)}
+  .step .no{font-family:var(--mono);font-size:13px;color:var(--acc);letter-spacing:.1em}
+  .step p{margin:0;font-size:15px}
+
+  .truths{margin-top:20px}
+  .truth{border-left:2.5px solid var(--gold);padding:2px 0 2px 18px;margin:22px 0;font-size:15px;color:var(--ink)}
+  .truth b{font-weight:600}
+
+  .note{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div id="frame" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="cell back"><a href="../">← MAX · 作品集</a></div>
+  <div class="cell"><span class="brand">小红书调研</span></div>
+</header>
+
+<main class="wrap">
+  <h1>小红书调研</h1>
+  <div class="en">XHS Research Skill</div>
+  <p class="lead">给一个主题，AI 自己在手机上打开真的小红书，像人一样一条条翻笔记、截图、认字，最后写成一篇带出处的调研报告。不是爬接口，就是真的在翻。</p>
+
+  <div class="shot"><img src="../assets/p-xhs.jpg" alt="安卓模拟器里，AI 正在小红书上自动搜索"></div>
+
+  <h2>它是怎么跑的</h2>
+  <div class="steps">
+    <div class="step"><span class="no">01</span><p>收到一个主题（比如「B 站笔试都考什么」），先扩成 3–5 个搜索词。</p></div>
+    <div class="step"><span class="no">02</span><p>在安卓模拟器里打开真的小红书 app，挨个词搜索、点进笔记、截图。</p></div>
+    <div class="step"><span class="no">03</span><p>截图在本地 OCR 认字，几十条笔记一条条读完。</p></div>
+    <div class="step"><span class="no">04</span><p>汇总成一篇报告，写清每条结论出自哪几条笔记，落进我的笔记库。</p></div>
+  </div>
+
+  <h2>几件真事</h2>
+  <div class="truths">
+    <div class="truth">第一次跑花了差不多 <b>4 个小时</b>：agent 一开始不听话，乱截图，产出是 0；小红书当天还改了搜索页的样子，一下午白跑。</div>
+    <div class="truth">最难的不是写提示词，是 agent 会偷懒——log 里说进了某条笔记，其实没截图就退出来了。后来没有去写更聪明的提示词，改成收尾<b>硬校验</b>：进入笔记的次数和截图数对不上，就告警重来。</div>
+    <div class="truth">营销号扎堆的主题（试过「人迷茫怎么办」，6 条里 5 条是营销号），它会在报告第一行标出<b>信噪比</b>、建议换个源，而不是硬编一篇像样的报告出来。</div>
+    <div class="truth">有快慢两档：快档 <b>5–10 分钟</b>，深档 15–30 分钟。加快档是因为我自己嫌一次跑一两个小时太重，跑着跑着就不想用了。</div>
+  </div>
+
+  <p class="note">这是个自用工具，跑在我自己的电脑上，代码没开源。从 v0.9 迭代到 v0.15，每跑一次真实调研就写一次复盘，把踩的坑变成规则。</p>
+</main>
+
+<script data-goatcounter="https://maxdev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
