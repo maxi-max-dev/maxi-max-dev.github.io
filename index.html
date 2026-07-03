@@ -24,8 +24,11 @@
   #loader{position:fixed;inset:0;background:var(--bg);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:transform .7s cubic-bezier(.77,0,.18,1)}
   #loader.up{transform:translateY(-100%)}
   #loader .pct{font-family:var(--mono);font-size:30px;font-weight:600;letter-spacing:.1em;color:var(--ink)}
+  #loader .barwrap{position:relative;width:200px}
   #loader .bar{width:200px;height:2px;background:var(--hair);overflow:hidden}
   #loader .bar i{display:block;height:100%;width:0;background:var(--ink)}
+  #loader .lchick{position:absolute;left:0;top:-24px;width:20px;height:20px;margin-left:-10px;transition:left .12s linear;animation:cbob .5s steps(2) infinite}
+  #loader .lchick svg{width:100%;height:100%;transform:scaleX(-1)}
   #loader .tag{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--muted)}
 
   /* frame */
@@ -51,19 +54,15 @@
   /* slim interactive band */
   #waves{display:block;width:100%;height:88px;border-bottom:1.5px solid var(--ink);background:var(--card)}
 
-  /* hello */
-  .hello{text-align:center;padding:46px 0 6px}
-  .hello p{font-family:var(--serif);font-size:17.5px;margin:0;color:var(--ink)}
-  .hello p span{display:block;font-family:var(--sans);font-size:13.5px;color:var(--muted);margin-top:8px}
-  .hello .chicks{margin:18px auto 0;justify-content:center}
-
   /* works */
   .works{padding-top:26px}
   .work{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:54px 0;border-bottom:1px solid var(--line)}
   .work .txt,.work .vis{min-width:0}
   .work:last-of-type{border-bottom:0}
   .work.rev .vis{order:2}
-  .work .txt h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,34px);font-weight:700;margin:0;letter-spacing:.01em;display:flex;align-items:center;gap:13px}
+  .work .txt h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,34px);font-weight:700;margin:0;letter-spacing:.01em;display:flex;align-items:center;gap:13px;position:relative;padding-bottom:14px}
+  .work .txt h2::after{content:"";position:absolute;left:53px;bottom:0;width:0;height:3px;background:var(--acc);transition:width .9s cubic-bezier(.22,.61,.36,1) .3s}
+  .work.in-view .txt h2::after{width:62px}
   .work .txt h2 .pic{width:40px;height:40px;flex:0 0 40px}
   .work .txt h2 .pic svg{width:100%;height:100%}
   .work .txt .en{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.22em;margin-top:9px;text-transform:uppercase}
@@ -81,7 +80,8 @@
   .browser .dot{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink)}
   .browser .dot.f{background:var(--acc)}
   .browser .url{flex:1;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 6px}
-  .browser .live{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--bg);background:var(--acc);border-radius:980px;padding:2px 8px;display:none}
+  .browser .live{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--bg);background:var(--acc);border-radius:980px;padding:2px 8px;display:none;animation:livepulse 2.4s ease-in-out infinite}
+  @keyframes livepulse{0%,100%{opacity:1}50%{opacity:.5}}
   .screen{position:relative;overflow:hidden;aspect-ratio:1280/780;background:var(--card)}
   .screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
   .screen iframe{position:absolute;top:0;left:0;width:1280px;height:780px;border:0;transform-origin:0 0;opacity:0;transition:opacity .6s;pointer-events:none;background:#fff}
@@ -140,8 +140,15 @@
   /* reveal */
   .reveal{opacity:0;transform:translateY(26px)}
   .in-view{opacity:1;transform:none;transition:opacity .75s ease,transform .75s cubic-bezier(.22,.61,.36,1)}
+  .grid .gcard:nth-child(3n+2).in-view{transition-delay:.09s}
+  .grid .gcard:nth-child(3n).in-view{transition-delay:.18s}
+
+  /* 像素图标：卡片 hover 蹦两下 */
+  .gcard:hover .gbody h3 .pic{animation:cbob .55s steps(2) 2}
+  .work:hover .txt h2 .pic{animation:cbob .55s steps(2) 2}
 
   footer{margin-top:80px;border-top:1.5px solid var(--ink);padding:34px 0 46px;text-align:center}
+  footer .chicks{margin:0 auto 20px;justify-content:center}
   footer a{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.1em}
   footer a:hover{color:var(--ink)}
 
@@ -169,7 +176,7 @@
 
 <div id="loader" aria-hidden="true">
   <div class="pct" id="lpct">0</div>
-  <div class="bar"><i id="lbar"></i></div>
+  <div class="barwrap"><span class="lchick" id="lchick" data-icon="chick"></span><div class="bar"><i id="lbar"></i></div></div>
   <div class="tag">MAX · PORTFOLIO</div>
 </div>
 
@@ -186,10 +193,6 @@
 
 <main class="wrap works">
 
-  <section class="hello reveal">
-    <p>我是 Max，平时爱折腾些 AI 的小东西，做出来的都放在这了。<span>下面这些大部分能点开玩，真的可以点。</span></p>
-    <div class="chicks" id="chicks1" title="点一下试试"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
-  </section>
 
   <!-- 0 音乐博物馆 -->
   <div class="work rev reveal">
@@ -249,12 +252,12 @@
   <p class="gridintro reveal">↓ 还做了这些，大多能点开试</p>
   <div class="grid">
 
-    <a class="gcard reveal" href="https://maxi-max-dev.github.io/chicken-chain/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-unity.jpg" alt="老鹰抓小鸡 Unity 版：选择角色" loading="lazy"></div>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/chicken-chase/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-chase.jpg" alt="老鹰抓小鸡：像素对局，老鹰刚抓走一只" loading="lazy"></div>
       <div class="gbody">
-        <h3><span class="pic" data-icon="eagle"></span>老鹰抓小鸡 · Unity</h3>
-        <div class="en">Chicken Chain · Unity</div>
-        <p>小时候的老鹰抓小鸡，用 Unity 重做了一个，专门调扑击和链条手感。键盘玩。</p>
+        <h3><span class="pic" data-icon="eagle"></span>老鹰抓小鸡</h3>
+        <div class="en">Chicken Chase</div>
+        <p>小时候的老鹰抓小鸡做成了像素小游戏：老鹰、母鸡、队尾那只小鸡都能当，手机电脑都能玩。这已经是重做的第三版了，前两版是 Unity 和 3D 方块。</p>
         <span class="go">玩一把 <span class="ar">↗</span></span>
       </div>
     </a>
@@ -328,16 +331,6 @@
       </div>
     </a>
 
-    <a class="gcard reveal" href="https://maxi-max-dev.github.io/voxel-chicken/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-voxel.jpg" alt="方块版老鹰抓小鸡：游戏画面" loading="lazy"></div>
-      <div class="gbody">
-        <h3><span class="pic" data-icon="chick"></span>老鹰抓小鸡 · 方块版</h3>
-        <div class="en">Voxel Chicken</div>
-        <p>同一个游戏的网页方块版，手机也能玩：你当母鸡，护着身后一串小鸡。</p>
-        <span class="go">玩一把 <span class="ar">↗</span></span>
-      </div>
-    </a>
-
   </div>
 
   <!-- 一直在跑的 -->
@@ -369,6 +362,7 @@
 </main>
 
 <footer>
+  <div class="chicks" id="chicks1" title="点一下试试"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
   <a href="https://github.com/maxi-max-dev" target="_blank" rel="noopener">GITHUB ↗</a>
   <span style="color:var(--line);margin:0 14px">·</span>
   <a href="/en/" hreflang="en">ENGLISH VERSION ↗</a>
@@ -416,14 +410,14 @@ document.querySelectorAll('[data-icon]').forEach(function(el){ el.innerHTML=pxsv
 (function(){
   var L=document.getElementById('loader');
   if(!L||getComputedStyle(L).display==='none') return;
-  var pct=document.getElementById('lpct'), bar=document.getElementById('lbar');
+  var pct=document.getElementById('lpct'), bar=document.getElementById('lbar'), ck=document.getElementById('lchick');
   var fast=sessionStorage.getItem('seen')==='1';
   var dur=fast?300:1000, start=null;
   function step(ts){
     if(!start) start=ts;
     var p=Math.min(1,(ts-start)/dur);
     var v=Math.round(p*100);
-    pct.textContent=v; bar.style.width=v+'%';
+    pct.textContent=v; bar.style.width=v+'%'; if(ck) ck.style.left=v+'%';
     if(p<1){ requestAnimationFrame(step); }
     else{ sessionStorage.setItem('seen','1'); setTimeout(function(){ L.classList.add('up'); setTimeout(function(){ L.remove(); },800); },130); }
   }
