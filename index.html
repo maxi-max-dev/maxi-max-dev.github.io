@@ -51,9 +51,16 @@
   /* slim interactive band */
   #waves{display:block;width:100%;height:88px;border-bottom:1.5px solid var(--ink);background:var(--card)}
 
+  /* hello */
+  .hello{text-align:center;padding:46px 0 6px}
+  .hello p{font-family:var(--serif);font-size:17.5px;margin:0;color:var(--ink)}
+  .hello p span{display:block;font-family:var(--sans);font-size:13.5px;color:var(--muted);margin-top:8px}
+  .hello .chicks{margin:18px auto 0;justify-content:center}
+
   /* works */
   .works{padding-top:26px}
   .work{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:54px 0;border-bottom:1px solid var(--line)}
+  .work .txt,.work .vis{min-width:0}
   .work:last-of-type{border-bottom:0}
   .work.rev .vis{order:2}
   .work .txt h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,34px);font-weight:700;margin:0;letter-spacing:.01em;display:flex;align-items:center;gap:13px}
@@ -96,7 +103,8 @@
   @keyframes cbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 
   /* compact rows */
-  .alsointro{font-size:13.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.14em;margin:64px 0 0;text-align:center}
+  .alsointro{font-size:13.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.14em;margin:64px 0 0;display:flex;align-items:center;gap:18px}
+  .alsointro::before,.alsointro::after{content:"";flex:1;height:1px;background:var(--line)}
   .also{border:1.5px solid var(--ink);background:var(--card);margin:18px 0 0}
   .arow{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:22px 24px;align-items:start}
   .arow + .arow{border-top:1px solid var(--line)}
@@ -107,12 +115,14 @@
   .arow p{font-size:14.5px;color:var(--muted);margin:5px 0 0;max-width:48em}
 
   /* grid tier */
-  .gridintro{font-size:13.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.14em;margin:62px 0 0;text-align:center}
+  .gridintro{font-size:13.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.14em;margin:62px 0 0;display:flex;align-items:center;gap:18px}
+  .gridintro::before,.gridintro::after{content:"";flex:1;height:1px;background:var(--line)}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
   .gcard{display:flex;flex-direction:column;color:var(--ink);border:1.5px solid var(--ink);border-radius:12px;overflow:hidden;background:var(--card);box-shadow:5px 5px 0 rgba(38,35,28,.1);transition:transform .3s ease,box-shadow .3s ease}
   .gcard:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 rgba(38,35,28,.14);text-decoration:none}
   .gthumb{aspect-ratio:1280/780;overflow:hidden;border-bottom:1.5px solid var(--ink);background:var(--bg)}
-  .gthumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  .gthumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .45s ease}
+  .gcard:hover .gthumb img{transform:scale(1.045)}
   .gthumb.port{display:flex;align-items:center;justify-content:center}
   .gthumb.port img{width:auto;max-width:100%;height:100%;object-fit:contain}
   .gbody{padding:15px 17px 18px;display:flex;flex-direction:column;flex:1}
@@ -175,6 +185,11 @@
 <canvas id="waves" aria-hidden="true"></canvas>
 
 <main class="wrap works">
+
+  <section class="hello reveal">
+    <p>我是 Max，平时爱折腾些 AI 的小东西，做出来的都放在这了。<span>下面这些大部分能点开玩，真的可以点。</span></p>
+    <div class="chicks" id="chicks1" title="点一下试试"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
+  </section>
 
   <!-- 0 音乐博物馆 -->
   <div class="work rev reveal">
@@ -354,6 +369,8 @@
 </main>
 
 <footer>
+  <a href="https://github.com/maxi-max-dev" target="_blank" rel="noopener">GITHUB ↗</a>
+  <span style="color:var(--line);margin:0 14px">·</span>
   <a href="/en/" hreflang="en">ENGLISH VERSION ↗</a>
 </footer>
 
