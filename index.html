@@ -21,7 +21,7 @@
   ::selection{background:var(--gold);color:var(--ink)}
 
   /* preloader */
-  #loader{position:fixed;inset:0;background:var(--bg);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:transform .7s cubic-bezier(.77,0,.18,1)}
+  #loader{position:fixed;inset:0;background:var(--bg);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:transform .5s cubic-bezier(.77,0,.18,1)}
   #loader.up{transform:translateY(-100%)}
   #loader .pct{font-family:var(--mono);font-size:30px;font-weight:600;letter-spacing:.1em;color:var(--ink)}
   #loader .barwrap{position:relative;width:200px}
@@ -431,14 +431,14 @@ document.querySelectorAll('[data-icon]').forEach(function(el){ el.innerHTML=pxsv
   if(!L||getComputedStyle(L).display==='none') return;
   var pct=document.getElementById('lpct'), bar=document.getElementById('lbar'), ck=document.getElementById('lchick');
   var fast=sessionStorage.getItem('seen')==='1';
-  var dur=fast?300:1000, start=null;
+  var dur=fast?200:600, start=null;
   function step(ts){
     if(!start) start=ts;
     var p=Math.min(1,(ts-start)/dur);
     var v=Math.round(p*100);
     pct.textContent=v; bar.style.width=v+'%'; if(ck) ck.style.left=v+'%';
     if(p<1){ requestAnimationFrame(step); }
-    else{ sessionStorage.setItem('seen','1'); setTimeout(function(){ L.classList.add('up'); setTimeout(function(){ L.remove(); },800); },130); }
+    else{ sessionStorage.setItem('seen','1'); setTimeout(function(){ L.classList.add('up'); setTimeout(function(){ L.remove(); },550); },80); }
   }
   requestAnimationFrame(step);
 })();
