@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Max · 个人作品集</title>
-<meta name="description" content="Max 的个人作品集：UNSEEN 空间记忆、vibecoding 成就墙、心跳墙、你的音乐博物馆、诗云、Quiet、雅思口语教练、老鹰抓小鸡、AI 自动化等，大部分能点开试。">
+<title>Max · Portfolio</title>
+<meta name="description" content="Max's portfolio: UNSEEN spatial memory, Vibe Trophy, Heartbeat Wall, Museum of You, Poetry Cloud, Quiet, a med-interaction checker, chicken games, AI automations and more, most of them open right in the browser.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' shape-rendering='crispEdges'%3E%3Crect x='1' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='9' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='3' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='7' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='5' y='5' width='2' height='2' fill='%23bf5430'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -53,40 +53,6 @@
 
   /* slim interactive band */
   #waves{display:block;width:100%;height:88px;border-bottom:1.5px solid var(--ink);background:var(--card)}
-
-  /* hero 定位区 */
-  .hero{padding:46px 0 8px;border-bottom:1px solid var(--line)}
-  .hero h1{font-family:var(--serif);font-weight:700;letter-spacing:.01em;margin:0;
-    font-size:clamp(30px,5.2vw,52px);line-height:1.18}
-  .hero .sub{font-size:clamp(15px,1.9vw,18px);color:var(--muted);margin:18px 0 0;max-width:30em}
-  .stats{display:flex;flex-wrap:wrap;gap:44px;margin:34px 0 2px}
-  .stat .n{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4.4vw,42px);line-height:1;color:var(--ink);letter-spacing:.01em}
-  .stat .l{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;color:var(--muted);margin-top:9px;text-transform:uppercase}
-  @media(max-width:700px){.stats{gap:0 34px;row-gap:26px}.stat{flex:0 0 calc(50% - 17px)}}
-
-  /* 方块目录 */
-  .nav4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:28px 0 6px}
-  .nav4 a{aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:space-between;
-    color:var(--ink);border:1.5px solid var(--ink);border-radius:12px;background:var(--card);
-    box-shadow:5px 5px 0 rgba(38,35,28,.1);padding:16px 16px 15px;
-    transition:transform .3s ease,box-shadow .3s ease,background .3s ease}
-  .nav4 a:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 rgba(38,35,28,.14);background:var(--bg);text-decoration:none}
-  .nav4 .ico{font-size:26px;line-height:1}
-  .nav4 .lb{font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:.01em}
-  .nav4 .lb small{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.16em;color:var(--muted);margin-top:5px;text-transform:uppercase}
-  @media(max-width:700px){.nav4{grid-template-columns:1fr 1fr;gap:14px}.nav4 .ico{font-size:22px}}
-
-  /* 锚点：避开吸顶页头 */
-  #featured,#more,#agents{scroll-margin-top:86px}
-
-
-  /* 后院出口 */
-  .yard{margin:74px 0 0;padding:36px 0 4px;border-top:1px solid var(--line);text-align:center}
-  .yardline{font-size:16.5px;color:var(--muted);margin:0 0 20px;line-height:1.6}
-  .yardbtn{display:inline-block;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;
-    border:1.5px solid var(--ink);border-radius:10px;padding:13px 24px;color:var(--ink);background:var(--card);
-    box-shadow:4px 4px 0 rgba(38,35,28,.1);transition:transform .25s ease,box-shadow .25s ease}
-  .yardbtn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(38,35,28,.14);text-decoration:none}
 
   /* works */
   .works{padding-top:26px}
@@ -177,7 +143,7 @@
   .grid .gcard:nth-child(3n+2).in-view{transition-delay:.09s}
   .grid .gcard:nth-child(3n).in-view{transition-delay:.18s}
 
-  /* 像素图标：卡片 hover 蹦两下 */
+  /* pixel icons: hop twice on card hover */
   .gcard:hover .gbody h3 .pic{animation:cbob .55s steps(2) 2}
   .work:hover .txt h2 .pic{animation:cbob .55s steps(2) 2}
 
@@ -217,8 +183,8 @@
 <div id="frame" aria-hidden="true"></div>
 
 <header class="top">
-  <div class="cell"><span class="brand">Max <small>个人作品集</small></span></div>
-  <div class="cell en"><a href="/en/" hreflang="en">EN ↗</a></div>
+  <div class="cell"><span class="brand">Max <small>PORTFOLIO</small></span></div>
+  <div class="cell en"><a href="/" hreflang="zh-CN">中文 ↗</a></div>
 </header>
 
 <div class="shell">
@@ -227,146 +193,92 @@
 
 <main class="wrap works">
 
-  <!-- 首屏定位区 -->
-  <section class="hero reveal">
-    <h1>从一个念头，到能点开的东西。</h1>
-    <p class="sub">博物馆、诗、游戏、工具，和一套天天在用的 agent 系统，全部在线。</p>
-    <div class="stats">
-      <div class="stat"><div class="n">20+</div><div class="l">上线作品</div></div>
-      <div class="stat"><div class="n">34</div><div class="l">个公开仓库</div></div>
-      <div class="stat"><div class="n">37</div><div class="l">间展厅</div></div>
-    </div>
-  </section>
 
-  <!-- 方块目录 -->
-  <nav class="nav4 reveal" aria-label="页面导览">
-    <a href="#featured"><span class="ico">🏛️</span><span class="lb">精选作品<small>Featured</small></span></a>
-    <a href="#more"><span class="ico">🧸</span><span class="lb">更多小作品<small>More Works</small></span></a>
-    <a href="#agents"><span class="ico">🤖</span><span class="lb">Agent 系统<small>Always Running</small></span></a>
-    <a href="https://github.com/maxi-max-dev" target="_blank" rel="noreferrer"><span class="ico">🐙</span><span class="lb">GitHub · 34 repos<small>Source</small></span></a>
-  </nav>
-
-  <!-- 000 UNSEEN 空间记忆 -->
-  <div class="work reveal" id="featured">
+  <!-- 000 UNSEEN -->
+  <div class="work reveal">
     <div class="txt">
       <h2><span class="pic" data-icon="cam"></span>UNSEEN</h2>
-      <div class="en">Spatial Memory</div>
-      <p>把一场活动散落在各人手机里的照片，按拍摄位置和朝向拼回原场景：宾客上传，系统判断它属于哪个场景、朝哪边拍，拿不准的交给主办方确认，最后拼成一个能走进去看的展览。AdventureX 2026 现场三天做的。</p>
-      <a class="open" href="https://unseen-d3gtp0sxh53bbef61-1316841054.tcloudbaseapp.com/portal.html" target="_blank" rel="noopener">打开产品入口 <span class="ar">↗</span></a>
+      <div class="en">空间记忆</div>
+      <p>Photos from one event, scattered across everyone's phones, put back into the scene by where they were taken and which way the camera was facing: guests upload, the system works out the scene and the heading, the organiser confirms the uncertain ones, and the result is an exhibition you can walk through. Built in three days at AdventureX 2026. The product itself is in Chinese.</p>
+      <a class="open" href="https://unseen-d3gtp0sxh53bbef61-1316841054.tcloudbaseapp.com/portal.html" target="_blank" rel="noopener">Open the product hub <span class="ar">↗</span></a>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">unseen-d3gtp0sxh53bbef61-1316841054.tcloudbaseapp.com</span><span class="live">LIVE</span></div>
         <div class="screen" data-live="https://unseen-d3gtp0sxh53bbef61-1316841054.tcloudbaseapp.com/portal.html">
-          <img src="assets/p-unseen.jpg" alt="UNSEEN 产品入口：让每张照片回到它的方向" loading="lazy">
-          <a class="cover" href="https://unseen-d3gtp0sxh53bbef61-1316841054.tcloudbaseapp.com/portal.html" target="_blank" rel="noopener" aria-label="打开 UNSEEN 产品入口"></a>
+          <img src="../assets/p-unseen.jpg" alt="UNSEEN product hub: every photo back to the direction it was taken" loading="lazy">
+          <a class="cover" href="https://unseen-d3gtp0sxh53bbef61-1316841054.tcloudbaseapp.com/portal.html" target="_blank" rel="noopener" aria-label="Open UNSEEN product hub"></a>
         </div>
       </div>
     </div>
   </div>
 
-  
-  <!-- 棋云 -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="chess"></span>棋云</h2>
-      <div class="en">Chess Cloud</div>
-      <p>把当前所有真实走法摊开成一张未来地图：点进任一路线，继续预演对手的强回应，以及这条路会吃掉、威胁或暴露哪些棋子。国际象棋和中国象棋用的是同一套语言。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/chess-cloud/" target="_blank" rel="noopener">进一局 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/chess-cloud</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/chess-cloud/">
-          <img src="assets/p-chess.jpg" alt="棋云：把下一步展开成一张未来地图" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/chess-cloud/" target="_blank" rel="noopener" aria-label="打开棋云"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 感觉博物馆 -->
+  <!-- 00 Vibe Trophy -->
   <div class="work reveal">
     <div class="txt">
-      <h2><span class="pic" data-icon="eye"></span>感觉博物馆</h2>
-      <div class="en">Museum of Feelings</div>
-      <p>一座关于日常感觉的博物馆，界面做成了一个操作系统。目前 37 间展厅：眼睛商店、堵车制造机、盐粒排成的声音、六度分隔，每一间都是一个能动手的小东西。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/museum-of-feelings/" target="_blank" rel="noopener">进馆逛逛 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/museum-of-feelings</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/museum-of-feelings/">
-          <img src="assets/p-feelings.jpg" alt="感觉博物馆：37 间展厅排成一个桌面" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/museum-of-feelings/" target="_blank" rel="noopener" aria-label="打开感觉博物馆"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- 00 vibecoding 成就墙 -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="trophy"></span>vibecoding 成就墙</h2>
-      <div class="en">vibe-trophy</div>
-      <p>给 vibe coding 做的 Steam 式成就系统。读本地 Claude Code、Codex、OpenClaw 的日志，算出 41 个成就：凌晨三点俱乐部、烧 token 大户、已读不回。页面上挂的是我自己的档案。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/vibe-trophy/demo.html" target="_blank" rel="noopener">看我的成就墙 <span class="ar">↗</span></a>
+      <h2><span class="pic" data-icon="trophy"></span>Vibe Trophy</h2>
+      <div class="en">vibecoding 成就墙</div>
+      <p>A Steam-style achievement system for vibe coding. It reads your local Claude Code, Codex and OpenClaw logs and computes 41 achievements: 3 AM Club, Token Furnace, Left-on-Read. The page shows my own records.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/vibe-trophy/en.html" target="_blank" rel="noopener">See my wall <span class="ar">↗</span></a>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/vibe-trophy</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/vibe-trophy/demo.html">
-          <img src="assets/p-trophy.jpg" alt="vibecoding 成就墙：Steam 式成就卡片" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/vibe-trophy/demo.html" target="_blank" rel="noopener" aria-label="打开 vibecoding 成就墙"></a>
+        <div class="screen" data-live="https://maxi-max-dev.github.io/vibe-trophy/en.html">
+          <img src="../assets/p-trophy.jpg" alt="Vibe Trophy: Steam-style achievement cards" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/vibe-trophy/en.html" target="_blank" rel="noopener" aria-label="Open Vibe Trophy"></a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 01 心跳墙 -->
+  <!-- 01 Heartbeat Wall -->
   <div class="work rev reveal">
     <div class="txt">
-      <h2><span class="pic" data-icon="heart"></span>心跳墙</h2>
-      <div class="en">Heartbeat Wall</div>
-      <p>给天天在跑的 agent 系统做的实时看板，像素风：十个 agent 谁在干活谁在休息、今天用掉多少 token、完成了几件事，15 分钟刷一次。另有工厂、农场两套外观。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/heartbeat-wall/" target="_blank" rel="noopener">进屋看看 <span class="ar">↗</span></a>
+      <h2><span class="pic" data-icon="heart"></span>Heartbeat Wall</h2>
+      <div class="en">心跳墙</div>
+      <p>A live pixel-art dashboard for the agent systems I run every day: which of the ten agents are working and which are idle, today's token spend, what actually got done. Refreshed every 15 minutes, with factory and farm skins to switch between.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/heartbeat-wall/" target="_blank" rel="noopener">Step inside <span class="ar">↗</span></a>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/heartbeat-wall</span><span class="live">LIVE</span></div>
         <div class="screen" data-live="https://maxi-max-dev.github.io/heartbeat-wall/">
-          <img src="assets/p-heartbeat.jpg" alt="心跳墙：agent 系统实时看板" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/heartbeat-wall/" target="_blank" rel="noopener" aria-label="打开心跳墙"></a>
+          <img src="../assets/p-heartbeat.jpg" alt="Heartbeat Wall: a live dashboard for my agents" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/heartbeat-wall/" target="_blank" rel="noopener" aria-label="Open Heartbeat Wall"></a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 0 音乐博物馆 -->
+  <!-- 0 Museum of You -->
   <div class="work reveal">
     <div class="txt">
-      <h2><span class="pic" data-icon="muse"></span>你的音乐博物馆</h2>
-      <div class="en">Museum of You</div>
-      <p>把歌单变成一座能走进去的 3D 博物馆：AI 读你的歌单，按口味自动布展，听得最多的那首放在展厅中央，每件展品配一句解说。为腾讯音乐的 AI 黑客松做的，建议电脑打开。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/walk-into-your-music/" target="_blank" rel="noopener">走进去 <span class="ar">↗</span></a>
+      <h2><span class="pic" data-icon="muse"></span>Museum of You</h2>
+      <div class="en">你的音乐博物馆</div>
+      <p>A playlist turned into a 3D museum you can walk through: an AI reads your playlist, curates the halls by taste, puts your most-played track at the center, and gives every exhibit a one-line caption. Built for a Tencent Music AI hackathon; best on desktop.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/walk-into-your-music/" target="_blank" rel="noopener">Walk in <span class="ar">↗</span></a>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/walk-into-your-music</span><span class="live">LIVE</span></div>
         <div class="screen" data-live="https://maxi-max-dev.github.io/walk-into-your-music/">
-          <img src="assets/p-museum.jpg" alt="你的音乐博物馆：聚光下的镇馆之宝" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/walk-into-your-music/" target="_blank" rel="noopener" aria-label="打开你的音乐博物馆"></a>
+          <img src="../assets/p-museum.jpg" alt="Museum of You: the spotlit centerpiece" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/walk-into-your-music/" target="_blank" rel="noopener" aria-label="Open Museum of You"></a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 1 诗云 -->
+  <!-- 1 Poetry Cloud -->
   <div class="work rev reveal">
     <div class="txt">
-      <h2><span class="pic" data-icon="cloud"></span>诗云</h2>
-      <div class="en">Poetry Cloud</div>
-      <p>刘慈欣同名小说里的设定，做了出来：所有可能的五言绝句摊成一片星空，一共 10⁶⁹ 首。《静夜思》这种人类真正写过的诗藏在里面，飞近了会亮金光。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener">打开飞一圈 <span class="ar">↗</span></a>
+      <h2><span class="pic" data-icon="cloud"></span>Poetry Cloud</h2>
+      <div class="en">诗云 · after Liu Cixin</div>
+      <p>A setting from Liu Cixin's short story of the same name, built for real: every possible five-character Chinese quatrain laid out as a starfield, 10⁶⁹ in total. Poems humans actually wrote, like Li Bai's Quiet Night Thoughts, are hidden inside and glow gold when you fly close.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener">Fly around <span class="ar">↗</span></a>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/poetry-cloud</span><span class="live">LIVE</span></div>
         <div class="screen" data-live="https://maxi-max-dev.github.io/poetry-cloud/">
-          <img src="assets/p-poetry.jpg" alt="诗云：星空中的五言绝句" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener" aria-label="打开诗云"></a>
+          <img src="../assets/p-poetry.jpg" alt="Poetry Cloud: quatrains as a starfield" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener" aria-label="Open Poetry Cloud"></a>
         </div>
       </div>
     </div>
@@ -377,174 +289,139 @@
     <div class="txt">
       <h2><span class="pic" data-icon="book"></span>Quiet</h2>
       <div class="en">UQ Study-Space Finder</div>
-      <p>只回答一件事：现在哪个图书馆人少。在昆士兰大学读书时做的，接了 9 个图书馆的占用数据。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/max/quiet/" target="_blank" rel="noopener">打开看看 <span class="ar">↗</span></a>
+      <p>Answers one question: which library is empty right now. Made while studying at the University of Queensland, wired to occupancy data from 9 libraries.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/max/quiet/" target="_blank" rel="noopener">Open it <span class="ar">↗</span></a>
     </div>
     <div class="vis">
       <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/max/quiet</span><span class="live">LIVE</span></div>
         <div class="screen" data-live="https://maxi-max-dev.github.io/max/quiet/">
-          <img src="assets/p-quiet.jpg" alt="Quiet：图书馆占用一览" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/max/quiet/" target="_blank" rel="noopener" aria-label="打开 Quiet"></a>
+          <img src="../assets/p-quiet.jpg" alt="Quiet: library occupancy at a glance" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/max/quiet/" target="_blank" rel="noopener" aria-label="Open Quiet"></a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 网格小卡 -->
-  <p class="gridintro reveal" id="more">↓ 还做了这些，大多能点开试</p>
+  <!-- grid cards -->
+  <p class="gridintro reveal">↓ A few more, most open right in the browser</p>
   <div class="grid">
 
-    <a class="gcard reveal" href="https://maxi-max-dev.github.io/pack-coach/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-pack.jpg" alt="打包教练：24 寸行李箱装入 12 件，空间利用率 60%" loading="lazy"></div>
-      <div class="gbody">
-        <h3><span class="pic" data-icon="box"></span>打包教练</h3>
-        <div class="en">PackCoach</div>
-        <p>告诉它你的箱子和要带的东西，它算出装得下的顺序，再一步步教你装。406 组自动化场景全过。</p>
-        <span class="go">试一箱 <span class="ar">↗</span></span>
-      </div>
-    </a>
-
-    <a class="gcard reveal" href="https://maxi-max-dev.github.io/hannibal-menu/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-hannibal.jpg" alt="今夜设宴：暗色调的菜单封面" loading="lazy"></div>
-      <div class="gbody">
-        <h3><span class="pic" data-icon="lobster"></span>今夜设宴</h3>
-        <div class="en">Hannibal Menu</div>
-        <p>一份不太正经的菜单：29 道中餐做成 3D 卡片盒里的翻卡，按口味筛，藏了一个主厨模式。</p>
-        <span class="go">入席 <span class="ar">↗</span></span>
-      </div>
-    </a>
-
-    <a class="gcard reveal" href="https://maxi-max-dev.github.io/other-you/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-otheryou.jpg" alt="平行人生沙盘：几份平行档案" loading="lazy"></div>
-      <div class="gbody">
-        <h3><span class="pic" data-icon="cycle"></span>平行人生沙盘</h3>
-        <div class="en">Parallel Lives</div>
-        <p>把一个真实的决定交给几个平行的「你」各走一段日子，挑一份档案，看看那条没走的路。不卖预测，只是演出。</p>
-        <span class="go">挑一份看 <span class="ar">↗</span></span>
-      </div>
-    </a>
-
     <a class="gcard reveal" href="https://maxi-max-dev.github.io/chicken-chase/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-chase.jpg" alt="老鹰抓小鸡：像素对局，老鹰刚抓走一只" loading="lazy"></div>
+      <div class="gthumb"><img src="../assets/p-chase.jpg" alt="Chicken Chase: pixel match, the eagle just grabbed a chick" loading="lazy"></div>
       <div class="gbody">
-        <h3><span class="pic" data-icon="eagle"></span>老鹰抓小鸡</h3>
-        <div class="en">Chicken Chase</div>
-        <p>小时候的老鹰抓小鸡，做成像素小游戏，老鹰、母鸡、队尾小鸡都能当，手机电脑都能玩。第三版了，前两版用 Unity 和 3D 方块。</p>
-        <span class="go">玩一把 <span class="ar">↗</span></span>
+        <h3><span class="pic" data-icon="eagle"></span>Chicken Chase</h3>
+        <div class="en">老鹰抓小鸡</div>
+        <p>The eagle-and-chicks playground game from my childhood as a pixel mini game: play the eagle, the hen, or the last chick in the chain, on phone or desktop. Third remake, after a Unity version and a 3D voxel one.</p>
+        <span class="go">Play it <span class="ar">↗</span></span>
       </div>
     </a>
 
     <a class="gcard reveal" href="https://maxi-max-dev.github.io/heyao/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-heyao.jpg" alt="核药：药物相互作用红黄绿分级" loading="lazy"></div>
+      <div class="gthumb"><img src="../assets/p-heyao.jpg" alt="Med Interaction Check: red, yellow, green ratings" loading="lazy"></div>
       <div class="gbody">
-        <h3><span class="pic" data-icon="pill"></span>核药</h3>
-        <div class="en">Med Interaction Check</div>
-        <p>查家里的药能不能一起吃，红黄绿三档。120 种常见药、73 条规则逐条人工核过，不用模型现场生成。有大字版。</p>
-        <span class="go">查一下 <span class="ar">↗</span></span>
+        <h3><span class="pic" data-icon="pill"></span>Med Interaction Check</h3>
+        <div class="en">核药</div>
+        <p>Checks whether the meds at home can be taken together, rated red, yellow or green. 120 common meds and 73 rules, each verified by hand, no model generating answers on the fly. Includes a large-print mode.</p>
+        <span class="go">Check one <span class="ar">↗</span></span>
       </div>
     </a>
 
     <a class="gcard reveal" href="https://maxi-max-dev.github.io/max-station/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-station.jpg" alt="Max Station 工作台总览" loading="lazy"></div>
+      <div class="gthumb"><img src="../assets/p-station.jpg" alt="Max Station workbench overview" loading="lazy"></div>
       <div class="gbody">
         <h3><span class="pic" data-icon="station"></span>Max Station</h3>
-        <div class="en">Personal Workbench</div>
-        <p>自己每天在用的工作台：看板、日历、笔记、番茄钟一页放下，藏了几个小游戏。</p>
-        <span class="go">打开看看 <span class="ar">↗</span></span>
+        <div class="en">个人工作台</div>
+        <p>The workbench I use every day: kanban, calendar, notes and a pomodoro on one page, plus a few hidden mini games.</p>
+        <span class="go">Open it <span class="ar">↗</span></span>
       </div>
     </a>
 
     <a class="gcard reveal" href="https://maxi-max-dev.github.io/ielts-speaking-coach/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-ielts.jpg" alt="雅思口语教练：出题与录音作答" loading="lazy"></div>
+      <div class="gthumb"><img src="../assets/p-ielts.jpg" alt="IELTS coach: question and recording panel" loading="lazy"></div>
       <div class="gbody">
-        <h3><span class="pic" data-icon="mic"></span>雅思口语教练</h3>
-        <div class="en">IELTS Speaking Coach</div>
-        <p>AI 考官：出题、录音作答、逐句反馈、估分，最后给一遍示范答案。备考没人陪练时做的。</p>
-        <span class="go">练一句 <span class="ar">↗</span></span>
+        <h3><span class="pic" data-icon="mic"></span>IELTS Speaking Coach</h3>
+        <div class="en">雅思口语教练</div>
+        <p>An AI examiner: asks a question, records your answer, gives sentence-by-sentence feedback and a band estimate, then a model answer. Made when I had no one to practice with.</p>
+        <span class="go">Try one <span class="ar">↗</span></span>
       </div>
     </a>
 
     <a class="gcard reveal" href="https://maxi-max-dev.github.io/tme-hackathon/garden.html" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-garden.jpg" alt="音乐花园：一首歌长成一座花园" loading="lazy"></div>
+      <div class="gthumb"><img src="../assets/p-garden.jpg" alt="Music Garden: a song grows into a garden" loading="lazy"></div>
       <div class="gbody">
-        <h3><span class="pic" data-icon="flower"></span>音乐花园</h3>
-        <div class="en">Music Garden</div>
-        <p>放一首歌，长出一朵属于它的花，听过的歌都留在园子里。同一场音乐黑客松的第二件作品。</p>
-        <span class="go">种一首 <span class="ar">↗</span></span>
+        <h3><span class="pic" data-icon="flower"></span>Music Garden</h3>
+        <div class="en">音乐花园</div>
+        <p>Play a song and it grows a flower of its own; every song you have played stays in the garden. Second piece from the same music hackathon.</p>
+        <span class="go">Plant one <span class="ar">↗</span></span>
       </div>
     </a>
 
     <div class="gcard reveal">
-      <div class="gthumb port"><img src="assets/p-reef.jpg" alt="ReefQuest 原型：海洋地图与积分" loading="lazy"></div>
+      <div class="gthumb port"><img src="../assets/p-reef.jpg" alt="ReefQuest prototype: ocean map and points" loading="lazy"></div>
       <div class="gbody">
         <h3><span class="pic" data-icon="coral"></span>ReefQuest</h3>
         <div class="en">UQ HackAIthon 2026</div>
-        <p>UQ 48 小时黑客松的团队提案：潜水拍鱼攒积分的海洋保护 app，AI 识鱼种。</p>
+        <p>Team proposal at UQ's 48-hour hackathon: an ocean-conservation app where divers photograph fish for points, with AI identifying the species.</p>
       </div>
     </div>
 
-    <a class="gcard reveal" href="xhs-research/">
-      <div class="gthumb port"><img src="assets/p-xhs.jpg" alt="小红书调研：手机上自动搜索中" loading="lazy"></div>
+    <a class="gcard reveal" href="/xhs-research/">
+      <div class="gthumb port"><img src="../assets/p-xhs.jpg" alt="XHS Research running on a phone" loading="lazy"></div>
       <div class="gbody">
-        <h3><span class="pic" data-icon="lens"></span>小红书调研</h3>
-        <div class="en">XHS Research Skill</div>
-        <p>AI 在真手机上翻小红书笔记，一条条读，汇总成调研报告。快的一轮 5 到 10 分钟。</p>
-        <span class="go">看它怎么翻 <span class="ar">↗</span></span>
+        <h3><span class="pic" data-icon="lens"></span>XHS Research</h3>
+        <div class="en">小红书调研</div>
+        <p>An AI flips through Xiaohongshu posts on a real phone, reads them one by one, and writes a research report. A quick pass takes 5 to 10 minutes. Case page in Chinese.</p>
+        <span class="go">Watch it read <span class="ar">↗</span></span>
       </div>
     </a>
 
     <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/projects/interface-archaeology/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-interface.jpg" alt="界面考古馆：人机交互进化史的多展厅博物馆" loading="lazy"></div>
+      <div class="gthumb"><img src="../assets/p-interface.jpg" alt="Interface Archaeology: a multi-hall museum of HCI history" loading="lazy"></div>
       <div class="gbody">
-        <h3><span class="pic" data-icon="muse"></span>界面考古馆</h3>
-        <div class="en">Interface Archaeology</div>
-        <p>一座人机交互史的博物馆：从命令行逛到图形界面，再逛到现在。</p>
-        <span class="go">进馆逛逛 <span class="ar">↗</span></span>
+        <h3><span class="pic" data-icon="muse"></span>Interface Archaeology</h3>
+        <div class="en">界面考古馆</div>
+        <p>A museum of human-computer interaction history: walk from the command line to graphical interfaces to now.</p>
+        <span class="go">Walk in <span class="ar">↗</span></span>
       </div>
     </a>
 
   </div>
 
-  <!-- 一直在跑的 -->
-  <p class="alsointro reveal" id="agents">↓ 下面这些没有界面，是一直在自动跑的</p>
+  <!-- always running -->
+  <p class="alsointro reveal">↓ These have no UI, they just run on their own</p>
   <div class="also reveal">
     <div class="arow">
       <span class="pic" data-icon="lobster"></span>
       <span>
-        <h3>多 Agent 系统 <span class="en">OPENCLAW</span></h3>
-        <p>几个 agent 各管一摊，加上一批定时任务，从早晨的市场预测到周末的反思报告，结果都推到手机上。基于开源项目 OpenClaw 搭的，跑了小半年，一直在修修补补。</p>
+        <h3>Multi-Agent System <span class="en">OPENCLAW</span></h3>
+        <p>A few agents each owning one area, plus a batch of scheduled jobs, from morning market forecasts to weekend retro reports, all pushed to my phone. Built on the open-source OpenClaw runtime; it has been running for about half a year, patched and re-patched the whole way.</p>
       </span>
     </div>
     <div class="arow">
-      <span class="pic"><img src="assets/mirofish.png" alt="MiroFish"></span>
+      <span class="pic"><img src="../assets/mirofish.png" alt="MiroFish"></span>
       <span>
-        <h3>每日预测 <span class="en">MIROFISH</span></h3>
-        <p>给开源预测引擎 MiroFish 接了条每天自动跑的管线：凌晨把当天新闻跑成趋势预测，早上自动发出来，再用记分板回头对答案。</p>
+        <h3>Daily Forecast <span class="en">MIROFISH</span></h3>
+        <p>A daily pipeline around the open-source MiroFish engine: overnight it turns the day's news into a structured forecast, posts it in the morning, and a scoreboard checks it against what actually happened.</p>
       </span>
     </div>
     <div class="arow">
       <span class="pic" data-icon="chart"></span>
       <span>
-        <h3>市场分析 <span class="en">DIGITAL ORACLE</span></h3>
-        <p>跟着 B 站 Komako 的开源思路，用市场价格反推趋势。写了个换汇分析脚本每天自动跑。也让一个 agent 在 ASX 模拟炒股比赛里自动看盘下单，跑完一个赛季，成绩中游。</p>
+        <h3>Market Analysis <span class="en">DIGITAL ORACLE</span></h3>
+        <p>Following Komako's open-sourced approach of reading market prices instead of headlines: a daily FX analysis script, plus an agent that watched the market and placed its own orders in the ASX Sharemarket Game for a full season. Simulated money, mid-table finish.</p>
       </span>
     </div>
   </div>
 
-
-  <!-- 后院 -->
-  <section class="yard reveal">
-    <p class="yardline">还没看够？后院堆着没进这一页的东西：三件大的，六十来个小玩具。</p>
-    <a class="yardbtn" href="https://maxi-max-dev.github.io/backyard/" target="_blank" rel="noopener">去后院逛逛 <span class="ar">↗</span></a>
-  </section>
-
 </main>
 
 <footer>
-  <div class="chicks" id="chicks1" title="点一下试试"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
+  <div class="chicks" id="chicks1" title="Click me"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
   <a href="https://github.com/maxi-max-dev" target="_blank" rel="noopener">GITHUB ↗</a>
   <span style="color:var(--line);margin:0 14px">·</span>
-  <a href="/en/" hreflang="en">ENGLISH VERSION ↗</a>
+  <a href="https://maxi-max-dev.github.io/backyard/" target="_blank" rel="noopener">BACKYARD ↗</a>
+  <span style="color:var(--line);margin:0 14px">·</span>
+  <a href="/" hreflang="zh-CN">中文版 ↗</a>
 </footer>
 
 </div><!-- /shell -->
@@ -553,9 +430,6 @@
 /* pixel icons */
 var PAL={k:'#2b2722',w:'#f6f1e6',r:'#bf5430',x:'#d04a3a',y:'#e9b34a',g:'#6a9a58',b:'#4a7fb5',l:'#a8cae6',p:'#e08a7a',d:'#8a6a4a',m:'#a39a89',c:'#efe6d2'};
 var ICONS={
-chess:['.....kk.....','....kkkk....','....kkkk....','.....kk.....','....kkkk....','...kkkkkk...','..kkkkkkkk..','.kkkkkkkkkk.'],
-eye:['............','...kkkkkk...','..k......k..','.k..llll..k.','k..lbbbbl..k','.k..llll..k.','..k......k..','...kkkkkk...','............'],
-box:['............','....kkkk....','....k..k....','.kkkkkkkkkk.','.kddddddddk.','.kdddkkdddk.','.kddddddddk.','.kkkkkkkkkk.','............'],
 cam:['....kkkk....','kkkkkkkkkkkk','kcccccccyyck','kcccllllccck','kcclbbbblcck','kcclbbbblcck','kcccllllccck','kcccccccccck','kkkkkkkkkkkk'],
 trophy:['............','.yyyyyyyyyy.','y..yyyyyy..y','y..yyyyyy..y','.y.yyyyyy.y.','...yyyyyy...','....yyyy....','.....yy.....','....yyyy....','...kkkkkk...'],
 heart:['............','..xx....xx..','.xwxx..xxxx.','.xxxxxxxxxx.','.xxxxxxxxxx.','..xxxxxxxx..','...xxxxxx...','....xxxx....','.....xx.....','............'],
@@ -698,7 +572,7 @@ document.querySelectorAll('.reveal').forEach(function(el){ io2.observe(el); });
 </script>
 <script data-goatcounter="https://maxdev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script>
-// Microsoft Clarity 行为回放：仅线上注入，本地预览不收集
+// Microsoft Clarity: only injected on the live site, local previews don't collect
 if (location.hostname.endsWith('github.io')) {
   (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
   t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;

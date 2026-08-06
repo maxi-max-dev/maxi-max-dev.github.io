@@ -54,6 +54,15 @@
   /* slim interactive band */
   #waves{display:block;width:100%;height:88px;border-bottom:1.5px solid var(--ink);background:var(--card)}
 
+
+  /* 后院出口 */
+  .yard{margin:74px 0 0;padding:36px 0 4px;border-top:1px solid var(--line);text-align:center}
+  .yardline{font-size:16.5px;color:var(--muted);margin:0 0 20px;line-height:1.6}
+  .yardbtn{display:inline-block;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;
+    border:1.5px solid var(--ink);border-radius:10px;padding:13px 24px;color:var(--ink);background:var(--card);
+    box-shadow:4px 4px 0 rgba(38,35,28,.1);transition:transform .25s ease,box-shadow .25s ease}
+  .yardbtn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(38,35,28,.14);text-decoration:none}
+
   /* works */
   .works{padding-top:26px}
   .work{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:54px 0;border-bottom:1px solid var(--line)}
@@ -212,7 +221,43 @@
     </div>
   </div>
 
-  <!-- 00 Vibe Trophy -->
+  
+  <!-- Chess Cloud -->
+  <div class="work rev reveal">
+    <div class="txt">
+      <h2><span class="pic" data-icon="chess"></span>Chess Cloud</h2>
+      <div class="en">棋云</div>
+      <p>Every legal next move, laid out as one map. Click into any line to see the opponent's strongest reply, and what that path costs you: pieces taken, threatened or left exposed. International chess and xiangqi speak the same language here.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/chess-cloud/" target="_blank" rel="noopener">Play a game <span class="ar">↗</span></a>
+    </div>
+    <div class="vis">
+      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/chess-cloud</span><span class="live">LIVE</span></div>
+        <div class="screen" data-live="https://maxi-max-dev.github.io/chess-cloud/">
+          <img src="../assets/p-chess.jpg" alt="Chess Cloud: the next move as a map of futures" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/chess-cloud/" target="_blank" rel="noopener" aria-label="Open Chess Cloud"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Museum of Feelings -->
+  <div class="work reveal">
+    <div class="txt">
+      <h2><span class="pic" data-icon="eye"></span>Museum of Feelings</h2>
+      <div class="en">感觉博物馆</div>
+      <p>A museum of ordinary sensations, with an interface built like a desktop OS. Thirty-seven rooms so far: the shop that sells eyes, the traffic-jam factory, the sound of salt falling, six degrees of separation. Each room is a small thing you can poke at.</p>
+      <a class="open" href="https://maxi-max-dev.github.io/museum-of-feelings/" target="_blank" rel="noopener">Walk in <span class="ar">↗</span></a>
+    </div>
+    <div class="vis">
+      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/museum-of-feelings</span><span class="live">LIVE</span></div>
+        <div class="screen" data-live="https://maxi-max-dev.github.io/museum-of-feelings/">
+          <img src="../assets/p-feelings.jpg" alt="Museum of Feelings: thirty-seven rooms laid out as a desktop" loading="lazy">
+          <a class="cover" href="https://maxi-max-dev.github.io/museum-of-feelings/" target="_blank" rel="noopener" aria-label="Open Museum of Feelings"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 00 Vibe Trophy -->
   <div class="work reveal">
     <div class="txt">
       <h2><span class="pic" data-icon="trophy"></span>Vibe Trophy</h2>
@@ -305,6 +350,36 @@
   <!-- grid cards -->
   <p class="gridintro reveal">↓ A few more, most open right in the browser</p>
   <div class="grid">
+
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/pack-coach/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-pack.jpg" alt="PackCoach: twelve items packed into a carry-on at 60% space use" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="box"></span>PackCoach</h3>
+        <div class="en">打包教练</div>
+        <p>Tell it your case and what you want to bring, and it works out an order that actually fits, then walks you through it step by step. Covered by 406 automated test scenarios.</p>
+        <span class="go">Pack a case <span class="ar">↗</span></span>
+      </div>
+    </a>
+
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/hannibal-menu/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-hannibal.jpg" alt="Tonight's Feast: a dark menu cover" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="lobster"></span>Tonight's Feast</h3>
+        <div class="en">今夜设宴</div>
+        <p>A not-entirely-serious menu app: twenty-nine Chinese dishes as flip cards in a 3D card box, filterable by taste, with a chef's mode hidden inside.</p>
+        <span class="go">Take a seat <span class="ar">↗</span></span>
+      </div>
+    </a>
+
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/other-you/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-otheryou.jpg" alt="Parallel Lives: several parallel case files" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="cycle"></span>Parallel Lives</h3>
+        <div class="en">平行人生沙盘</div>
+        <p>Hand one real decision to several parallel versions of you and let each walk it a while. Pick a file and see the road not taken. Not a prediction, a dramatisation.</p>
+        <span class="go">Pick a file <span class="ar">↗</span></span>
+      </div>
+    </a>
 
     <a class="gcard reveal" href="https://maxi-max-dev.github.io/chicken-chase/" target="_blank" rel="noopener">
       <div class="gthumb"><img src="../assets/p-chase.jpg" alt="Chicken Chase: pixel match, the eagle just grabbed a chick" loading="lazy"></div>
@@ -413,13 +488,18 @@
     </div>
   </div>
 
+
+  <!-- backyard -->
+  <section class="yard reveal">
+    <p class="yardline">Still not enough? The backyard holds everything that didn't make this page: three larger projects and about sixty small toys.</p>
+    <a class="yardbtn" href="https://maxi-max-dev.github.io/backyard/" target="_blank" rel="noopener">Wander the backyard <span class="ar">↗</span></a>
+  </section>
+
 </main>
 
 <footer>
   <div class="chicks" id="chicks1" title="Click me"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
   <a href="https://github.com/maxi-max-dev" target="_blank" rel="noopener">GITHUB ↗</a>
-  <span style="color:var(--line);margin:0 14px">·</span>
-  <a href="https://maxi-max-dev.github.io/backyard/" target="_blank" rel="noopener">BACKYARD ↗</a>
   <span style="color:var(--line);margin:0 14px">·</span>
   <a href="/" hreflang="zh-CN">中文版 ↗</a>
 </footer>
@@ -430,6 +510,9 @@
 /* pixel icons */
 var PAL={k:'#2b2722',w:'#f6f1e6',r:'#bf5430',x:'#d04a3a',y:'#e9b34a',g:'#6a9a58',b:'#4a7fb5',l:'#a8cae6',p:'#e08a7a',d:'#8a6a4a',m:'#a39a89',c:'#efe6d2'};
 var ICONS={
+chess:['.....kk.....','....kkkk....','....kkkk....','.....kk.....','....kkkk....','...kkkkkk...','..kkkkkkkk..','.kkkkkkkkkk.'],
+eye:['............','...kkkkkk...','..k......k..','.k..llll..k.','k..lbbbbl..k','.k..llll..k.','..k......k..','...kkkkkk...','............'],
+box:['............','....kkkk....','....k..k....','.kkkkkkkkkk.','.kddddddddk.','.kdddkkdddk.','.kddddddddk.','.kkkkkkkkkk.','............'],
 cam:['....kkkk....','kkkkkkkkkkkk','kcccccccyyck','kcccllllccck','kcclbbbblcck','kcclbbbblcck','kcccllllccck','kcccccccccck','kkkkkkkkkkkk'],
 trophy:['............','.yyyyyyyyyy.','y..yyyyyy..y','y..yyyyyy..y','.y.yyyyyy.y.','...yyyyyy...','....yyyy....','.....yy.....','....yyyy....','...kkkkkk...'],
 heart:['............','..xx....xx..','.xwxx..xxxx.','.xxxxxxxxxx.','.xxxxxxxxxx.','..xxxxxxxx..','...xxxxxx...','....xxxx....','.....xx.....','............'],

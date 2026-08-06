@@ -79,15 +79,6 @@
   /* 锚点：避开吸顶页头 */
   #featured,#more,#agents{scroll-margin-top:86px}
 
-
-  /* 后院出口 */
-  .yard{margin:74px 0 0;padding:36px 0 4px;border-top:1px solid var(--line);text-align:center}
-  .yardline{font-size:16.5px;color:var(--muted);margin:0 0 20px;line-height:1.6}
-  .yardbtn{display:inline-block;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;
-    border:1.5px solid var(--ink);border-radius:10px;padding:13px 24px;color:var(--ink);background:var(--card);
-    box-shadow:4px 4px 0 rgba(38,35,28,.1);transition:transform .25s ease,box-shadow .25s ease}
-  .yardbtn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(38,35,28,.14);text-decoration:none}
-
   /* works */
   .works{padding-top:26px}
   .work{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:54px 0;border-bottom:1px solid var(--line)}
@@ -232,9 +223,9 @@
     <h1>从一个念头，到能点开的东西。</h1>
     <p class="sub">博物馆、诗、游戏、工具，和一套天天在用的 agent 系统，全部在线。</p>
     <div class="stats">
-      <div class="stat"><div class="n">20+</div><div class="l">上线作品</div></div>
-      <div class="stat"><div class="n">34</div><div class="l">个公开仓库</div></div>
-      <div class="stat"><div class="n">37</div><div class="l">间展厅</div></div>
+      <div class="stat"><div class="n">12+</div><div class="l">上线作品</div></div>
+      <div class="stat"><div class="n">17</div><div class="l">个公开仓库</div></div>
+      <div class="stat"><div class="n">34</div><div class="l">间展厅</div></div>
     </div>
   </section>
 
@@ -243,11 +234,11 @@
     <a href="#featured"><span class="ico">🏛️</span><span class="lb">精选作品<small>Featured</small></span></a>
     <a href="#more"><span class="ico">🧸</span><span class="lb">更多小作品<small>More Works</small></span></a>
     <a href="#agents"><span class="ico">🤖</span><span class="lb">Agent 系统<small>Always Running</small></span></a>
-    <a href="https://github.com/maxi-max-dev" target="_blank" rel="noreferrer"><span class="ico">🐙</span><span class="lb">GitHub · 34 repos<small>Source</small></span></a>
+    <a href="https://github.com/maxi-max-dev" target="_blank" rel="noreferrer"><span class="ico">🐙</span><span class="lb">GitHub · 17 repos<small>Source</small></span></a>
   </nav>
 
   <!-- 000 UNSEEN 空间记忆 -->
-  <div class="work reveal" id="featured">
+  <div class="work reveal">
     <div class="txt">
       <h2><span class="pic" data-icon="cam"></span>UNSEEN</h2>
       <div class="en">Spatial Memory</div>
@@ -264,44 +255,8 @@
     </div>
   </div>
 
-  
-  <!-- 棋云 -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="chess"></span>棋云</h2>
-      <div class="en">Chess Cloud</div>
-      <p>把当前所有真实走法摊开成一张未来地图：点进任一路线，继续预演对手的强回应，以及这条路会吃掉、威胁或暴露哪些棋子。国际象棋和中国象棋用的是同一套语言。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/chess-cloud/" target="_blank" rel="noopener">进一局 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/chess-cloud</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/chess-cloud/">
-          <img src="assets/p-chess.jpg" alt="棋云：把下一步展开成一张未来地图" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/chess-cloud/" target="_blank" rel="noopener" aria-label="打开棋云"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 感觉博物馆 -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="eye"></span>感觉博物馆</h2>
-      <div class="en">Museum of Feelings</div>
-      <p>一座关于日常感觉的博物馆，界面做成了一个操作系统。目前 37 间展厅：眼睛商店、堵车制造机、盐粒排成的声音、六度分隔，每一间都是一个能动手的小东西。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/museum-of-feelings/" target="_blank" rel="noopener">进馆逛逛 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/museum-of-feelings</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/museum-of-feelings/">
-          <img src="assets/p-feelings.jpg" alt="感觉博物馆：37 间展厅排成一个桌面" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/museum-of-feelings/" target="_blank" rel="noopener" aria-label="打开感觉博物馆"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- 00 vibecoding 成就墙 -->
-  <div class="work reveal">
+  <!-- 00 vibecoding 成就墙 -->
+  <div class="work reveal" id="featured">
     <div class="txt">
       <h2><span class="pic" data-icon="trophy"></span>vibecoding 成就墙</h2>
       <div class="en">vibe-trophy</div>
@@ -393,36 +348,6 @@
   <!-- 网格小卡 -->
   <p class="gridintro reveal" id="more">↓ 还做了这些，大多能点开试</p>
   <div class="grid">
-
-    <a class="gcard reveal" href="https://maxi-max-dev.github.io/pack-coach/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-pack.jpg" alt="打包教练：24 寸行李箱装入 12 件，空间利用率 60%" loading="lazy"></div>
-      <div class="gbody">
-        <h3><span class="pic" data-icon="box"></span>打包教练</h3>
-        <div class="en">PackCoach</div>
-        <p>告诉它你的箱子和要带的东西，它算出装得下的顺序，再一步步教你装。406 组自动化场景全过。</p>
-        <span class="go">试一箱 <span class="ar">↗</span></span>
-      </div>
-    </a>
-
-    <a class="gcard reveal" href="https://maxi-max-dev.github.io/hannibal-menu/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-hannibal.jpg" alt="今夜设宴：暗色调的菜单封面" loading="lazy"></div>
-      <div class="gbody">
-        <h3><span class="pic" data-icon="lobster"></span>今夜设宴</h3>
-        <div class="en">Hannibal Menu</div>
-        <p>一份不太正经的菜单：29 道中餐做成 3D 卡片盒里的翻卡，按口味筛，藏了一个主厨模式。</p>
-        <span class="go">入席 <span class="ar">↗</span></span>
-      </div>
-    </a>
-
-    <a class="gcard reveal" href="https://maxi-max-dev.github.io/other-you/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-otheryou.jpg" alt="平行人生沙盘：几份平行档案" loading="lazy"></div>
-      <div class="gbody">
-        <h3><span class="pic" data-icon="cycle"></span>平行人生沙盘</h3>
-        <div class="en">Parallel Lives</div>
-        <p>把一个真实的决定交给几个平行的「你」各走一段日子，挑一份档案，看看那条没走的路。不卖预测，只是演出。</p>
-        <span class="go">挑一份看 <span class="ar">↗</span></span>
-      </div>
-    </a>
 
     <a class="gcard reveal" href="https://maxi-max-dev.github.io/chicken-chase/" target="_blank" rel="noopener">
       <div class="gthumb"><img src="assets/p-chase.jpg" alt="老鹰抓小鸡：像素对局，老鹰刚抓走一只" loading="lazy"></div>
@@ -531,18 +456,13 @@
     </div>
   </div>
 
-
-  <!-- 后院 -->
-  <section class="yard reveal">
-    <p class="yardline">还没看够？后院堆着没进这一页的东西：三件大的，六十来个小玩具。</p>
-    <a class="yardbtn" href="https://maxi-max-dev.github.io/backyard/" target="_blank" rel="noopener">去后院逛逛 <span class="ar">↗</span></a>
-  </section>
-
 </main>
 
 <footer>
   <div class="chicks" id="chicks1" title="点一下试试"><span data-icon="chick"></span><span data-icon="chick"></span><span data-icon="chick"></span></div>
   <a href="https://github.com/maxi-max-dev" target="_blank" rel="noopener">GITHUB ↗</a>
+  <span style="color:var(--line);margin:0 14px">·</span>
+  <a href="https://maxi-max-dev.github.io/backyard/" target="_blank" rel="noopener">后院 ↗</a>
   <span style="color:var(--line);margin:0 14px">·</span>
   <a href="/en/" hreflang="en">ENGLISH VERSION ↗</a>
 </footer>
@@ -553,9 +473,6 @@
 /* pixel icons */
 var PAL={k:'#2b2722',w:'#f6f1e6',r:'#bf5430',x:'#d04a3a',y:'#e9b34a',g:'#6a9a58',b:'#4a7fb5',l:'#a8cae6',p:'#e08a7a',d:'#8a6a4a',m:'#a39a89',c:'#efe6d2'};
 var ICONS={
-chess:['.....kk.....','....kkkk....','....kkkk....','.....kk.....','....kkkk....','...kkkkkk...','..kkkkkkkk..','.kkkkkkkkkk.'],
-eye:['............','...kkkkkk...','..k......k..','.k..llll..k.','k..lbbbbl..k','.k..llll..k.','..k......k..','...kkkkkk...','............'],
-box:['............','....kkkk....','....k..k....','.kkkkkkkkkk.','.kddddddddk.','.kdddkkdddk.','.kddddddddk.','.kkkkkkkkkk.','............'],
 cam:['....kkkk....','kkkkkkkkkkkk','kcccccccyyck','kcccllllccck','kcclbbbblcck','kcclbbbblcck','kcccllllccck','kcccccccccck','kkkkkkkkkkkk'],
 trophy:['............','.yyyyyyyyyy.','y..yyyyyy..y','y..yyyyyy..y','.y.yyyyyy.y.','...yyyyyy...','....yyyy....','.....yy.....','....yyyy....','...kkkkkk...'],
 heart:['............','..xx....xx..','.xwxx..xxxx.','.xxxxxxxxxx.','.xxxxxxxxxx.','..xxxxxxxx..','...xxxxxx...','....xxxx....','.....xx.....','............'],
