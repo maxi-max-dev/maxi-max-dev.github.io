@@ -1,0 +1,54 @@
+# push 到 main 之后自动把作品集同步到 maxxam.xyz 主站。
+# github.io 由 GitHub Pages 自己更新，这个 workflow 只管主站那一份镜像。
+# 服务器地址/账号/主机公钥都放在仓库 secrets 里，所以这个公开文件不泄露部署信息。
+name: 同步到 maxxam.xyz
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-maxxam
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 装部署钥匙
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.MAXXAM_DEPLOY_KEY }}" > ~/.ssh/deploy
+          chmod 600 ~/.ssh/deploy
+          printf '%s\n' "${{ secrets.MAXXAM_HOSTKEY }}" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: 推到主站
+        run: |
+          rsync -rlptz --delete \
+            --exclude '.git' --exclude '.gitignore' --exclude '.github' \
+            -e "ssh -i ~/.ssh/deploy -o BatchMode=yes -o ConnectTimeout=20" \
+            ./ "${{ secrets.MAXXAM_USER }}@${{ secrets.MAXXAM_HOST }}:/"
+
+      - name: 验收（每个文件跟仓库逐字节比）
+        run: |
+          fail=0; n=0
+          while IFS= read -r f; do
+            live=$(curl -fsS --retry 3 --retry-delay 2 "https://maxxam.xyz/$f" | sha256sum | cut -d' ' -f1)
+            repo=$(sha256sum "$f" | cut -d' ' -f1)
+            n=$((n+1))
+            if [ "$live" != "$repo" ]; then echo "不一致：$f"; fail=$((fail+1)); fi
+          done < <(find . -type f \
+                     -not -path './.git/*' -not -path './.github/*' -not -name '.gitignore' \
+                   | sed 's|^\./||')
+          echo "校验 $n 个文件，不一致 $fail 个"
+          test "$fail" -eq 0
+
+      - name: 报一眼线上状态
+        run: |
+          for u in https://maxxam.xyz/ https://maxxam.xyz/en/; do
+            printf '%s -> %s\n' "$u" "$(curl -s -o /dev/null -w '%{http_code}' "$u")"
+          done
