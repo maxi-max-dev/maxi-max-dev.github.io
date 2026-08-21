@@ -1,0 +1,6 @@
+# maxxam.xyz · Max 的个人作品集
+# 同样的内容也镜像在 maxi-max-dev.github.io，两边都用 canonical 指回本域名。
+User-agent: *
+Allow: /
+
+Sitemap: https://maxxam.xyz/sitemap.xml

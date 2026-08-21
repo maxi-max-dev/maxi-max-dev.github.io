@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://maxxam.xyz/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://maxxam.xyz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maxxam.xyz/en/"/>
+  </url>
+  <url>
+    <loc>https://maxxam.xyz/en/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://maxxam.xyz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maxxam.xyz/en/"/>
+  </url>
+  <url>
+    <loc>https://maxxam.xyz/xhs-research/</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+</urlset>
