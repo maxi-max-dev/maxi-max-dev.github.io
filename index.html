@@ -168,6 +168,7 @@
   .gbody .go{display:inline-flex;align-items:center;gap:5px;margin-top:auto;padding-top:13px;font-size:12.5px;font-weight:600;color:var(--ink)}
   .gbody .go .ar{transition:transform .25s}
   .gcard:hover .go .ar{transform:translate(2px,-2px)}
+  @media(min-width:861px){.grid.duo{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:860px){.grid{grid-template-columns:1fr 1fr;gap:16px}}
   @media(max-width:560px){.grid{grid-template-columns:1fr}}
 
@@ -465,6 +466,30 @@
 
   </div>
 
+
+  <!-- 自己在长的站 -->
+  <p class="gridintro reveal" id="living">↓ 这两个站在自己长，我不动手</p>
+  <div class="grid duo">
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-studio.jpg" alt="造物台：灯做的 67 件东西和 20 个大工具排成一页" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="lamp"></span>造物台</h3>
+        <div class="en">Studio</div>
+        <p>趁我睡着、额度闲下来时，几个造物者自己醒来做东西。其中「灯」已经醒了 67 次，做了 67 件小东西，另有 20 个大工具。这一页每晚自动重建，我不经手。</p>
+        <span class="go">看它长成什么样 <span class="ar">↗</span></span>
+      </div>
+    </a>
+    <a class="gcard reveal" href="https://huijian.maxxam.xyz/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-huijian.jpg" alt="回见：纪念册、相册、空间三个入口" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="album"></span>回见</h3>
+        <div class="en">Huijian</div>
+        <p>挑几张照片，模型只说它确定看见的事实，再问一个可以不答的问题。答案全是你写的，不改写、不润色，最后装订成一本能翻页、能打印的小书。测试版。</p>
+        <span class="go">翻一本 <span class="ar">↗</span></span>
+      </div>
+    </a>
+  </div>
+
   <!-- 一直在跑的 -->
   <p class="alsointro reveal" id="agents">↓ 下面这些没有界面，是一直在自动跑的</p>
   <div class="also reveal">
@@ -513,6 +538,8 @@
 /* pixel icons */
 var PAL={k:'#2b2722',w:'#f6f1e6',r:'#bf5430',x:'#d04a3a',y:'#e9b34a',g:'#6a9a58',b:'#4a7fb5',l:'#a8cae6',p:'#e08a7a',d:'#8a6a4a',m:'#a39a89',c:'#efe6d2'};
 var ICONS={
+lamp:['.........y..','........yyy.','.........y..','............','..dddddddd..','.dddddddddd.','.dyyyyyyyyd.','..dddddddd..','...dddddd...','....kkkk....'],
+album:['.kkkkkkkkkk.','.kwllllllwk.','.kwlyllllwk.','.kwlllgggwk.','.kwggggggwk.','.kwwwwwwwwk.','.kkkkkkkkkk.'],
 chess:['.....kk.....','....kkkk....','....kkkk....','.....kk.....','....kkkk....','...kkkkkk...','..kkkkkkkk..','.kkkkkkkkkk.'],
 eye:['............','...kkkkkk...','..k......k..','.k..llll..k.','k..lbbbbl..k','.k..llll..k.','..k......k..','...kkkkkk...','............'],
 box:['............','....kkkk....','....k..k....','.kkkkkkkkkk.','.kddddddddk.','.kdddkkdddk.','.kddddddddk.','.kkkkkkkkkk.','............'],

@@ -150,6 +150,7 @@
   .gbody .go{display:inline-flex;align-items:center;gap:5px;margin-top:auto;padding-top:13px;font-size:12.5px;font-weight:600;color:var(--ink)}
   .gbody .go .ar{transition:transform .25s}
   .gcard:hover .go .ar{transform:translate(2px,-2px)}
+  @media(min-width:861px){.grid.duo{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:860px){.grid{grid-template-columns:1fr 1fr;gap:16px}}
   @media(max-width:560px){.grid{grid-template-columns:1fr}}
 
@@ -438,6 +439,32 @@
 
   </div>
 
+
+  <!-- sites that grow on their own -->
+  <p class="gridintro reveal">↓ Two sites that keep building themselves</p>
+  <div class="grid duo">
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-studio.jpg" alt="Studio: 67 pieces by Lamp, plus 20 larger tools" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="lamp"></span>Studio</h3>
+        <div class="en">造物台</div>
+        <span class="cnonly">Chinese only</span>
+        <p>While I sleep and the quota sits idle, a few makers wake up and build things. One of them, Lamp, has woken 67 times and made 67 small pieces, plus 20 larger tools. The page rebuilds itself every night; I never touch it.</p>
+        <span class="go">See what it grew <span class="ar">↗</span></span>
+      </div>
+    </a>
+    <a class="gcard reveal" href="https://huijian.maxxam.xyz/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="../assets/p-huijian.jpg" alt="Huijian: keepsake book, albums and spaces" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="album"></span>Huijian</h3>
+        <div class="en">回见</div>
+        <span class="cnonly">Chinese only</span>
+        <p>Pick a few photos. The model states only what it can actually see, then asks one question you are free to ignore. Every word of the answer is yours, unedited, and it binds into a small book you can flip through and print. Beta.</p>
+        <span class="go">Flip through one <span class="ar">↗</span></span>
+      </div>
+    </a>
+  </div>
+
   <!-- always running -->
   <p class="alsointro reveal">↓ These have no UI, they just run on their own</p>
   <div class="also reveal">
@@ -486,6 +513,8 @@
 /* pixel icons */
 var PAL={k:'#2b2722',w:'#f6f1e6',r:'#bf5430',x:'#d04a3a',y:'#e9b34a',g:'#6a9a58',b:'#4a7fb5',l:'#a8cae6',p:'#e08a7a',d:'#8a6a4a',m:'#a39a89',c:'#efe6d2'};
 var ICONS={
+lamp:['.........y..','........yyy.','.........y..','............','..dddddddd..','.dddddddddd.','.dyyyyyyyyd.','..dddddddd..','...dddddd...','....kkkk....'],
+album:['.kkkkkkkkkk.','.kwllllllwk.','.kwlyllllwk.','.kwlllgggwk.','.kwggggggwk.','.kwwwwwwwwk.','.kkkkkkkkkk.'],
 chess:['.....kk.....','....kkkk....','....kkkk....','.....kk.....','....kkkk....','...kkkkkk...','..kkkkkkkk..','.kkkkkkkkkk.'],
 eye:['............','...kkkkkk...','..k......k..','.k..llll..k.','k..lbbbbl..k','.k..llll..k.','..k......k..','...kkkkkk...','............'],
 box:['............','....kkkk....','....k..k....','.kkkkkkkkkk.','.kddddddddk.','.kdddkkdddk.','.kddddddddk.','.kkkkkkkkkk.','............'],
