@@ -75,23 +75,8 @@
   .hero{padding:46px 0 8px;border-bottom:1px solid var(--line)}
   .hero h1{font-family:var(--serif);font-weight:700;letter-spacing:.01em;margin:0;
     font-size:clamp(30px,5.2vw,52px);line-height:1.18}
-  .hero .sub{font-size:clamp(15px,1.9vw,18px);color:var(--muted);margin:18px 0 0;max-width:30em}
-  .stats{display:flex;flex-wrap:wrap;gap:44px;margin:34px 0 2px}
-  .stat .n{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4.4vw,42px);line-height:1;color:var(--ink);letter-spacing:.01em}
-  .stat .l{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;color:var(--muted);margin-top:9px;text-transform:uppercase}
-  @media(max-width:700px){.stats{gap:0 34px;row-gap:26px}.stat{flex:0 0 calc(50% - 17px)}}
+  .hero .sub{font-size:clamp(15px,1.9vw,18px);color:var(--muted);margin:18px 0 0;max-width:34em}
 
-  /* 方块目录 */
-  .nav4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:28px 0 6px}
-  .nav4 a{aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:space-between;
-    color:var(--ink);border:1.5px solid var(--ink);border-radius:12px;background:var(--card);
-    box-shadow:5px 5px 0 rgba(38,35,28,.1);padding:16px 16px 15px;
-    transition:transform .3s ease,box-shadow .3s ease,background .3s ease}
-  .nav4 a:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 rgba(38,35,28,.14);background:var(--bg);text-decoration:none}
-  .nav4 .ico{font-size:26px;line-height:1}
-  .nav4 .lb{font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:.01em}
-  .nav4 .lb small{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.16em;color:var(--muted);margin-top:5px;text-transform:uppercase}
-  @media(max-width:700px){.nav4{grid-template-columns:1fr 1fr;gap:14px}.nav4 .ico{font-size:22px}}
 
   /* 锚点：避开吸顶页头 */
   #featured,#more,#agents{scroll-margin-top:86px}
@@ -111,6 +96,14 @@
   .work .txt,.work .vis{min-width:0}
   .work:last-of-type{border-bottom:0}
   .work.rev .vis{order:2}
+  /* 主打：唯一一张放大的代表作 */
+  .work.lead{padding-top:34px;gap:56px}
+  .work.lead .leadtag{grid-column:1/-1;font-family:var(--mono);font-size:11px;letter-spacing:.26em;
+    color:var(--acc);text-transform:uppercase;margin-bottom:-22px}
+  .work.lead .txt h2{font-size:clamp(30px,4.6vw,46px)}
+  .work.lead .txt p{font-size:16.5px}
+  .work.lead .browser{box-shadow:9px 9px 0 rgba(38,35,28,.13)}
+  @media(max-width:760px){.work.lead{gap:22px}.work.lead .leadtag{margin-bottom:-8px}}
   .work .txt h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,34px);font-weight:700;margin:0;letter-spacing:.01em;display:flex;align-items:center;gap:13px;position:relative;padding-bottom:14px}
   .work .txt h2::after{content:"";position:absolute;left:53px;bottom:0;width:0;height:3px;background:var(--acc);transition:width .9s cubic-bezier(.22,.61,.36,1) .3s}
   .work.in-view .txt h2::after{width:62px}
@@ -168,6 +161,10 @@
   /* grid tier */
   .gridintro{font-size:13.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.14em;margin:62px 0 0;display:flex;align-items:center;gap:18px}
   .gridintro::before,.gridintro::after{content:"";flex:1;height:1px;background:var(--line)}
+  .moreworks{display:none;width:100%;margin-top:16px;font-family:var(--mono);font-size:12.5px;
+    letter-spacing:.14em;color:var(--ink);background:var(--card);border:1.5px solid var(--ink);
+    border-radius:10px;padding:12px 0;box-shadow:4px 4px 0 rgba(38,35,28,.12);cursor:pointer}
+  .moreworks:active{transform:translate(2px,2px);box-shadow:1px 1px 0 rgba(38,35,28,.12)}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
   .gcard{display:flex;flex-direction:column;color:var(--ink);border:1.5px solid var(--ink);border-radius:12px;overflow:hidden;background:var(--card);box-shadow:5px 5px 0 rgba(38,35,28,.1);transition:transform .3s ease,box-shadow .3s ease}
   .gcard:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 rgba(38,35,28,.14);text-decoration:none}
@@ -187,7 +184,17 @@
   .gcard:hover .go .ar{transform:translate(2px,-2px)}
   @media(min-width:861px){.grid.duo{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:860px){.grid{grid-template-columns:1fr 1fr;gap:16px}}
-  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  @media(max-width:560px){
+    .grid{grid-template-columns:1fr 1fr;gap:12px}
+    .grid .gbody{padding:11px 12px 13px}
+    .grid .gbody h3{font-size:15px;gap:7px}
+    .grid .gbody p{font-size:12.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .grid.duo .gbody p{-webkit-line-clamp:4}
+    .grid.folded .gcard:nth-child(n+7){display:none}
+    .moreworks{display:block}
+    .grid.open + .moreworks{display:none}
+    #waves{display:none}
+  }
 
   /* reveal */
   .reveal{opacity:0;transform:translateY(26px)}
@@ -249,23 +256,11 @@
   <section class="hero reveal">
     <h1>从一个念头，到能点开的东西。</h1>
     <p class="sub">博物馆、诗、游戏、工具，和一套天天在用的 agent 系统，全部在线。</p>
-    <div class="stats">
-      <div class="stat"><div class="n">20+</div><div class="l">上线作品</div></div>
-      <div class="stat"><div class="n">36</div><div class="l">个公开仓库</div></div>
-      <div class="stat"><div class="n">37</div><div class="l">间展厅</div></div>
-    </div>
   </section>
 
-  <!-- 方块目录 -->
-  <nav class="nav4 reveal" aria-label="页面导览">
-    <a href="#featured"><span class="ico">🏛️</span><span class="lb">精选作品<small>Featured</small></span></a>
-    <a href="#more"><span class="ico">🧸</span><span class="lb">更多小作品<small>More Works</small></span></a>
-    <a href="#agents"><span class="ico">🤖</span><span class="lb">Agent 系统<small>Always Running</small></span></a>
-    <a href="https://github.com/maxi-max-dev" target="_blank" rel="noreferrer"><span class="ico">🐙</span><span class="lb">GitHub · 36 repos<small>Source</small></span></a>
-  </nav>
-
   <!-- 000 UNSEEN 空间记忆 -->
-  <div class="work reveal" id="featured">
+  <div class="work lead reveal" id="featured">
+    <div class="leadtag">代表作</div>
     <div class="txt">
       <h2><span class="pic" data-icon="cam"></span>UNSEEN</h2>
       <div class="en">Spatial Memory</div>
@@ -283,6 +278,51 @@
   </div>
 
   
+  <!-- 一直在跑的东西 -->
+  <p class="alsointro reveal" id="agents">↓ 一直在跑的东西：它们自己还在产出</p>
+  <div class="grid duo">
+<a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-studio.jpg" alt="造物台：灯做的 67 件东西和 20 个大工具排成一页" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="lamp"></span>造物台</h3>
+        <div class="en">Studio</div>
+        <p>趁我睡着、额度闲下来时，几个造物者自己醒来做东西。其中「灯」已经醒了 67 次，做了 67 件小东西，另有 20 个大工具。这一页每晚自动重建，我不经手。</p>
+        <span class="go">看它长成什么样 <span class="ar">↗</span></span>
+      </div>
+    </a>
+<a class="gcard reveal" href="https://maxi-max-dev.github.io/heartbeat-wall/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-heartbeat.jpg" alt="心跳墙：十个 agent 谁在干活谁在休息" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="heart"></span>心跳墙</h3>
+        <div class="en">Heartbeat Wall</div>
+        <p>这套系统的实时看板，像素风：十个 agent 谁在干活谁在休息、今天用掉多少 token、完成了几件事，15 分钟刷一次。</p>
+        <span class="go">进屋看看 <span class="ar">↗</span></span>
+      </div>
+    </a>
+  </div>
+  <div class="also reveal">
+    <div class="arow">
+      <span class="pic" data-icon="lobster"></span>
+      <span>
+        <h3>多 Agent 系统 <span class="en">OPENCLAW</span></h3>
+        <p>几个 agent 各管一摊，加上一批定时任务，从早晨的市场预测到周末的反思报告，结果都推到手机上。基于开源项目 OpenClaw 搭的，跑了小半年，一直在修修补补。</p>
+      </span>
+    </div>
+    <div class="arow">
+      <span class="pic"><img src="assets/mirofish.png" alt="MiroFish"></span>
+      <span>
+        <h3>每日预测 <span class="en">MIROFISH</span></h3>
+        <p>给开源预测引擎 MiroFish 接了条每天自动跑的管线：凌晨把当天新闻跑成趋势预测，早上自动发出来，再用记分板回头对答案。</p>
+      </span>
+    </div>
+    <div class="arow">
+      <span class="pic" data-icon="chart"></span>
+      <span>
+        <h3>市场分析 <span class="en">DIGITAL ORACLE</span></h3>
+        <p>跟着 B 站 Komako 的开源思路，用市场价格反推趋势。写了个换汇分析脚本每天自动跑。也让一个 agent 在 ASX 模拟炒股比赛里自动看盘下单，跑完一个赛季，成绩中游。</p>
+      </span>
+    </div>
+  </div>
   <!-- 棋云 -->
   <div class="work rev reveal">
     <div class="txt">
@@ -319,7 +359,7 @@
     </div>
   </div>
 <!-- 00 vibecoding 成就墙 -->
-  <div class="work reveal">
+  <div class="work rev reveal">
     <div class="txt">
       <h2><span class="pic" data-icon="trophy"></span>vibecoding 成就墙</h2>
       <div class="en">vibe-trophy</div>
@@ -336,81 +376,38 @@
     </div>
   </div>
 
-  <!-- 01 心跳墙 -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="heart"></span>心跳墙</h2>
-      <div class="en">Heartbeat Wall</div>
-      <p>给天天在跑的 agent 系统做的实时看板，像素风：十个 agent 谁在干活谁在休息、今天用掉多少 token、完成了几件事，15 分钟刷一次。另有工厂、农场两套外观。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/heartbeat-wall/" target="_blank" rel="noopener">进屋看看 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/heartbeat-wall</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/heartbeat-wall/">
-          <img src="assets/p-heartbeat.jpg" alt="心跳墙：agent 系统实时看板" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/heartbeat-wall/" target="_blank" rel="noopener" aria-label="打开心跳墙"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 0 音乐博物馆 -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="muse"></span>你的音乐博物馆</h2>
-      <div class="en">Museum of You</div>
-      <p>把歌单变成一座能走进去的 3D 博物馆：AI 读你的歌单，按口味自动布展，听得最多的那首放在展厅中央，每件展品配一句解说。为腾讯音乐的 AI 黑客松做的，建议电脑打开。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/walk-into-your-music/" target="_blank" rel="noopener">走进去 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/walk-into-your-music</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/walk-into-your-music/">
-          <img src="assets/p-museum.jpg" alt="你的音乐博物馆：聚光下的镇馆之宝" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/walk-into-your-music/" target="_blank" rel="noopener" aria-label="打开你的音乐博物馆"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 1 诗云 -->
-  <div class="work rev reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="cloud"></span>诗云</h2>
-      <div class="en">Poetry Cloud</div>
-      <p>刘慈欣同名小说里的设定，做了出来：所有可能的五言绝句摊成一片星空，一共 10⁶⁹ 首。《静夜思》这种人类真正写过的诗藏在里面，飞近了会亮金光。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener">打开飞一圈 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/poetry-cloud</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/poetry-cloud/">
-          <img src="assets/p-poetry.jpg" alt="诗云：星空中的五言绝句" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener" aria-label="打开诗云"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2 Quiet -->
-  <div class="work reveal">
-    <div class="txt">
-      <h2><span class="pic" data-icon="book"></span>Quiet</h2>
-      <div class="en">UQ Study-Space Finder</div>
-      <p>只回答一件事：现在哪个图书馆人少。在昆士兰大学读书时做的，接了 9 个图书馆的占用数据。</p>
-      <a class="open" href="https://maxi-max-dev.github.io/max/quiet/" target="_blank" rel="noopener">打开看看 <span class="ar">↗</span></a>
-    </div>
-    <div class="vis">
-      <div class="browser"><div class="bbar"><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="url">maxi-max-dev.github.io/max/quiet</span><span class="live">LIVE</span></div>
-        <div class="screen" data-live="https://maxi-max-dev.github.io/max/quiet/">
-          <img src="assets/p-quiet.jpg" alt="Quiet：图书馆占用一览" loading="lazy">
-          <a class="cover" href="https://maxi-max-dev.github.io/max/quiet/" target="_blank" rel="noopener" aria-label="打开 Quiet"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- 网格小卡 -->
-  <p class="gridintro reveal" id="more">↓ 还做了这些，大多能点开试</p>
-  <div class="grid">
+  <p class="gridintro reveal" id="more">↓ 其余作品，大多能点开试</p>
+  <div class="grid folded" id="worksgrid">
+
+    <a class="gcard reveal" href="https://huijian.maxxam.xyz/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-huijian.jpg" alt="回见：纪念册、相册、空间三个入口" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="album"></span>回见</h3>
+        <div class="en">Huijian</div>
+        <p>挑几张照片，模型只说它确定看见的事实，再问一个可以不答的问题。答案全是你写的，不改写、不润色，最后装订成一本能翻页、能打印的小书。测试版。</p>
+        <span class="go">翻一本 <span class="ar">↗</span></span>
+      </div>
+    </a>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/walk-into-your-music/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-museum.jpg" alt="你的音乐博物馆：聚光下的镇馆之宝" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="muse"></span>你的音乐博物馆</h3>
+        <div class="en">Museum of You</div>
+        <p>把歌单变成一座能走进去的 3D 博物馆：AI 读你的歌单按口味布展，听得最多的那首摆在展厅中央。腾讯音乐 AI 黑客松作品，建议电脑打开。</p>
+        <span class="go">走进去 <span class="ar">↗</span></span>
+      </div>
+    </a>
+    <a class="gcard reveal" href="https://maxi-max-dev.github.io/poetry-cloud/" target="_blank" rel="noopener">
+      <div class="gthumb"><img src="assets/p-poetry.jpg" alt="诗云：星空中的五言绝句" loading="lazy"></div>
+      <div class="gbody">
+        <h3><span class="pic" data-icon="cloud"></span>诗云</h3>
+        <div class="en">Poetry Cloud</div>
+        <p>刘慈欣同名小说里的设定，做了出来：所有可能的五言绝句摊成一片星空，一共 10⁶⁹ 首。《静夜思》这种人真写过的诗藏在里面，飞近了会亮金光。</p>
+        <span class="go">打开飞一圈 <span class="ar">↗</span></span>
+      </div>
+    </a>
+
 
     <a class="gcard reveal" href="https://maxi-max-dev.github.io/pack-coach/" target="_blank" rel="noopener">
       <div class="gthumb"><img src="assets/p-pack.jpg" alt="打包教练：24 寸行李箱装入 12 件，空间利用率 60%" loading="lazy"></div>
@@ -482,61 +479,11 @@
     </a>
 
   </div>
-
-
-  <!-- 自己在长的站 -->
-  <p class="gridintro reveal" id="living">↓ 这两个站在自己长，我不动手</p>
-  <div class="grid duo">
-    <a class="gcard reveal" href="https://maxi-max-dev.github.io/studio/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-studio.jpg" alt="造物台：灯做的 67 件东西和 20 个大工具排成一页" loading="lazy"></div>
-      <div class="gbody">
-        <h3><span class="pic" data-icon="lamp"></span>造物台</h3>
-        <div class="en">Studio</div>
-        <p>趁我睡着、额度闲下来时，几个造物者自己醒来做东西。其中「灯」已经醒了 67 次，做了 67 件小东西，另有 20 个大工具。这一页每晚自动重建，我不经手。</p>
-        <span class="go">看它长成什么样 <span class="ar">↗</span></span>
-      </div>
-    </a>
-    <a class="gcard reveal" href="https://huijian.maxxam.xyz/" target="_blank" rel="noopener">
-      <div class="gthumb"><img src="assets/p-huijian.jpg" alt="回见：纪念册、相册、空间三个入口" loading="lazy"></div>
-      <div class="gbody">
-        <h3><span class="pic" data-icon="album"></span>回见</h3>
-        <div class="en">Huijian</div>
-        <p>挑几张照片，模型只说它确定看见的事实，再问一个可以不答的问题。答案全是你写的，不改写、不润色，最后装订成一本能翻页、能打印的小书。测试版。</p>
-        <span class="go">翻一本 <span class="ar">↗</span></span>
-      </div>
-    </a>
-  </div>
-
-  <!-- 一直在跑的 -->
-  <p class="alsointro reveal" id="agents">↓ 下面这些没有界面，是一直在自动跑的</p>
-  <div class="also reveal">
-    <div class="arow">
-      <span class="pic" data-icon="lobster"></span>
-      <span>
-        <h3>多 Agent 系统 <span class="en">OPENCLAW</span></h3>
-        <p>几个 agent 各管一摊，加上一批定时任务，从早晨的市场预测到周末的反思报告，结果都推到手机上。基于开源项目 OpenClaw 搭的，跑了小半年，一直在修修补补。</p>
-      </span>
-    </div>
-    <div class="arow">
-      <span class="pic"><img src="assets/mirofish.png" alt="MiroFish"></span>
-      <span>
-        <h3>每日预测 <span class="en">MIROFISH</span></h3>
-        <p>给开源预测引擎 MiroFish 接了条每天自动跑的管线：凌晨把当天新闻跑成趋势预测，早上自动发出来，再用记分板回头对答案。</p>
-      </span>
-    </div>
-    <div class="arow">
-      <span class="pic" data-icon="chart"></span>
-      <span>
-        <h3>市场分析 <span class="en">DIGITAL ORACLE</span></h3>
-        <p>跟着 B 站 Komako 的开源思路，用市场价格反推趋势。写了个换汇分析脚本每天自动跑。也让一个 agent 在 ASX 模拟炒股比赛里自动看盘下单，跑完一个赛季，成绩中游。</p>
-      </span>
-    </div>
-  </div>
-
+  <button class="moreworks" id="moreworks" type="button">查看全部作品</button>
 
   <!-- 后院 -->
   <section class="yard reveal">
-    <p class="yardline">还没看够？后院堆着没进这一页的东西：三件大的，六十来个小玩具。</p>
+    <p class="yardline">还没看够？后院堆着没进这一页的东西：五件大的，六十来个小玩具。</p>
     <a class="yardbtn" href="https://maxi-max-dev.github.io/backyard/" target="_blank" rel="noopener">去后院逛逛 <span class="ar">↗</span></a>
   </section>
 
@@ -593,6 +540,12 @@ function pxsvg(name){
   });
   return '<svg viewBox="0 0 '+cols+' '+rows+'" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-hidden="true">'+s+'</svg>';
 }
+/* 窄屏：作品网格默认只露 6 张，点开展全 */
+(function(){
+  var g=document.getElementById('worksgrid'), b=document.getElementById('moreworks');
+  if(!g||!b) return;
+  b.addEventListener('click',function(){ g.classList.remove('folded'); g.classList.add('open'); b.remove(); });
+})();
 document.querySelectorAll('[data-icon]').forEach(function(el){ el.innerHTML=pxsvg(el.getAttribute('data-icon')); });
 
 /* preloader */
