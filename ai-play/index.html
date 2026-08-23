@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#edf2ff">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: https:; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="每天最多三个值得亲手试的 AI 玩法">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI 今日可玩 · 001 · 2026-08-23">
+  <meta property="og:description" content="不追发布会，只挑今天能动手试、能讲成画面的 AI 玩法。">
+  <meta property="og:url" content="https://maxxam.xyz/ai-play/20260823-r4.html"><link rel="canonical" href="https://maxxam.xyz/ai-play/20260823-r4.html">
+  <title>AI 今日可玩 · 001 · 2026-08-23</title>
+  <style>
+    :root{--paper:#edf2ff;--ink:#11162a;--blue:#3157ff;--orange:#ff6b47;--mint:#71d7b7;--yellow:#ffd84d;--white:#fff;--muted:#5e6478;--line:rgba(17,22,42,.18);font-family:"PingFang SC","Hiragino Sans GB","Noto Sans SC",system-ui,sans-serif;color:var(--ink);background:#14182a}
+    *{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden}button,a,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}.shell{height:100dvh;display:grid;place-items:center;background:radial-gradient(circle at 16% 12%,#394374 0 1px,transparent 2px),#14182a;background-size:28px 28px}.deck{position:relative;width:min(100%,470px);height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior-y:contain;background:var(--paper);box-shadow:0 0 80px #070916;scrollbar-width:none}.deck::-webkit-scrollbar{display:none}.slide{min-height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden;background:var(--paper)}.slide:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:24px 24px;opacity:.16;pointer-events:none}.slide-inner{position:relative;z-index:1;min-height:100dvh;padding:max(54px,calc(env(safe-area-inset-top) + 36px)) 22px max(30px,env(safe-area-inset-bottom));display:flex;flex-direction:column}.top-progress{position:fixed;z-index:20;top:0;left:50%;translate:-50% 0;width:min(100%,470px);height:5px;background:rgba(17,22,42,.12)}.top-progress i{display:block;width:0;height:100%;background:var(--blue);transition:width .25s ease}.page-count{position:fixed;z-index:20;top:max(14px,env(safe-area-inset-top));left:calc(50% - min(50vw,235px) + 20px);font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em}.soundless{position:fixed;z-index:20;top:max(11px,env(safe-area-inset-top));right:calc(50% - min(50vw,235px) + 16px);border:1px solid var(--line);background:rgba(237,242,255,.86);border-radius:99px;padding:6px 9px;font-size:10px;letter-spacing:.08em}.cover{background:var(--yellow)}.cover:before{opacity:.12}.cover .slide-inner{justify-content:space-between;padding-top:max(65px,calc(env(safe-area-inset-top) + 48px))}.eyebrow{font:800 11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;margin:0}.cover h1{font-size:clamp(56px,17vw,78px);line-height:.86;letter-spacing:-.09em;margin:18px 0 12px;max-width:380px}.cover h1 span{display:block;color:var(--blue)}.cover .thesis{font-size:18px;line-height:1.55;font-weight:650;max-width:350px;margin:0}.specimen-stack{height:220px;position:relative;margin:20px 0}.specimen{position:absolute;width:62%;height:124px;border:2px solid var(--ink);background:var(--paper);box-shadow:7px 7px 0 var(--ink);padding:14px;display:flex;flex-direction:column;justify-content:space-between}.specimen b{font-size:20px}.specimen small{font:700 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace}.specimen:nth-child(1){left:2%;top:50px;rotate:-8deg}.specimen:nth-child(2){right:3%;top:17px;rotate:6deg;background:var(--mint)}.specimen:nth-child(3){left:24%;top:86px;rotate:1deg;background:var(--orange)}.cover-bottom{display:flex;align-items:end;justify-content:space-between;gap:14px}.tag-row{display:flex;flex-wrap:wrap;gap:7px}.tag-row span{border:1px solid var(--ink);border-radius:99px;padding:6px 9px;font-size:11px;font-weight:700;background:rgba(255,255,255,.46)}.swipe-hint{font:800 11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-align:right;white-space:nowrap}.swipe-hint i{display:block;font-style:normal;font-size:24px;animation:bob 1.5s ease-in-out infinite}.play-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.play-no{font:800 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em}.evidence{font-size:10px;font-weight:800;border:1px solid var(--ink);border-radius:99px;padding:6px 9px;background:var(--white)}.evidence.verified{background:var(--mint)}.evidence.sourced{background:var(--yellow)}.evidence.lead{background:#dfe2ec}.lab-art{height:146px;border:2px solid var(--ink);background:var(--white);box-shadow:6px 6px 0 var(--ink);position:relative;overflow:hidden;flex:0 0 auto}.lab-art span,.lab-art em{position:absolute;font:800 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;font-style:normal}.art-explain .text-wall{position:absolute;left:15px;top:18px;width:42%;display:grid;gap:7px}.art-explain .text-wall i{height:5px;background:#b7bdcd;display:block;transform-origin:left;animation:shrink 4.2s ease-in-out infinite}.art-explain .fold-card{position:absolute;right:16px;width:26%;height:72px;border:2px solid var(--ink);background:var(--yellow);top:34px}.art-explain .c1{right:78px;rotate:-7deg}.art-explain .c2{right:47px;top:27px;background:var(--mint)}.art-explain .c3{right:16px;rotate:7deg;background:var(--orange)}.art-explain span{left:14px;bottom:11px}.art-explain em{right:14px;bottom:11px}.art-director{background:var(--blue);color:var(--white)}.art-director>b{position:absolute;left:50%;top:50%;translate:-50% -50%;width:78px;height:78px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;background:var(--yellow);color:var(--ink);z-index:2;font:900 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace}.art-director .node{position:absolute;width:34px;height:34px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);display:grid;place-items:center;font-style:normal;font-weight:900;font-size:12px;z-index:2}.n1{left:18px;top:16px}.n2{right:18px;top:16px}.n3{left:18px;bottom:16px}.n4{right:18px;bottom:16px}.beam{position:absolute;height:2px;width:36%;background:var(--ink);left:50%;top:50%;transform-origin:left;animation:pulse 2s ease-in-out infinite}.b1{rotate:210deg}.b2{rotate:-30deg}.b3{rotate:150deg}.b4{rotate:30deg}.art-learn{background:var(--mint)}.art-learn .trail{position:absolute;left:14px;right:125px;top:55px;display:flex;justify-content:space-between}.art-learn .trail i{width:22px;height:22px;border:2px solid var(--ink);background:var(--paper);animation:hop 2s ease-in-out infinite}.art-learn .trail i:nth-child(2){animation-delay:.15s}.art-learn .trail i:nth-child(3){animation-delay:.3s}.art-learn .trail i:nth-child(4){animation-delay:.45s}.art-learn .trail i:nth-child(5){animation-delay:.6s}.skill-card{position:absolute;right:18px;top:24px;width:98px;height:96px;background:var(--orange);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);display:grid;place-items:center;font:900 18px/1 ui-monospace,SFMono-Regular,Menlo,monospace;rotate:3deg}.skill-card small{position:absolute;top:8px;left:8px;font-size:8px}.art-learn>span{left:14px;bottom:12px}.copy-block{margin:18px 0 12px}.category{font:800 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.09em;color:var(--blue);margin:0 0 8px}.copy-block h2{font-size:clamp(30px,9.2vw,43px);line-height:1.02;letter-spacing:-.055em;margin:0;max-width:410px}.hook{font-size:14px;line-height:1.5;color:#32384c;margin:10px 0 0;font-weight:570}.experiment{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:11px 0 10px}.stage-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.stage-tabs button{border:0;background:transparent;padding:5px 3px;color:var(--muted);font-size:11px;font-weight:800}.stage-tabs button.active{color:var(--ink);background:var(--yellow)}.stage-range{width:100%;height:20px;margin:5px 0 2px;accent-color:var(--blue);cursor:grab}.stage-range:active{cursor:grabbing}.stage-copy{min-height:42px;margin:0;font-size:13px;line-height:1.52;font-weight:620}.verdict{margin:11px 0 0;display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:start}.verdict span{font:800 9px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;color:var(--orange);padding-top:3px}.verdict p{font-size:12px;line-height:1.45;margin:0}.actions{margin-top:auto;padding-top:13px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px}.actions button,.actions a{border:1.5px solid var(--ink);background:var(--white);color:var(--ink);padding:9px 6px;text-align:center;text-decoration:none;font-size:10px;font-weight:800;box-shadow:2px 2px 0 var(--ink)}.actions button:last-child{background:var(--blue);color:var(--white)}.actions button:focus-visible,.actions a:focus-visible,.stage-tabs button:focus-visible,.sheet-head button:focus-visible{outline:3px solid var(--orange);outline-offset:2px}.details{width:min(100% - 24px,446px);max-height:88dvh;margin:auto auto 0;border:2px solid var(--ink);border-radius:18px 18px 0 0;padding:20px 20px max(24px,env(safe-area-inset-bottom));color:var(--ink);background:var(--paper);box-shadow:0 -12px 0 rgba(17,22,42,.2);overflow:auto}.details::backdrop{background:rgba(8,10,22,.72);backdrop-filter:blur(3px)}.sheet-head{display:flex;justify-content:space-between;align-items:center;font:800 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em}.sheet-head button{width:34px;height:34px;border:1.5px solid var(--ink);border-radius:50%;background:var(--white);font-size:24px;line-height:1}.details h2{font-size:31px;line-height:1.05;letter-spacing:-.05em;margin:16px 0 10px}.details h3{font:900 11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;margin:24px 0 9px;color:var(--blue)}.details p,.details li{font-size:13px;line-height:1.58}.details ol,.details ul{padding-left:20px}.details pre{white-space:pre-wrap;word-break:break-word;background:var(--ink);color:var(--paper);padding:14px;font:600 12px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}.copy-wide,.source-wide{display:block;width:100%;border:1.5px solid var(--ink);padding:12px;text-align:center;text-decoration:none;font-weight:800;font-size:12px}.copy-wide{background:var(--yellow);box-shadow:3px 3px 0 var(--ink)}.source-wide{background:var(--blue);color:var(--white);margin-top:18px}.remix-slide{background:var(--orange)}.remix-slide:before{opacity:.11}.remix-slide .slide-inner{justify-content:center}.remix-slide .eyebrow{margin-bottom:18px}.remix-slide h2{font-size:clamp(45px,14vw,64px);line-height:.9;letter-spacing:-.075em;margin:0 0 25px}.remix-card{border:2px solid var(--ink);background:var(--paper);box-shadow:8px 8px 0 var(--ink);padding:22px;rotate:-2deg}.remix-card p{font-size:17px;line-height:1.58;margin:0}.remix-card span{display:block;font:800 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--blue);letter-spacing:.12em;margin-bottom:12px}.final-slide{background:var(--ink);color:var(--paper)}.final-slide:before{background-image:linear-gradient(rgba(237,242,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(237,242,255,.1) 1px,transparent 1px)}.final-slide .slide-inner{justify-content:center}.final-slide h2{font-size:clamp(48px,15vw,70px);line-height:.9;letter-spacing:-.08em;margin:16px 0 18px}.final-slide p{font-size:16px;line-height:1.55;color:#cbd0e4}.final-actions{display:grid;gap:10px;margin-top:24px}.final-actions button,.final-actions a{padding:15px;border:2px solid var(--paper);background:transparent;color:var(--paper);text-align:center;text-decoration:none;font-weight:850}.final-actions button:first-child{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}.source-note{font:700 9px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:#9299b2!important;margin-top:24px!important}.empty-slide .slide-inner{justify-content:center}.empty-slide h2{font-size:48px;line-height:.95;letter-spacing:-.06em}.empty-slide p{font-size:17px;line-height:1.6}.toast{position:fixed;z-index:50;left:50%;bottom:max(22px,env(safe-area-inset-bottom));translate:-50% 20px;background:var(--ink);color:var(--paper);border:1px solid var(--paper);padding:10px 14px;font-size:12px;font-weight:800;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1;translate:-50% 0}@keyframes bob{50%{translate:0 5px}}@keyframes shrink{50%{scale:.45 1;opacity:.5}}@keyframes pulse{50%{opacity:.2;scale:.65 1}}@keyframes hop{50%{translate:0 -10px;rotate:8deg}}
+    @media (max-height:720px){.lab-art{height:112px}.copy-block{margin:12px 0 8px}.copy-block h2{font-size:30px}.hook{font-size:12px;margin-top:6px}.slide-inner{padding-top:max(42px,calc(env(safe-area-inset-top) + 28px));padding-bottom:18px}.verdict{display:none}.actions{padding-top:8px}.stage-copy{min-height:36px;font-size:12px}}
+    @media (min-width:600px){.deck{height:min(900px,96dvh);border:2px solid #4b547f}.slide,.slide-inner{min-height:min(900px,96dvh)}.top-progress{top:2dvh}.page-count,.soundless{top:calc(2dvh + 14px)}}
+    @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <div class="top-progress" aria-hidden="true"><i></i></div><span class="page-count">01 / 6</span><span class="soundless">SOUND OFF</span>
+  <div class="deck" id="deck">
+    <section class="slide cover" data-slide="0"><div class="slide-inner">
+      <div><p class="eyebrow">TODAY, PLAYABLE · 8月23日 · 周日</p><h1>AI 今日<span>可玩</span></h1><p class="thesis">不追发布会，只挑今天能动手试、能讲成画面的 AI 玩法。</p></div>
+      <div class="specimen-stack" aria-hidden="true"><div class="specimen"><small>INPUT</small><b>一句想法</b></div><div class="specimen"><small>AGENT MOVE</small><b>亲手演给你看</b></div><div class="specimen"><small>OUTPUT</small><b>3 个真玩法</b></div></div>
+      <div class="cover-bottom"><div class="tag-row"><span>视觉解释</span><span>Codex Prompt</span><span>会成长的 Agent</span></div><div class="swipe-hint">60 秒刷完<i>↓</i></div></div>
+    </div></section>
+    <section class="slide play-slide" data-slide="1" data-item="eli5-html-explainer">
+    <div class="slide-inner">
+      <header class="play-head">
+        <span class="play-no">PLAY 01</span>
+        <span class="evidence sourced">原帖实证</span>
+      </header>
+      <div class="lab-art art-explain" aria-hidden="true"><div class="text-wall"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b class="fold-card c1"></b><b class="fold-card c2"></b><b class="fold-card c3"></b><span>LONG ANSWER</span><em>3 SCREENS</em></div>
+      <div class="copy-block">
+        <p class="category">海外源头 / 国内发现 · 视觉解释</p>
+        <h2>一句话，把 OpenClaw 讲成会动的网页</h2>
+        <p class="hook">别再让 AI 写 2000 字解释：让它用 3 屏大图，把陌生概念讲到一眼就懂。</p>
+      </div>
+      <div class="experiment" aria-label="输入、AI 动作、结果实验滑轨">
+        <div class="stage-tabs" role="tablist">
+          <button type="button" class="active" data-stage="0">输入</button>
+          <button type="button" data-stage="1">AI 动作</button>
+          <button type="button" data-stage="2">结果</button>
+        </div>
+        <input class="stage-range" type="range" min="0" max="2" step="1" value="0" aria-label="拖动查看玩法三个阶段">
+        <p class="stage-copy">“OpenClaw 为什么不只是聊天机器人？”这种抽象、容易解释很长的话题。</p>
+      </div>
+      <div class="verdict"><span>JARVIS VERDICT</span><p>首刊主推｜十分钟可试，结果一眼可判，而且正好验证《AI 今日可玩》应采用的表达形态。</p></div>
+      <div class="actions">
+        <button type="button" data-open="details-eli5-html-explainer">展开玩法</button>
+        <a href="https://github.com/anthropics/claude-plugins-community/blob/main/eli5/skills/eli5/SKILL.md" target="_blank" rel="noopener noreferrer">看原帖 ↗</a>
+        <button type="button" data-try="eli5-html-explainer">让 Jarvis 试</button>
+      </div>
+    </div>
+    <dialog class="details" id="details-eli5-html-explainer">
+    <div class="sheet-head"><span>PLAY 01</span><button type="button" data-close aria-label="关闭">×</button></div>
+    <h2>一句话，把 OpenClaw 讲成会动的网页</h2>
+    <p class="sheet-lead">真正的新意不是“儿童化语气”，而是把回答的默认介质从文字换成网页。它天然适合每日样刊，也能成为自媒体母版。</p>
+    <h3>怎么试</h3><ol><li>选一个你已经听过、但一直没真正弄懂的 AI 概念。</li><li>把下方 Prompt 交给能创建文件的 Codex、Claude Code 或其他 Agent。</li><li>要求输出单文件 HTML，直接在手机尺寸浏览器打开。</li><li>删掉任何需要第二遍阅读的句子；若一屏超过一个概念，让 Agent 重做。</li></ol>
+    <h3>可复制指令</h3><pre>请把我当成完全不懂这个话题的人，用一个包含大图、少量文字的单文件 HTML 页面解释：OpenClaw 如何从聊天变成会定时做事的个人 AI 助手。手机优先，3 屏内讲完，每屏只讲一个概念；用原创 CSS/SVG 图形，不依赖外部素材；加入一个能亲手操作的小交互，并确保离线打开可用。</pre>
+    <button class="copy-wide" type="button" data-copy-prompt="eli5-html-explainer">复制这条指令</button>
+    <h3>别忽略这些</h3><ul><li>官方 Skill 本质上非常短，效果主要取决于模型的前端与视觉能力，不是安装后就必然变好。</li><li>大图少字适合建立直觉，不适合承载完整技术边界；需要保留“查看原理/来源”入口。</li><li>若直接发布模型生成页面，常会出现模板化审美、移动端溢出或信息过度简化，仍需人工验收。</li></ul>
+    <h3>编辑推演</h3><p>让 Jarvis 把每天排名第一的玩法自动再做一份 ELI5 版：同一份结构化内容同时产出“深读卡”和“3 屏轻读卡”，由用户切换，而不是另写一份报告。</p>
+    <a class="source-wide" href="https://github.com/anthropics/claude-plugins-community/blob/main/eli5/skills/eli5/SKILL.md" target="_blank" rel="noopener noreferrer">打开原始来源 ↗</a>
+  </dialog>
+  </section><section class="slide play-slide" data-slide="2" data-item="director-prompt-for-agents">
+    <div class="slide-inner">
+      <header class="play-head">
+        <span class="play-no">PLAY 02</span>
+        <span class="evidence sourced">原帖实证</span>
+      </header>
+      <div class="lab-art art-director" aria-hidden="true"><b>DIRECT</b><i class="node n1">找</i><i class="node n2">做</i><i class="node n3">测</i><i class="node n4">验</i><span class="beam b1"></span><span class="beam b2"></span><span class="beam b3"></span><span class="beam b4"></span></div>
+      <div class="copy-block">
+        <p class="category">国内创作者 · Codex Prompt</p>
+        <h2>别让最贵的模型搬砖：让它当总导演</h2>
+        <p class="hook">一个 Prompt，把“AI 自己埋头写”改成“主 Agent 拆戏、子 Agent 开工、最后统一验收”。</p>
+      </div>
+      <div class="experiment" aria-label="输入、AI 动作、结果实验滑轨">
+        <div class="stage-tabs" role="tablist">
+          <button type="button" class="active" data-stage="0">输入</button>
+          <button type="button" data-stage="1">AI 动作</button>
+          <button type="button" data-stage="2">结果</button>
+        </div>
+        <input class="stage-range" type="range" min="0" max="2" step="1" value="0" aria-label="拖动查看玩法三个阶段">
+        <p class="stage-copy">一个包含调研、设计、实现和测试的长任务，例如“给个人 AI 助手加一份每日 AI 玩法 Web Story，并让它会生成、会推送、会自检”。</p>
+      </div>
+      <div class="verdict"><span>JARVIS VERDICT</span><p>值得拿真实项目实测｜不是万能省钱咒语，但非常适合“内容 + 网页渲染 + Agent 接入 + 多轮复测”这种天然可并行任务。</p></div>
+      <div class="actions">
+        <button type="button" data-open="details-director-prompt-for-agents">展开玩法</button>
+        <a href="https://x.com/dotey/status/2090844095820259744" target="_blank" rel="noopener noreferrer">看原帖 ↗</a>
+        <button type="button" data-try="director-prompt-for-agents">让 Jarvis 试</button>
+      </div>
+    </div>
+    <dialog class="details" id="details-director-prompt-for-agents">
+    <div class="sheet-head"><span>PLAY 02</span><button type="button" data-close aria-label="关闭">×</button></div>
+    <h2>别让最贵的模型搬砖：让它当总导演</h2>
+    <p class="sheet-lead">它把 Prompt 从“怎么让模型回答更好”推进到“怎么设计一支 AI 团队”。对复杂任务，玩法不再是写神句，而是配置责任边界。</p>
+    <h3>怎么试</h3><ol><li>挑一个至少有两个可独立工作流、且最终结果能测试的任务；小任务不要硬拆。</li><li>把下方 Prompt 放在任务开头，并要求主 Agent 给出每个子任务的明确交付物。</li><li>执行时观察主 Agent 是否真的把实现工作派出，而不是只口头说会委派。</li><li>最后检查它有没有亲自读回产物、跑统一测试、处理子 Agent 之间的矛盾。</li><li>用同类小任务做一次不开委派的对照，比较总耗时、失败率和主上下文占用；不要只看感觉。</li></ol>
+    <h3>可复制指令</h3><pre>你的职责是总导演：先澄清目标，并拆成可并行、可验收的任务；把大量代码阅读、具体实现、测试和批量修改交给合适的 subagent。你保留架构判断、任务分发、交叉核验与最终验收。只有当任务很小、委派开销明显更大时才自己完成。持续推进，直到主目标通过真实验证；不要把子 Agent 的完成回执当作验证结果。</pre>
+    <button class="copy-wide" type="button" data-copy-prompt="director-prompt-for-agents">复制这条指令</button>
+    <h3>别忽略这些</h3><ul><li>只有支持子 Agent/多 Agent 的产品才能完整复现；普通聊天模型只能模拟任务拆分。</li><li>委派有固定开销，单文件小改、一步查询和强耦合任务通常自己做更快。</li><li>子 Agent 共享信息不足时会各自做出合理但互相冲突的方案，主 Agent 必须重新验收。</li><li>原帖对成本的判断是个体经验；不同模型、计费和上下文缓存下结论可能相反。</li></ul>
+    <h3>编辑推演</h3><p>给公开报告增加一张“幕后任务树”折叠卡：显示今天由哪些 Agent 找线索、谁核验、谁渲染、谁复测，让读者看到 AI 团队如何协作；只展示角色和动作，不暴露私有路径、群聊或系统信息。</p>
+    <a class="source-wide" href="https://x.com/dotey/status/2090844095820259744" target="_blank" rel="noopener noreferrer">打开原始来源 ↗</a>
+  </dialog>
+  </section><section class="slide play-slide" data-slide="3" data-item="hermes-learn-a-skill">
+    <div class="slide-inner">
+      <header class="play-head">
+        <span class="play-no">PLAY 03</span>
+        <span class="evidence sourced">原帖实证</span>
+      </header>
+      <div class="lab-art art-learn" aria-hidden="true"><div class="trail"><i></i><i></i><i></i><i></i><i></i></div><b class="skill-card"><small>NEW</small>SKILL</b><span>DO → LEARN → REUSE</span></div>
+      <div class="copy-block">
+        <p class="category">海外开源 · 会成长的 Agent</p>
+        <h2>做完一次，就让 Agent 永久学会</h2>
+        <p class="hook">一句 `/learn how I just…`，把刚走通的流程现场压成下次能直接调用的 Skill。</p>
+      </div>
+      <div class="experiment" aria-label="输入、AI 动作、结果实验滑轨">
+        <div class="stage-tabs" role="tablist">
+          <button type="button" class="active" data-stage="0">输入</button>
+          <button type="button" data-stage="1">AI 动作</button>
+          <button type="button" data-stage="2">结果</button>
+        </div>
+        <input class="stage-range" type="range" min="0" max="2" step="1" value="0" aria-label="拖动查看玩法三个阶段">
+        <p class="stage-copy">一段刚刚由你和 Agent 共同走通的重复流程，例如：筛公开 AI 玩法、核验来源、生成 Web Story、跑视觉 QA、等待发布确认。</p>
+      </div>
+      <div class="verdict"><span>JARVIS VERDICT</span><p>概念很值得抄，产品不必急着装｜先把“完成三次后建议沉淀 Skill”的闭环做进现有 Agent，比新增第二套 Agent 宿主更符合常见架构。</p></div>
+      <div class="actions">
+        <button type="button" data-open="details-hermes-learn-a-skill">展开玩法</button>
+        <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/skills#learning-a-skill-from-sources-learn" target="_blank" rel="noopener noreferrer">看原帖 ↗</a>
+        <button type="button" data-try="hermes-learn-a-skill">让 Jarvis 试</button>
+      </div>
+    </div>
+    <dialog class="details" id="details-hermes-learn-a-skill">
+    <div class="sheet-head"><span>PLAY 03</span><button type="button" data-close aria-label="关闭">×</button></div>
+    <h2>做完一次，就让 Agent 永久学会</h2>
+    <p class="sheet-lead">早期 OpenClaw 的惊喜是“AI 能长期住在你的系统里”；Hermes 把下一步做得很直白：它不只记得事实，还能把经历变成操作方法。</p>
+    <h3>怎么试</h3><ol><li>只在隔离环境或已有 Hermes 安装中测试，不要为了试玩直接改动现有个人 AI 主环境。</li><li>先和 Agent 完成一段有明确成功标准的真实工作流，并保留失败与修正过程。</li><li>在同一会话输入 `/learn how I just completed this workflow`，补充你希望它下次何时触发。</li><li>用 `/skills` 检查生成项，再让一个新会话仅凭该 Skill 重做一次简化任务。</li><li>对照原过程检查是否漏掉权限、人工确认和验证步骤；有遗漏就更新 Skill 后再测。</li></ol>
+    <h3>可复制指令</h3><pre>/learn how I just completed the daily AI-play report: find public candidates, return to primary sources, separate verified facts from editor inference, structure the winners as story JSON, render the mobile page, run functional and visual QA, and require human approval before posting to external social accounts. Capture triggers, procedure, pitfalls, privacy rules, and verification—not private content or credentials.</pre>
+    <button class="copy-wide" type="button" data-copy-prompt="hermes-learn-a-skill">复制这条指令</button>
+    <h3>别忽略这些</h3><ul><li>“生成了 Skill”不等于“学对了”；必须在新会话用新样本复测，才能判断是否可复用。</li><li>对话里若混有一次性的路径、密钥、私人群聊或错误捷径，自动提炼可能把坏习惯永久化。</li><li>官方仓库对自我改进的描述包含产品主张；本条只采用文档可核验的 `/learn` 行为，不替它证明长期效果。</li><li>现有系统若已有长期记忆与 Skill 体系，直接迁移或并装 Hermes 可能制造两套事实源。</li></ul>
+    <h3>编辑推演</h3><p>每次成功生成报告后只记录匿名化流程差异；同一步骤稳定成功 3 次，再出现一张“要把这个方法教给 Agent 吗？”卡片。由用户确认后才写 Skill，并自动安排一次新会话回归测试。</p>
+    <a class="source-wide" href="https://hermes-agent.nousresearch.com/docs/user-guide/features/skills#learning-a-skill-from-sources-learn" target="_blank" rel="noopener noreferrer">打开原始来源 ↗</a>
+  </dialog>
+  </section>
+    <section class="slide remix-slide" data-slide="4"><div class="slide-inner"><p class="eyebrow">EDITOR REMIX · 编辑推演</p><h2>不是搬运，<br>再往前推一步。</h2><div class="remix-card"><span>WHAT IF WE COMBINE IT?</span><p>让 Jarvis 把每天排名第一的玩法自动再做一份 ELI5 版：同一份结构化内容同时产出“深读卡”和“3 屏轻读卡”，由用户切换，而不是另写一份报告。</p></div></div></section>
+  <section class="slide final-slide" data-slide="5"><div class="slide-inner"><p class="eyebrow">TONIGHT / ONE MOVE</p><h2>今晚只试<br>一件事。</h2><p>把“一句话，把 OpenClaw 讲成会动的网页”跑一个最小版本。先看结果，再决定要不要沉淀成 Jarvis 的长期能力。</p><div class="final-actions"><button type="button" data-try="eli5-html-explainer">复制给 Jarvis</button><button type="button" data-share>分享这一期</button><a href="#" data-top>回到封面 ↑</a></div><p class="source-note">AI 今日可玩 · 001 · r4 · 3 SOURCES<br>事实、实证与编辑推演已分层；本页公开但不主动收录。</p></div></section>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+</main>
+<script>
+  const REPORT={"issueDate":"2026-08-23","issueTitle":"AI 今日可玩 · 001","editorialLine":"不追发布会，只挑今天能动手试、能讲成画面的 AI 玩法。","items":[{"id":"eli5-html-explainer","region":"海外源头 / 国内发现","category":"视觉解释","title":"一句话，把 OpenClaw 讲成会动的网页","hook":"别再让 AI 写 2000 字解释：让它用 3 屏大图，把陌生概念讲到一眼就懂。","source":"Anthropic claude-plugins-community · ELI5","sourceUrl":"https://github.com/anthropics/claude-plugins-community/blob/main/eli5/skills/eli5/SKILL.md","evidenceStatus":"原帖实证｜Anthropic 组织下的公开社区仓库 SKILL.md 已核验；Anthropic 员工的公开演示帖与宝玉转述交叉吻合；本轮未独立复现同款模型输出。","evidenceLabel":"原帖实证","input":"“OpenClaw 为什么不只是聊天机器人？”这种抽象、容易解释很长的话题。","action":"让 AI 不写长文，而是生成一个手机优先的单文件 HTML：每屏只讲一个概念，用大图、少字和轻交互完成解释。","result":"得到一份可在浏览器打开、可上划阅读、也能继续改成图文卡片或短视频的视觉解释页。","whyInteresting":"真正的新意不是“儿童化语气”，而是把回答的默认介质从文字换成网页。它天然适合每日样刊，也能成为自媒体母版。","reproduceSteps":["选一个你已经听过、但一直没真正弄懂的 AI 概念。","把下方 Prompt 交给能创建文件的 Codex、Claude Code 或其他 Agent。","要求输出单文件 HTML，直接在手机尺寸浏览器打开。","删掉任何需要第二遍阅读的句子；若一屏超过一个概念，让 Agent 重做。"],"prompt":"请把我当成完全不懂这个话题的人，用一个包含大图、少量文字的单文件 HTML 页面解释：OpenClaw 如何从聊天变成会定时做事的个人 AI 助手。手机优先，3 屏内讲完，每屏只讲一个概念；用原创 CSS/SVG 图形，不依赖外部素材；加入一个能亲手操作的小交互，并确保离线打开可用。","limitations":["官方 Skill 本质上非常短，效果主要取决于模型的前端与视觉能力，不是安装后就必然变好。","大图少字适合建立直觉，不适合承载完整技术边界；需要保留“查看原理/来源”入口。","若直接发布模型生成页面，常会出现模板化审美、移动端溢出或信息过度简化，仍需人工验收。"],"verdict":"首刊主推｜十分钟可试，结果一眼可判，而且正好验证《AI 今日可玩》应采用的表达形态。","editorRemix":"让 Jarvis 把每天排名第一的玩法自动再做一份 ELI5 版：同一份结构化内容同时产出“深读卡”和“3 屏轻读卡”，由用户切换，而不是另写一份报告。"},{"id":"director-prompt-for-agents","region":"国内创作者","category":"Codex Prompt","title":"别让最贵的模型搬砖：让它当总导演","hook":"一个 Prompt，把“AI 自己埋头写”改成“主 Agent 拆戏、子 Agent 开工、最后统一验收”。","source":"宝玉 dotey · 公开 X 帖","sourceUrl":"https://x.com/dotey/status/2090844095820259744","evidenceStatus":"原帖实证｜帖子级 URL 与正文已由两个公开入口交叉核对；“更经济实惠”是作者经验判断，没有受控成本数据，本条不把它写成已证实结论。","evidenceLabel":"原帖实证","input":"一个包含调研、设计、实现和测试的长任务，例如“给个人 AI 助手加一份每日 AI 玩法 Web Story，并让它会生成、会推送、会自检”。","action":"主 Agent 只掌握目标、拆任务、分发、处理冲突和验收；把可独立进行的资料搜集、代码阅读、实现、测试交给多个子 Agent 并行完成。","result":"产出从一团对话变成可见的任务树：内容、渲染、接入、复测各自有交付物，主 Agent 最后用同一套验收标准合并。是否真的省 Token 取决于任务规模和委派质量。","whyInteresting":"它把 Prompt 从“怎么让模型回答更好”推进到“怎么设计一支 AI 团队”。对复杂任务，玩法不再是写神句，而是配置责任边界。","reproduceSteps":["挑一个至少有两个可独立工作流、且最终结果能测试的任务；小任务不要硬拆。","把下方 Prompt 放在任务开头，并要求主 Agent 给出每个子任务的明确交付物。","执行时观察主 Agent 是否真的把实现工作派出，而不是只口头说会委派。","最后检查它有没有亲自读回产物、跑统一测试、处理子 Agent 之间的矛盾。","用同类小任务做一次不开委派的对照，比较总耗时、失败率和主上下文占用；不要只看感觉。"],"prompt":"你的职责是总导演：先澄清目标，并拆成可并行、可验收的任务；把大量代码阅读、具体实现、测试和批量修改交给合适的 subagent。你保留架构判断、任务分发、交叉核验与最终验收。只有当任务很小、委派开销明显更大时才自己完成。持续推进，直到主目标通过真实验证；不要把子 Agent 的完成回执当作验证结果。","limitations":["只有支持子 Agent/多 Agent 的产品才能完整复现；普通聊天模型只能模拟任务拆分。","委派有固定开销，单文件小改、一步查询和强耦合任务通常自己做更快。","子 Agent 共享信息不足时会各自做出合理但互相冲突的方案，主 Agent 必须重新验收。","原帖对成本的判断是个体经验；不同模型、计费和上下文缓存下结论可能相反。"],"verdict":"值得拿真实项目实测｜不是万能省钱咒语，但非常适合“内容 + 网页渲染 + Agent 接入 + 多轮复测”这种天然可并行任务。","editorRemix":"给公开报告增加一张“幕后任务树”折叠卡：显示今天由哪些 Agent 找线索、谁核验、谁渲染、谁复测，让读者看到 AI 团队如何协作；只展示角色和动作，不暴露私有路径、群聊或系统信息。"},{"id":"hermes-learn-a-skill","region":"海外开源","category":"会成长的 Agent","title":"做完一次，就让 Agent 永久学会","hook":"一句 `/learn how I just…`，把刚走通的流程现场压成下次能直接调用的 Skill。","source":"Nous Research Hermes Agent · Skills System","sourceUrl":"https://hermes-agent.nousresearch.com/docs/user-guide/features/skills#learning-a-skill-from-sources-learn","evidenceStatus":"原帖实证｜GitHub 热门线索已回到 Nous Research 官方仓库和官方文档；文档明确给出从刚完成流程生成 Skill 的 /learn 用法。本轮未安装 Hermes，因此不声称已复现其生成质量。","evidenceLabel":"原帖实证","input":"一段刚刚由你和 Agent 共同走通的重复流程，例如：筛公开 AI 玩法、核验来源、生成 Web Story、跑视觉 QA、等待发布确认。","action":"在同一段对话后调用 `/learn`，让 Agent 从刚才的真实过程提炼触发条件、步骤、坑点和验证方式，并保存成可复用 Skill。","result":"下次不用重新解释整套操作，只需调用新 Skill；官方文档说明 Agent 会通过技能管理工具保存结果，也可以从 URL、本地文档或刚完成的对话中学习。","whyInteresting":"早期 OpenClaw 的惊喜是“AI 能长期住在你的系统里”；Hermes 把下一步做得很直白：它不只记得事实，还能把经历变成操作方法。","reproduceSteps":["只在隔离环境或已有 Hermes 安装中测试，不要为了试玩直接改动现有个人 AI 主环境。","先和 Agent 完成一段有明确成功标准的真实工作流，并保留失败与修正过程。","在同一会话输入 `/learn how I just completed this workflow`，补充你希望它下次何时触发。","用 `/skills` 检查生成项，再让一个新会话仅凭该 Skill 重做一次简化任务。","对照原过程检查是否漏掉权限、人工确认和验证步骤；有遗漏就更新 Skill 后再测。"],"prompt":"/learn how I just completed the daily AI-play report: find public candidates, return to primary sources, separate verified facts from editor inference, structure the winners as story JSON, render the mobile page, run functional and visual QA, and require human approval before posting to external social accounts. Capture triggers, procedure, pitfalls, privacy rules, and verification—not private content or credentials.","limitations":["“生成了 Skill”不等于“学对了”；必须在新会话用新样本复测，才能判断是否可复用。","对话里若混有一次性的路径、密钥、私人群聊或错误捷径，自动提炼可能把坏习惯永久化。","官方仓库对自我改进的描述包含产品主张；本条只采用文档可核验的 `/learn` 行为，不替它证明长期效果。","现有系统若已有长期记忆与 Skill 体系，直接迁移或并装 Hermes 可能制造两套事实源。"],"verdict":"概念很值得抄，产品不必急着装｜先把“完成三次后建议沉淀 Skill”的闭环做进现有 Agent，比新增第二套 Agent 宿主更符合常见架构。","editorRemix":"每次成功生成报告后只记录匿名化流程差异；同一步骤稳定成功 3 次，再出现一张“要把这个方法教给 Agent 吗？”卡片。由用户确认后才写 Skill，并自动安排一次新会话回归测试。"}],"revision":"r4","generatedAt":"2026-08-23T14:20:05.324Z","url":"https://maxxam.xyz/ai-play/20260823-r4.html"};
+  const deck=document.querySelector('#deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  const progress=document.querySelector('.top-progress i');
+  const counter=document.querySelector('.page-count');
+  const toast=document.querySelector('.toast');
+  const say=(text)=>{toast.textContent=text;toast.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>toast.classList.remove('show'),1600)};
+  const copy=async(text)=>{try{await navigator.clipboard.writeText(text);say('已复制')}catch{const field=document.createElement('textarea');field.value=text;field.style.position='fixed';field.style.opacity='0';document.body.append(field);field.select();const ok=document.execCommand('copy');field.remove();say(ok?'已复制':'复制失败，请长按选择')}};
+  document.querySelectorAll('.experiment').forEach(box=>{
+    const slide=box.closest('[data-item]');
+    const item=REPORT.items.find(entry=>entry.id===slide.dataset.item);
+    const values=[item.input,item.action,item.result];
+    const range=box.querySelector('.stage-range');
+    const tabs=[...box.querySelectorAll('[data-stage]')];
+    const output=box.querySelector('.stage-copy');
+    const setStage=value=>{const index=Number(value);range.value=index;output.textContent=values[index];tabs.forEach((tab,i)=>tab.classList.toggle('active',i===index))};
+    range.addEventListener('input',event=>setStage(event.target.value));
+    tabs.forEach(tab=>tab.addEventListener('click',()=>setStage(tab.dataset.stage)));
+  });
+  document.querySelectorAll('[data-open]').forEach(button=>button.addEventListener('click',()=>{const dialog=document.getElementById(button.dataset.open);dialog.showModal?dialog.showModal():dialog.setAttribute('open','')}));
+  document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>button.closest('dialog').close()));
+  document.querySelectorAll('dialog').forEach(dialog=>dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()}));
+  document.querySelectorAll('[data-copy-prompt]').forEach(button=>button.addEventListener('click',()=>{const item=REPORT.items.find(entry=>entry.id===button.dataset.copyPrompt);copy(item.prompt)}));
+  document.querySelectorAll('[data-try]').forEach(button=>button.addEventListener('click',()=>{const item=REPORT.items.find(entry=>entry.id===button.dataset.try);copy('让 Jarvis 试一下《AI 今日可玩》'+REPORT.issueDate+' '+REPORT.revision+' 的「'+item.title+'」（ID: '+item.id+'）。先读本期证据和限制，做一个安全的最小复现，再把真实结果回填。')}));
+  document.querySelectorAll('[data-share]').forEach(button=>button.addEventListener('click',async()=>{const data={title:REPORT.issueTitle,text:REPORT.editorialLine,url:location.href};if(navigator.share){try{await navigator.share(data)}catch{}}else copy(location.href)}));
+  document.querySelector('[data-top]')?.addEventListener('click',event=>{event.preventDefault();deck.scrollTo({top:0,behavior:'smooth'})});
+  const observer=new IntersectionObserver(entries=>{const visible=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!visible)return;const index=slides.indexOf(visible.target);progress.style.width=((index+1)/slides.length*100)+'%';counter.textContent=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0')},{root:deck,threshold:[.55,.75]});
+  slides.forEach(slide=>observer.observe(slide));
+  addEventListener('keydown',event=>{if(!['ArrowDown','ArrowUp','PageDown','PageUp'].includes(event.key))return;event.preventDefault();const current=Math.round(deck.scrollTop/deck.clientHeight);const delta=['ArrowDown','PageDown'].includes(event.key)?1:-1;slides[Math.max(0,Math.min(slides.length-1,current+delta))]?.scrollIntoView({behavior:'smooth'})});
+</script>
+</body>
+</html>
