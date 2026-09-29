@@ -274,6 +274,20 @@
     .reveal{opacity:1;transform:none}
     #loader{display:none}
   }
+
+  .work.lead{row-gap:24px}
+  .project-awards{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}
+  .project-award{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--line);border-radius:5px;background:var(--card);font-size:12px;line-height:1.45;color:var(--ink);min-width:0}
+  .award-brand{width:68px;height:32px;flex:0 0 68px;display:flex;align-items:center;justify-content:center}
+  .award-logo{display:block;width:68px;height:30px;object-fit:contain}
+  .award-brand.advx .award-logo{width:28px;height:28px;padding:3px;background:#242424;border-radius:3px}
+  .award-result{display:flex;align-items:flex-start;gap:6px;min-width:0}
+  .project-award .pic{width:16px;height:16px;flex:0 0 16px;margin:1px 0 0}
+  .project-award strong{font-weight:600;overflow-wrap:normal}
+  .project-award small{display:block;color:var(--muted);font-size:10px;letter-spacing:.02em;margin-top:3px}
+  @media(min-width:561px) and (max-width:760px){.project-award{gap:8px;padding:11px 9px;font-size:11px}.award-brand{width:48px;flex-basis:48px}.award-logo{width:48px}.award-result{gap:4px}}
+  @media(max-width:860px){.work.lead .project-awards{order:1}.work.lead .vis{order:2}}
+  @media(max-width:560px){.project-awards{grid-template-columns:1fr;gap:7px}.project-award{padding:10px 12px}.award-brand{width:76px;flex-basis:76px}}
 </style>
 </head>
 <body>
@@ -309,9 +323,10 @@
     <div class="leadtag">Flagship</div>
     <div class="txt">
       <h2><span class="pic" data-icon="cam"></span>UNSEEN</h2>
-      <div class="en">空间记忆</div>
+      <div class="en">Photos, spaces & shared memories</div>
       <span class="cnonly">Chinese only</span>
-      <p>Photos from one event, scattered across everyone's phones, put back into the scene by where they were taken and which way the camera was facing: guests upload, the system works out the scene and the heading, the organiser confirms the uncertain ones, and the result is an exhibition you can walk through. Built in three days at AdventureX 2026.</p>
+      <p>Turn scattered photos, voices and stories into memories people can build together and step back into. Friends and family contribute their own perspectives. AI asks about details in a photo, helping people tell the stories outside the frame, while panoramas and 3D scenes give those memories a place to return to.</p>
+      <p>I lead product design and development, building on the shared-space prototype we started at AdventureX. I’m also exploring an AI family frame: relatives send photos and voice messages from their phones, and older family members can see, listen and leave a reply.</p>
       <a class="open" href="https://unseen.maxxam.xyz/" target="_blank" rel="noopener">Open the app <span class="ar">↗</span></a>
     </div>
     <div class="vis">
@@ -322,6 +337,11 @@
         </div>
       </div>
     </div>
+  <ul class="project-awards" aria-label="Project awards">
+    <li class="project-award"><span class="award-brand insta"><img class="award-logo" src="../assets/awards/insta360.svg" alt="Insta360" width="102" height="28"></span><span class="award-result"><span class="pic" data-icon="trophy" aria-hidden="true"></span><span><strong>1st Place</strong><small>Insta360 · AI for Good Track</small></span></span></li>
+    <li class="project-award"><span class="award-brand bund"><img class="award-logo" src="../assets/awards/bund.png" alt="Inclusion · 外滩大会" width="102" height="28"></span><span class="award-result"><span class="pic" data-icon="trophy" aria-hidden="true"></span><span><strong>Third Prize</strong><small>The Bund Coding Competition</small></span></span></li>
+    <li class="project-award"><span class="award-brand advx"><img class="award-logo" src="../assets/awards/adventurex.svg" alt="AdventureX" width="102" height="28"></span><span class="award-result"><span class="pic" data-icon="trophy" aria-hidden="true"></span><span><strong>Best Interaction Award</strong><small>AdventureX 2026</small></span></span></li>
+  </ul>
   </div>
 
   

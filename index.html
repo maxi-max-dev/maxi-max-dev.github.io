@@ -229,6 +229,20 @@
     .reveal{opacity:1;transform:none}
     #loader{display:none}
   }
+
+  .work.lead{row-gap:24px}
+  .project-awards{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}
+  .project-award{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--line);border-radius:5px;background:var(--card);font-size:12px;line-height:1.45;color:var(--ink);min-width:0}
+  .award-brand{width:68px;height:32px;flex:0 0 68px;display:flex;align-items:center;justify-content:center}
+  .award-logo{display:block;width:68px;height:30px;object-fit:contain}
+  .award-brand.advx .award-logo{width:28px;height:28px;padding:3px;background:#242424;border-radius:3px}
+  .award-result{display:flex;align-items:flex-start;gap:6px;min-width:0}
+  .project-award .pic{width:16px;height:16px;flex:0 0 16px;margin:1px 0 0}
+  .project-award strong{font-weight:600;overflow-wrap:normal}
+  .project-award small{display:block;color:var(--muted);font-size:10px;letter-spacing:.02em;margin-top:3px}
+  @media(min-width:561px) and (max-width:760px){.project-award{gap:8px;padding:11px 9px;font-size:11px}.award-brand{width:48px;flex-basis:48px}.award-logo{width:48px}.award-result{gap:4px}}
+  @media(max-width:860px){.work.lead .project-awards{order:1}.work.lead .vis{order:2}}
+  @media(max-width:560px){.project-awards{grid-template-columns:1fr;gap:7px}.project-award{padding:10px 12px}.award-brand{width:76px;flex-basis:76px}}
 </style>
 </head>
 <body>
@@ -263,8 +277,9 @@
     <div class="leadtag">代表作</div>
     <div class="txt">
       <h2><span class="pic" data-icon="cam"></span>UNSEEN</h2>
-      <div class="en">Spatial Memory</div>
-      <p>把一场活动散落在各人手机里的照片，按拍摄位置和朝向拼回原场景：宾客上传，系统判断它属于哪个场景、朝哪边拍，拿不准的交给主办方确认，最后拼成一个能走进去看的展览。AdventureX 2026 现场三天做的。</p>
+      <div class="en">照片、空间与共同记忆</div>
+      <p>把散落的照片、声音和故事，变成能一起补充、再次走进去的记忆。家人朋友留下各自的视角，AI 从照片里的细节发问，帮人讲出画面之外的故事；照片与全景、三维场景关联，让回忆有一个可以回去的地方。</p>
+      <p>我负责产品设计与开发，从 AdventureX 的多人共享空间原型持续迭代。现在也在探索家庭 AI 相框：让家人从手机发送照片和原声，让长辈在相框上看见、听见，再留下一句回应。</p>
       <a class="open" href="https://unseen.maxxam.xyz/" target="_blank" rel="noopener">打开产品入口 <span class="ar">↗</span></a>
     </div>
     <div class="vis">
@@ -275,6 +290,11 @@
         </div>
       </div>
     </div>
+  <ul class="project-awards" aria-label="项目奖项">
+    <li class="project-award"><span class="award-brand insta"><img class="award-logo" src="assets/awards/insta360.svg" alt="Insta360" width="102" height="28"></span><span class="award-result"><span class="pic" data-icon="trophy" aria-hidden="true"></span><span><strong>AI 公益赛道第一名</strong><small>影石</small></span></span></li>
+    <li class="project-award"><span class="award-brand bund"><img class="award-logo" src="assets/awards/bund.png" alt="Inclusion · 外滩大会" width="102" height="28"></span><span class="award-result"><span class="pic" data-icon="trophy" aria-hidden="true"></span><span><strong>三等奖</strong><small>外滩 Coding 大赛</small></span></span></li>
+    <li class="project-award"><span class="award-brand advx"><img class="award-logo" src="assets/awards/adventurex.svg" alt="AdventureX" width="102" height="28"></span><span class="award-result"><span class="pic" data-icon="trophy" aria-hidden="true"></span><span><strong>秒哒赛道最佳交互奖</strong><small>AdventureX 2026</small></span></span></li>
+  </ul>
   </div>
 
   
