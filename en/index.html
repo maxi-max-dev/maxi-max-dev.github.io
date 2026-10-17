@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Max · Portfolio</title>
-<meta name="description" content="Max's portfolio: UNSEEN spatial memory, Chess Cloud, Museum of Feelings, Vibe Trophy, Heartbeat Wall, Voice Creatures, Museum of You, Poetry Cloud, Studio, Huijian, plus an agent system that runs every day. Most of it opens right in the browser.">
+<meta name="description" content="Max’s portfolio: UNSEEN, Phone Harness, Agent ETA, MAX OPS / OPS, plus museums, poems, games and agent tools. Recent projects include preview status and validation limits.">
 <link rel="canonical" href="https://maxxam.xyz/en/">
 <meta name="theme-color" content="#f7f4ec">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Max · Portfolio">
 <meta property="og:url" content="https://maxxam.xyz/en/">
 <meta property="og:title" content="Max · Portfolio">
-<meta property="og:description" content="Max's portfolio: UNSEEN spatial memory, Chess Cloud, Museum of Feelings, Vibe Trophy, Heartbeat Wall, Voice Creatures, Museum of You, Poetry Cloud, Studio, Huijian, plus an agent system that runs every day. Most of it opens right in the browser.">
+<meta property="og:description" content="Max’s portfolio: UNSEEN, Phone Harness, Agent ETA, MAX OPS / OPS, plus museums, poems, games and agent tools. Recent projects include preview status and validation limits.">
 <meta property="og:image" content="https://maxxam.xyz/assets/og-en.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,7 +20,7 @@
 <meta property="og:locale:alternate" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Max · Portfolio">
-<meta name="twitter:description" content="Max's portfolio: UNSEEN spatial memory, Chess Cloud, Museum of Feelings, Vibe Trophy, Heartbeat Wall, Voice Creatures, Museum of You, Poetry Cloud, Studio, Huijian, plus an agent system that runs every day. Most of it opens right in the browser.">
+<meta name="twitter:description" content="Max’s portfolio: UNSEEN, Phone Harness, Agent ETA, MAX OPS / OPS, plus museums, poems, games and agent tools. Recent projects include preview status and validation limits.">
 <meta name="twitter:image" content="https://maxxam.xyz/assets/og-en.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' shape-rendering='crispEdges'%3E%3Crect x='1' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='9' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='3' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='7' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='5' y='5' width='2' height='2' fill='%23bf5430'/%3E%3C/svg%3E">
 <style>
@@ -289,6 +289,7 @@
   @media(max-width:860px){.work.lead .project-awards{order:1}.work.lead .vis{order:2}}
   @media(max-width:560px){.project-awards{grid-template-columns:1fr;gap:7px}.project-award{padding:10px 12px}.award-brand{width:76px;flex-basis:76px}}
 </style>
+<link rel="stylesheet" href="../assets/agent-tools.css">
 </head>
 <body>
 
@@ -315,7 +316,7 @@
   <!-- hero -->
   <section class="hero reveal">
     <h1>From an idea to something you can click.</h1>
-    <p class="sub">Museums, poems, games, tools, and an agent system I use every day. All of it live.</p>
+    <p class="sub">Museums, poems, games, tools, and agent workflows I keep building. Explore the projects and their public previews.</p>
   </section>
 
   <!-- 000 UNSEEN -->
@@ -345,6 +346,64 @@
   </div>
 
   
+  <section id="agent-tools" aria-labelledby="agent-tools-title">
+    <header class="tools-head reveal">
+      <div class="gridintro">AGENT TOOLS · PUBLIC PREVIEWS</div>
+      <h2 id="agent-tools-title">See the actions, the wait, and the handoffs.</h2>
+      <p>Three recent tools: share an Android workspace, estimate the remaining wait, and keep tasks and receipts together. Each has its own validation limits.</p>
+    </header>
+    <div class="grid tool-grid">
+      <article class="gcard reveal" id="phone-harness">
+        <div class="tool-sketch">
+          <div class="handoff" aria-hidden="true"><b>HUMAN</b><i>↔</i><b class="phone-node">PHONE</b><i>↔</i><b>AGENT</b></div>
+          <span class="sketch-label">Concept sketch · no real phone content</span>
+        </div>
+        <div class="gbody">
+          <h3><span class="pic" data-icon="station" aria-hidden="true"></span>Phone Harness</h3>
+          <div class="en"><a href="https://github.com/maxi-max-dev/phone-harness/releases/tag/v0.6.0" target="_blank" rel="noopener noreferrer">v0.6.0</a> · MIT open-source preview</div>
+          <p>Humans and their existing AI assistants share an Android screen and task queue. Take control, then hand it back. MCP tools and an optional OpenClaw adapter support continuation in the original conversation.</p>
+          <p class="tool-limit">Device acceptance covers one recorded Motorola on Android 15. Broader compatibility and external adoption are unproven. Public screenshots are synthetic.</p>
+          <div class="tool-links">
+            <a href="https://github.com/maxi-max-dev/phone-harness" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+            <a href="https://github.com/maxi-max-dev/phone-harness/blob/main/VALIDATION.md" target="_blank" rel="noopener noreferrer">Validation scope ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="gcard reveal" id="agent-eta">
+        <div class="tool-sketch">
+          <div class="state-sketch" aria-hidden="true"><span>Cold start</span><span class="estimating">Estimating</span><span>Paused</span><span>Stale</span></div>
+          <span class="sketch-label">State sketch · no accuracy results</span>
+        </div>
+        <div class="gbody">
+          <h3><span class="pic" data-icon="chart" aria-hidden="true"></span>Agent ETA</h3>
+          <div class="en"><a href="https://github.com/maxi-max-dev/agent-eta/releases/tag/v0.11.0" target="_blank" rel="noopener noreferrer">v0.11.0</a> · Experimental preview</div>
+          <p>Estimate remaining time from comparable runs, using a CLI, SDK and dashboard. Cold start, pause and stale observation are explicit. Predictions are recorded before outcomes for later evaluation.</p>
+          <p class="tool-limit">General prediction accuracy is not established. The public walkthrough uses synthetic samples to show the workflow, not real performance.</p>
+          <div class="tool-links">
+            <a href="https://github.com/maxi-max-dev/agent-eta" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+            <a href="https://github.com/maxi-max-dev/agent-eta/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer">Progress &amp; limits ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="gcard reveal" id="max-ops">
+        <div class="tool-sketch">
+          <div class="ops-sketch" aria-hidden="true"><span>Tasks</span><span>Agents</span><span>Progress</span><span>Questions</span><span>Artifacts</span><span>Receipts</span></div>
+          <span class="sketch-label">Concept sketch · synthetic preview</span>
+        </div>
+        <div class="gbody">
+          <h3><span class="pic" data-icon="ledger" aria-hidden="true"></span>MAX OPS / OPS</h3>
+          <div class="en">OPS · Public interactive preview</div>
+          <p>One workspace for tasks, agent progress, questions, artifacts and receipts. Humans own task status; agents report execution, keeping progress and results traceable.</p>
+          <p class="tool-limit">The public site uses labelled synthetic data and simulated interactions. It gives visitors no access to private Feishu data and is not a complete public service.</p>
+          <div class="tool-links">
+            <a href="https://maxi-max-dev.github.io/ops/" target="_blank" rel="noopener noreferrer">Try synthetic preview ↗</a>
+            <a href="https://github.com/maxi-max-dev/ops" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- always running -->
   <p class="alsointro reveal">↓ These keep running on their own, and keep producing</p>
   <div class="grid duo">

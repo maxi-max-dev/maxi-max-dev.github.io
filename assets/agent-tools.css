@@ -1,0 +1,42 @@
+/* Static concept sketches; no device screens, task data or runtime connections. */
+#agent-tools{scroll-margin-top:86px}
+.tools-head{margin:58px 0 0}
+.tools-head .gridintro{margin:0 0 14px}
+.tools-head h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,34px);line-height:1.4;margin:0}
+.tools-head p{color:var(--muted);font-size:14.5px;margin:12px 0 0;max-width:48em}
+.tool-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.tool-grid .gcard{min-width:0}
+.tool-grid .gbody{padding:18px 18px 20px}
+.tool-grid .gbody h3{font-size:20px;flex-wrap:wrap}
+.tool-grid .gbody p{display:block;overflow:visible;-webkit-line-clamp:unset;font-size:14px;line-height:1.75}
+.tool-grid .gbody .en{line-height:1.8;letter-spacing:.08em}
+.tool-grid .gbody .en a{color:var(--acc);text-decoration:underline;text-underline-offset:3px}
+.tool-grid .gbody .tool-limit{border-top:1px solid var(--hair);margin-top:15px;padding-top:12px;font-size:12.5px;line-height:1.7}
+.tool-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:auto;padding-top:18px}
+.tool-links a{font-size:12.5px;font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:4px;padding:5px 0}
+.tool-links a:hover{color:var(--acc)}
+.tool-grid a:focus-visible{outline:2px solid var(--acc);outline-offset:5px;border-radius:2px}
+.tool-sketch{position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:24px 18px 42px;aspect-ratio:1.7;border-bottom:1.5px solid var(--ink);background:var(--bg);gap:12px}
+.tool-sketch .sketch-label{position:absolute;bottom:12px;left:10px;right:10px;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--muted);line-height:1.5}
+.handoff{display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--mono);font-size:10px}
+.handoff b{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border:1.5px solid var(--ink);border-radius:50%;font-weight:500;background:var(--card)}
+.handoff b.phone-node{height:76px;width:44px;border-radius:8px;background:var(--gold)}
+.handoff i{font-size:16px;color:var(--acc);font-style:normal}
+.state-sketch{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:220px;font-family:var(--mono);font-size:11px}
+.state-sketch span{border:1px solid var(--line);border-radius:5px;padding:7px 8px;background:var(--card);text-align:center;color:var(--muted)}
+.state-sketch .estimating{border-color:var(--acc);color:var(--acc);box-shadow:2px 2px 0 rgba(191,84,48,.12)}
+.ops-sketch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;max-width:240px;font-size:11px;text-align:center}
+.ops-sketch span{padding:8px 2px;border:1px solid var(--line);border-radius:4px;background:var(--card);color:var(--muted)}
+.ops-sketch span:first-child,.ops-sketch span:last-child{border-color:var(--ink);color:var(--ink);background:#efe6d2}
+@media(max-width:860px){
+  .tool-grid{grid-template-columns:1fr;gap:22px}
+  .tool-grid .gcard{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr)}
+  .tool-sketch{aspect-ratio:auto;min-height:220px;border-bottom:0;border-right:1.5px solid var(--ink)}
+}
+@media(max-width:560px){
+  .tools-head{margin-top:44px}
+  .tool-grid .gcard{display:flex}
+  .tool-sketch{min-height:0;aspect-ratio:1.9;border-right:0;border-bottom:1.5px solid var(--ink)}
+  .tool-grid .gbody{padding:18px}
+  .tool-grid .gbody h3{font-size:21px}
+}

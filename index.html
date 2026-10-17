@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Max · 个人作品集</title>
-<meta name="description" content="Max 的个人作品集：UNSEEN 空间记忆、棋云、感觉博物馆、vibecoding 成就墙、心跳墙、声纹生物园、你的音乐博物馆、诗云、造物台、回见，还有一套天天在跑的 agent 系统，大部分能点开试。">
+<meta name="description" content="Max 的个人作品集：UNSEEN 空间记忆、Phone Harness、Agent ETA、MAX OPS / OPS，以及博物馆、诗、游戏与 Agent 工具。新作标明预览状态与验证范围，大部分作品能点开试。">
 <link rel="canonical" href="https://maxxam.xyz/">
 <meta name="theme-color" content="#f7f4ec">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Max · Portfolio">
 <meta property="og:url" content="https://maxxam.xyz/">
 <meta property="og:title" content="Max · 个人作品集">
-<meta property="og:description" content="Max 的个人作品集：UNSEEN 空间记忆、棋云、感觉博物馆、vibecoding 成就墙、心跳墙、声纹生物园、你的音乐博物馆、诗云、造物台、回见，还有一套天天在跑的 agent 系统，大部分能点开试。">
+<meta property="og:description" content="Max 的个人作品集：UNSEEN 空间记忆、Phone Harness、Agent ETA、MAX OPS / OPS，以及博物馆、诗、游戏与 Agent 工具。新作标明预览状态与验证范围，大部分作品能点开试。">
 <meta property="og:image" content="https://maxxam.xyz/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,7 +20,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Max · 个人作品集">
-<meta name="twitter:description" content="Max 的个人作品集：UNSEEN 空间记忆、棋云、感觉博物馆、vibecoding 成就墙、心跳墙、声纹生物园、你的音乐博物馆、诗云、造物台、回见，还有一套天天在跑的 agent 系统，大部分能点开试。">
+<meta name="twitter:description" content="Max 的个人作品集：UNSEEN 空间记忆、Phone Harness、Agent ETA、MAX OPS / OPS，以及博物馆、诗、游戏与 Agent 工具。新作标明预览状态与验证范围，大部分作品能点开试。">
 <meta name="twitter:image" content="https://maxxam.xyz/assets/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' shape-rendering='crispEdges'%3E%3Crect x='1' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='9' y='1' width='2' height='10' fill='%2326231c'/%3E%3Crect x='3' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='7' y='3' width='2' height='2' fill='%23bf5430'/%3E%3Crect x='5' y='5' width='2' height='2' fill='%23bf5430'/%3E%3C/svg%3E">
 <style>
@@ -244,6 +244,7 @@
   @media(max-width:860px){.work.lead .project-awards{order:1}.work.lead .vis{order:2}}
   @media(max-width:560px){.project-awards{grid-template-columns:1fr;gap:7px}.project-award{padding:10px 12px}.award-brand{width:76px;flex-basis:76px}}
 </style>
+<link rel="stylesheet" href="assets/agent-tools.css">
 </head>
 <body>
 
@@ -269,7 +270,7 @@
   <!-- 首屏定位区 -->
   <section class="hero reveal">
     <h1>从一个念头，到能点开的东西。</h1>
-    <p class="sub">博物馆、诗、游戏、工具，和一套天天在用的 agent 系统，全部在线。</p>
+    <p class="sub">博物馆、诗、游戏、工具，和我持续搭建的 Agent 工作流。往下看，也能点开试。</p>
   </section>
 
   <!-- 000 UNSEEN 空间记忆 -->
@@ -298,6 +299,64 @@
   </div>
 
   
+  <section id="agent-tools" aria-labelledby="agent-tools-title">
+    <header class="tools-head reveal">
+      <div class="gridintro">AGENT TOOLS · 公开预览</div>
+      <h2 id="agent-tools-title">让操作、等待与协作，变得可见。</h2>
+      <p>最近做的三件 Agent 工具：共用一部手机，看清还要等多久，把任务进度与回执放在一起。各自的验证范围写在卡片里。</p>
+    </header>
+    <div class="grid tool-grid">
+      <article class="gcard reveal" id="phone-harness">
+        <div class="tool-sketch">
+          <div class="handoff" aria-hidden="true"><b>HUMAN</b><i>↔</i><b class="phone-node">PHONE</b><i>↔</i><b>AGENT</b></div>
+          <span class="sketch-label">交互示意 · 非真实手机画面</span>
+        </div>
+        <div class="gbody">
+          <h3><span class="pic" data-icon="station" aria-hidden="true"></span>Phone Harness</h3>
+          <div class="en"><a href="https://github.com/maxi-max-dev/phone-harness/releases/tag/v0.6.0" target="_blank" rel="noopener noreferrer">v0.6.0</a> · MIT 开源预览版</div>
+          <p>人和原有 AI 助手共用 Android 画面与任务队列，人工随时接管，再交还原助手。提供 MCP 工具，并可通过 OpenClaw 回到原会话续接。</p>
+          <p class="tool-limit">真机验收仅限已记录的一台 Motorola Android 15，不代表普遍兼容或外部采用。公开截图也是合成演示。</p>
+          <div class="tool-links">
+            <a href="https://github.com/maxi-max-dev/phone-harness" target="_blank" rel="noopener noreferrer">查看仓库 ↗</a>
+            <a href="https://github.com/maxi-max-dev/phone-harness/blob/main/VALIDATION.md" target="_blank" rel="noopener noreferrer">验证范围 ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="gcard reveal" id="agent-eta">
+        <div class="tool-sketch">
+          <div class="state-sketch" aria-hidden="true"><span>冷启动</span><span class="estimating">估时中</span><span>已暂停</span><span>观测过期</span></div>
+          <span class="sketch-label">状态示意 · 非预测效果数据</span>
+        </div>
+        <div class="gbody">
+          <h3><span class="pic" data-icon="chart" aria-hidden="true"></span>Agent ETA</h3>
+          <div class="en"><a href="https://github.com/maxi-max-dev/agent-eta/releases/tag/v0.11.0" target="_blank" rel="noopener noreferrer">v0.11.0</a> · 实验性预览</div>
+          <p>根据同类运行历史，估计 Agent 任务还要多久。提供 CLI、SDK 与看板，明确呈现冷启动、暂停和观测过期状态，并保存事前预测记录供回头核对。</p>
+          <p class="tool-limit">一般预测准确度尚未证实。公开演示使用合成样本，只展示流程，不作为真实效果数据。</p>
+          <div class="tool-links">
+            <a href="https://github.com/maxi-max-dev/agent-eta" target="_blank" rel="noopener noreferrer">查看仓库 ↗</a>
+            <a href="https://github.com/maxi-max-dev/agent-eta/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer">进展与边界 ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="gcard reveal" id="max-ops">
+        <div class="tool-sketch">
+          <div class="ops-sketch" aria-hidden="true"><span>任务</span><span>Agent</span><span>进度</span><span>问题</span><span>产物</span><span>回执</span></div>
+          <span class="sketch-label">协作示意 · 合成数据预览</span>
+        </div>
+        <div class="gbody">
+          <h3><span class="pic" data-icon="ledger" aria-hidden="true"></span>MAX OPS / OPS</h3>
+          <div class="en">OPS · 公开交互预览</div>
+          <p>把任务、Agent 进度、问题、产物和回执收进同一个协作界面。人保留任务状态的决定权，Agent 汇报执行过程，让进度与结果可以追溯。</p>
+          <p class="tool-limit">公开站点使用明确标注的合成数据与模拟交互，不会让访客接入私有飞书，也不代表完整线上产品。</p>
+          <div class="tool-links">
+            <a href="https://maxi-max-dev.github.io/ops/" target="_blank" rel="noopener noreferrer">体验合成预览 ↗</a>
+            <a href="https://github.com/maxi-max-dev/ops" target="_blank" rel="noopener noreferrer">查看仓库 ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- 一直在跑的东西 -->
   <p class="alsointro reveal" id="agents">↓ 一直在跑的东西：它们自己还在产出</p>
   <div class="grid duo">
