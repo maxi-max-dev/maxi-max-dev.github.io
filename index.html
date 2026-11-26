@@ -298,6 +298,44 @@
   </ul>
   </div>
 
+  <!-- 实证研究预印本 When should I come back?（紧接 UNSEEN 下方） -->
+  <section id="research-preprint" aria-labelledby="research-preprint-title">
+    <div class="gridintro reveal">RESEARCH PREPRINT · 实证研究论文</div>
+    <article class="paper-card reveal">
+      <div class="paper-bar">
+        <span>Maosheng Huang · 2026-11-26 · 四个公开数据集 30,000+ 次智能体运行</span>
+        <a class="doi-badge" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.24560104 ↗</a>
+      </div>
+      <div class="paper-grid">
+        <div class="paper-txt">
+          <h3 id="research-preprint-title"><span class="pic" data-icon="book" aria-hidden="true"></span>When should I come back?</h3>
+          <div class="paper-sub">Forecasting how long a coding agent will run, from one developer’s sessions to public execution logs</div>
+          <ul class="paper-findings">
+            <li><strong>总体得分掩盖了真实问题：</strong>在 5,133 次预留仓库运行上，文本预测器总体 AUC 达 0.78–0.86，但超 95% 的配对只是在比“哪个智能体更慢”；在<strong>同一智能体配置内部</strong>，词袋模型接近随机（AUC 0.48–0.55）。</li>
+            <li><strong>信号在题目里，盲评可找回：</strong>两项事先冻结方案并哈希存证的检验中，大模型盲读请求文本在同一配置内的排序 AUC 达 <strong>0.69–0.71</strong>，在 11 个配置运行的 202 道新发布 Longtail-SWE 任务上不经重拟合仍达 <strong>0.71</strong>。</li>
+            <li><strong>早期观察与待办计数未减误差：</strong>观察前 5 分钟活动或按智能体自报的未完成待办项缩放，均未比单纯看该配置的历史耗时更准。</li>
+            <li><strong>何时开始查看决定排序成败：</strong>在一人轮流查看多任务的回放中，过早开始查看会撞上仍在运行的最快任务并把它推到队尾，反而增加已完成结果的等待时间。</li>
+          </ul>
+          <div class="paper-actions">
+            <a class="paper-btn" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer">Zenodo 官方预印本 (DOI) ↗</a>
+            <a class="paper-link" href="/papers/When-should-I-come-back.pdf" target="_blank" rel="noopener noreferrer">英文全文 PDF (28p) ↗</a>
+          </div>
+        </div>
+        <div class="paper-vis">
+          <a class="paper-fig" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer" aria-label="查看论文图 1：为什么合并得分会误导人，以及存在多少任务层面的信号">
+            <img src="assets/p-comeback-fig1.png" alt="论文图 1：左为 20,523 次运行对数时长方差分解，右为跨配置总体 AUC 与同一智能体内部盲评排序 AUC 对比" loading="lazy">
+          </a>
+          <div class="paper-figcaption">Figure 1 · 左：配置差异占对数时长方差过半（51.3% / 53.0%），任务与交互项约占三分之一。右：同一智能体内 TF–IDF 近乎随机（0.48 / 0.55），事先设定盲评找回排序能力（0.69–0.71）。</div>
+          <div class="paper-stat-strip">
+            <div class="paper-stat"><b>32,000+</b><small>四项公开基准与预研运行记录</small></div>
+            <div class="paper-stat"><b>0.48 → 0.71</b><small>同配置内 TF–IDF vs 事先冻结盲评 AUC</small></div>
+            <div class="paper-stat"><b>16 表 · 5 图</b><small>全流程哈希冻结与独立复算核验</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
   
   <section id="agent-tools" aria-labelledby="agent-tools-title">
     <header class="tools-head reveal">
@@ -355,45 +393,6 @@
         </div>
       </article>
     </div>
-  </section>
-
-  <!-- 实证研究预印本 When should I come back? -->
-  <section id="research-preprint" aria-labelledby="research-preprint-title">
-    <div class="gridintro reveal">RESEARCH PREPRINT · 实证研究论文</div>
-    <article class="paper-card reveal">
-      <div class="paper-bar">
-        <span>Maosheng Huang · 2026-11-26 · 四个公开数据集 30,000+ 次智能体运行</span>
-        <a class="doi-badge" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.24560104 ↗</a>
-      </div>
-      <div class="paper-grid">
-        <div class="paper-txt">
-          <h3 id="research-preprint-title"><span class="pic" data-icon="book" aria-hidden="true"></span>我什么时候该回来？</h3>
-          <div class="paper-sub">When should I come back? Forecasting how long a coding agent will run, from one developer’s sessions to public execution logs</div>
-          <ul class="paper-findings">
-            <li><strong>总体得分掩盖了真实问题：</strong>在 5,133 次预留仓库运行上，文本预测器总体 AUC 达 0.78–0.86，但超 95% 的配对只是在比“哪个智能体更慢”；在<strong>同一智能体配置内部</strong>，词袋模型接近抛硬币（AUC 0.48–0.55）。</li>
-            <li><strong>信号在题目里，盲评可找回：</strong>两项事先冻结方案并哈希存证的检验中，大模型盲读请求文本在同一配置内的排序 AUC 达 <strong>0.69–0.71</strong>，在 11 个配置运行的 202 道新发布 Longtail-SWE 任务上不经重拟合仍达 <strong>0.71</strong>。</li>
-            <li><strong>早期观察与待办计数未减误差：</strong>观察前 5 分钟活动或按智能体自报的未完成待办项缩放，均未比单纯看该配置的历史耗时更准。</li>
-            <li><strong>何时开始查看决定排序成败：</strong>在一人轮流查看多任务的回放中，过早开始查看会撞上仍在运行的最快任务并把它推到队尾，反而增加已完成结果的等待时间。</li>
-          </ul>
-          <div class="paper-actions">
-            <a class="paper-btn" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer">Zenodo 预印本 (DOI) ↗</a>
-            <a class="paper-link" href="/papers/When-should-I-come-back.pdf" target="_blank" rel="noopener noreferrer">英文全文 PDF (28页) ↗</a>
-            <a class="paper-link" href="/papers/When-should-I-come-back-zh.pdf" target="_blank" rel="noopener noreferrer">中文译稿 PDF (25页) ↗</a>
-          </div>
-        </div>
-        <div class="paper-vis">
-          <a class="paper-fig" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer" aria-label="查看论文图 1：为什么合并得分会误导人，以及存在多少任务层面的信号">
-            <img src="assets/p-comeback-fig1.png" alt="论文图 1：左为 20,523 次运行对数时长方差分解，右为跨配置总体 AUC 与同一智能体内部盲评排序 AUC 对比" loading="lazy">
-          </a>
-          <div class="paper-figcaption">图 1 · 左：配置差异占对数时长方差过半（51.3% / 53.0%），任务与交互项约占三分之一。右：同一智能体内 TF–IDF 近乎随机（0.48 / 0.55），事先设定盲评找回排序能力（0.69–0.71）。</div>
-          <div class="paper-stat-strip">
-            <div class="paper-stat"><b>32,000+</b><small>四项公开基准与预研运行记录</small></div>
-            <div class="paper-stat"><b>0.48 → 0.71</b><small>同配置内 TF–IDF vs 事先冻结盲评 AUC</small></div>
-            <div class="paper-stat"><b>16 表 · 5 图</b><small>全流程哈希冻结与独立复算核验</small></div>
-          </div>
-        </div>
-      </div>
-    </article>
   </section>
 
   <!-- 棋云 -->

@@ -345,6 +345,44 @@
   </ul>
   </div>
 
+  <!-- Empirical Research Preprint: When should I come back? (Right below UNSEEN) -->
+  <section id="research-preprint" aria-labelledby="research-preprint-title">
+    <div class="gridintro reveal">RESEARCH PREPRINT · EMPIRICAL STUDY</div>
+    <article class="paper-card reveal">
+      <div class="paper-bar">
+        <span>Maosheng Huang · 26 November 2026 · 30,000+ runs across four public releases</span>
+        <a class="doi-badge" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.24560104 ↗</a>
+      </div>
+      <div class="paper-grid">
+        <div class="paper-txt">
+          <h3 id="research-preprint-title"><span class="pic" data-icon="book" aria-hidden="true"></span>When should I come back?</h3>
+          <div class="paper-sub">Forecasting how long a coding agent will run, from one developer’s sessions to public execution logs</div>
+          <ul class="paper-findings">
+            <li><strong>Pooled scores flatter launch-time forecasts:</strong> On 5,133 held-out SWE-rebench runs, a text forecaster looked accurate overall (AUC 0.78–0.86), but over 95% of pairs set a slow agent configuration against a fast one; <strong>within a single agent configuration</strong>, it ranked tasks little better than chance (0.48–0.55).</li>
+            <li><strong>Task-level signal exists in the prompt text:</strong> Under prespecified, hash-frozen protocols, blind language-model ratings ordered runs within a configuration at <strong>AUC 0.69–0.71</strong> on held-out repositories and <strong>0.71 [0.66, 0.75]</strong> without refitting on 202 newly published Longtail-SWE tasks across 11 configurations.</li>
+            <li><strong>Early observation and to-do counts did not reduce error:</strong> Watching the first five minutes of activity or scaling by the agent’s own unfinished to-do items did not beat configuration history alone.</li>
+            <li><strong>When checking starts can reverse forecast benefits:</strong> In a replay of one person supervising concurrent runs, checking too early finds the shortest job still running and sends it to the back of the queue.</li>
+          </ul>
+          <div class="paper-actions">
+            <a class="paper-btn" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer">Zenodo Preprint (DOI) ↗</a>
+            <a class="paper-link" href="/papers/When-should-I-come-back.pdf" target="_blank" rel="noopener noreferrer">Full Manuscript PDF (28p) ↗</a>
+          </div>
+        </div>
+        <div class="paper-vis">
+          <a class="paper-fig" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer" aria-label="View Figure 1: Why pooled scores mislead and what task-level signal exists">
+            <img src="../assets/p-comeback-fig1.png" alt="Figure 1: Log-duration variance decomposition across 20,523 runs (left) and pooled vs. within-configuration AUC across 5,133 held-out and 6,666 Longtail-SWE runs (right)" loading="lazy">
+          </a>
+          <div class="paper-figcaption">Figure 1 · Left: configuration differences account for over half of log-duration variance (51.3% / 53.0%). Right: within one agent, TF–IDF is near chance (0.48 / 0.55), while prespecified blind ratings recover task ordering (0.69–0.71).</div>
+          <div class="paper-stat-strip">
+            <div class="paper-stat"><b>32,000+</b><small>Public &amp; pilot runs analyzed</small></div>
+            <div class="paper-stat"><b>0.48 → 0.71</b><small>Within-agent TF–IDF vs. blind rating AUC</small></div>
+            <div class="paper-stat"><b>16 tables · 5 figs</b><small>Hash-frozen protocols &amp; verified outputs</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
   
   <section id="agent-tools" aria-labelledby="agent-tools-title">
     <header class="tools-head reveal">
@@ -402,45 +440,6 @@
         </div>
       </article>
     </div>
-  </section>
-
-  <!-- Empirical Research Preprint: When should I come back? -->
-  <section id="research-preprint" aria-labelledby="research-preprint-title">
-    <div class="gridintro reveal">RESEARCH PREPRINT · EMPIRICAL STUDY</div>
-    <article class="paper-card reveal">
-      <div class="paper-bar">
-        <span>Maosheng Huang · 26 November 2026 · 30,000+ runs across four public releases</span>
-        <a class="doi-badge" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.24560104 ↗</a>
-      </div>
-      <div class="paper-grid">
-        <div class="paper-txt">
-          <h3 id="research-preprint-title"><span class="pic" data-icon="book" aria-hidden="true"></span>When should I come back?</h3>
-          <div class="paper-sub">Forecasting how long a coding agent will run, from one developer’s sessions to public execution logs</div>
-          <ul class="paper-findings">
-            <li><strong>Pooled scores flatter launch-time forecasts:</strong> On 5,133 held-out SWE-rebench runs, a text forecaster looked accurate overall (AUC 0.78–0.86), but over 95% of pairs set a slow agent configuration against a fast one; <strong>within a single agent configuration</strong>, it ranked tasks little better than chance (0.48–0.55).</li>
-            <li><strong>Task-level signal exists in the prompt text:</strong> Under prespecified, hash-frozen protocols, blind language-model ratings ordered runs within a configuration at <strong>AUC 0.69–0.71</strong> on held-out repositories and <strong>0.71 [0.66, 0.75]</strong> without refitting on 202 newly published Longtail-SWE tasks across 11 configurations.</li>
-            <li><strong>Early observation and to-do counts did not reduce error:</strong> Watching the first five minutes of activity or scaling by the agent’s own unfinished to-do items did not beat configuration history alone.</li>
-            <li><strong>When checking starts can reverse forecast benefits:</strong> In a replay of one person supervising concurrent runs, checking too early finds the shortest job still running and sends it to the back of the queue.</li>
-          </ul>
-          <div class="paper-actions">
-            <a class="paper-btn" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer">Zenodo Preprint (DOI) ↗</a>
-            <a class="paper-link" href="/papers/When-should-I-come-back.pdf" target="_blank" rel="noopener noreferrer">Full Manuscript PDF (28p) ↗</a>
-            <a class="paper-link" href="/papers/When-should-I-come-back-zh.pdf" target="_blank" rel="noopener noreferrer">Chinese Edition PDF (25p) ↗</a>
-          </div>
-        </div>
-        <div class="paper-vis">
-          <a class="paper-fig" href="https://doi.org/10.5281/zenodo.24560104" target="_blank" rel="noopener noreferrer" aria-label="View Figure 1: Why pooled scores mislead and what task-level signal exists">
-            <img src="../assets/p-comeback-fig1.png" alt="Figure 1: Log-duration variance decomposition across 20,523 runs (left) and pooled vs. within-configuration AUC across 5,133 held-out and 6,666 Longtail-SWE runs (right)" loading="lazy">
-          </a>
-          <div class="paper-figcaption">Figure 1 · Left: configuration differences account for over half of log-duration variance (51.3% / 53.0%). Right: within one agent, TF–IDF is near chance (0.48 / 0.55), while prespecified blind ratings recover task ordering (0.69–0.71).</div>
-          <div class="paper-stat-strip">
-            <div class="paper-stat"><b>32,000+</b><small>Public &amp; pilot runs analyzed</small></div>
-            <div class="paper-stat"><b>0.48 → 0.71</b><small>Within-agent TF–IDF vs. blind rating AUC</small></div>
-            <div class="paper-stat"><b>16 tables · 5 figs</b><small>Hash-frozen protocols &amp; verified outputs</small></div>
-          </div>
-        </div>
-      </div>
-    </article>
   </section>
 
   <!-- Chess Cloud -->
